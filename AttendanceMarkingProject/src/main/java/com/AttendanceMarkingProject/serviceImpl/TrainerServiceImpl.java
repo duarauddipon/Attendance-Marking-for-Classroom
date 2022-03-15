@@ -18,12 +18,20 @@ public class TrainerServiceImpl implements TrainerService {
 	@Override
 	public String addTrainer(Trainer trainer) {
 		// TODO Auto-generated method stub
+		
 		String sql = "Insert into trainer(trainerId,trainerName,contactNumber,email,skillset) values(?,?,?,?,?);";
+		try {
 		int r = jt.update(sql, new Object[] {trainer.getTrainerId(),trainer.getSkillSet(),trainer.getContactNumber(),trainer.getEmail(),trainer.getTrainerName()});
 		if(r>=1)
 			return "Trainer Added";
 		else
 			return "Error....";
+	}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+		return "Error..";
 	}
 
 }
