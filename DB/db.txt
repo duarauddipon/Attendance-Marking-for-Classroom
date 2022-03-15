@@ -32,5 +32,5 @@ CREATE TABLE `gencproject`.`skillset` (
   `skilldes` VARCHAR(100) NULL,
   PRIMARY KEY (`skillid`));
 
-Superuser 
+alter table sessiondet add foreign key(skillset) references skillset(skilltype);
 	
