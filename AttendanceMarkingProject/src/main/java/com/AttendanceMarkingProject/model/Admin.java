@@ -50,6 +50,7 @@ public class Admin {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
 	public Admin(String firstName, String lastName, int age, String gender, String number, int adminId,
 			String password) {
 		super();
@@ -61,9 +62,11 @@ public class Admin {
 		this.adminId = adminId;
 		this.password = password;
 	}
+	
 	public Admin() {
 		super();
 	}
+	
 	@Override
 	public String toString() {
 		return "Admin [firstName=" + firstName + ", lastName=" + lastName + ", age=" + age + ", gender=" + gender
