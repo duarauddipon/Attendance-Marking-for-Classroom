@@ -42,4 +42,4 @@ CREATE TABLE `gencproject`.`skillset` (
   PRIMARY KEY (`skillid`));
 
 alter table sessiondet add foreign key(skillset) references skillset(skilltype);
-	
+	fifj
