@@ -8,7 +8,7 @@ public class AttendanceMarkingProjectApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AttendanceMarkingProjectApplication.class, args);
-		System.out.println("Server ....");
+		System.out.println("Server started...");
 	}
 
 }
