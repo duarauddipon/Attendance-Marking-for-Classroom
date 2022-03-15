@@ -8,7 +8,6 @@ public class Admin {
 	private String number;
 	private int adminId;
 	private String password;
-	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -51,7 +50,6 @@ public class Admin {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
 	public Admin(String firstName, String lastName, int age, String gender, String number, int adminId,
 			String password) {
 		super();
