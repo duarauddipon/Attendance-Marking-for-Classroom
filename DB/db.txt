@@ -25,7 +25,16 @@ CREATE TABLE `gencproject`.`adminreg` (
 	trainer_details table
 
 	session_details table
-	skilset table
+CREATE TABLE `gencproject`.`sessiondet` (
+  `sessionid` INT NOT NULL,
+  `sessiondes` VARCHAR(100) NOT NULL,
+  `skillset` VARCHAR(45) NOT NULL,
+  `sessiondate` DATE NOT NULL,
+  `sessiontime` TIME NOT NULL,
+  `availslots` INT NOT NULL,
+  PRIMARY KEY (`sessionid`));
+
+	skillset table
 CREATE TABLE `gencproject`.`skillset` (
   `skillid` INT NOT NULL,
   `skilltype` VARCHAR(45) NULL,
