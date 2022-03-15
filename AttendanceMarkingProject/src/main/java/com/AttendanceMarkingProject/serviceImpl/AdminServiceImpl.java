@@ -12,7 +12,7 @@ public class AdminServiceImpl implements AdminService {
 	JdbcTemplate jt;
 
 	@Override
-	public boolean registerAdmin(Admin admin) {
+	public String registerAdmin(Admin admin) {
 		String sql = "Insert into adminreg(firstname,lastname,age,gender,number,adminid,password)values(?,?,?,?,?,?,?)";
 		try
 		{
@@ -20,16 +20,16 @@ public class AdminServiceImpl implements AdminService {
 					admin.getNumber(),admin.getAdminId(),admin.getPassword()});
 			if(a>=1)
 			{
-				return true;
+				return "Admin details added successfully";
 			}
 			else
-				return false;
+				return "Erorr..";
 		}
 		catch(Exception ex)
 		{
 			System.out.println(ex.getMessage());
 		}
-		return false;
+		return "Error..";
 	}
 
 }
