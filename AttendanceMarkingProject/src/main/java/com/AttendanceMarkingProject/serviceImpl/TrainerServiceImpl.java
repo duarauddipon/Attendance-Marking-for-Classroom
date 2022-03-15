@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
-import com.AttendanceMarkingProject.model.Session;
+
 
 @Component
 public class TrainerServiceImpl implements TrainerService {
