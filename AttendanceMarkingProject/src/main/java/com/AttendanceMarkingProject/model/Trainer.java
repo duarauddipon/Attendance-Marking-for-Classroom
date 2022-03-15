@@ -52,7 +52,7 @@ public class Trainer {
 	@Override
 	public String toString() {
 		return "Trainer [trainerId=" + trainerId + ", trainerName=" + trainerName
-				+ ", ContactNumber=" + contactNumber + ", email=" + email + ", skillSet=" + skillSet + "]";
+				+ ", contactNumber=" + contactNumber + ", email=" + email + ", skillSet=" + skillSet + "]";
 	}
 	
 
