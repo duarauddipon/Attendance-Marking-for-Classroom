@@ -42,4 +42,11 @@ CREATE TABLE `gencproject`.`skillset` (
   PRIMARY KEY (`skillid`));
 
 alter table sessiondet add foreign key(skillset) references skillset(skilltype);
+
+
+
+ALTER TABLE `gencproject`.`skillset` 
+CHANGE COLUMN `skilltype` `skilltype` VARCHAR(45) NOT NULL ,
+DROP PRIMARY KEY,
+ADD PRIMARY KEY (`skilltype`);
 	
