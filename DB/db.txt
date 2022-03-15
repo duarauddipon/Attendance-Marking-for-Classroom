@@ -1,0 +1,36 @@
+Admin 
+
+
+Attendance marking Databsase
+	user_reg table
+	CREATE TABLE `gencproject`.`userreg` (
+  `firstname` VARCHAR(20) NOT NULL,
+  `lastname` VARCHAR(20) NOT NULL,
+  `empid` INT NOT NULL AUTO_INCREMENT,
+  `email` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`empid`));
+
+	admin_reg table
+CREATE TABLE `gencproject`.`adminreg` (
+  `firstname` VARCHAR(20) NOT NULL,
+  `lastname` VARCHAR(20) NOT NULL,
+  `age` INT NOT NULL,
+  `gender` VARCHAR(10) NOT NULL,
+  `number` VARCHAR(45) NOT NULL,
+  `adminid` INT NOT NULL AUTO_INCREMENT,
+  `password` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`adminid`));
+
+	trainer_details table
+
+	session_details table
+	skilset table
+CREATE TABLE `gencproject`.`skillset` (
+  `skillid` INT NOT NULL,
+  `skilltype` VARCHAR(45) NULL,
+  `skilldes` VARCHAR(100) NULL,
+  PRIMARY KEY (`skillid`));
+
+Superuser 
+	
