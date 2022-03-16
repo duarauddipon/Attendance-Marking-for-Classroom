@@ -13,6 +13,7 @@ import com.AttendanceMarkingProject.serviceImpl.AdminServiceImpl;
 
 @Controller
 public class AdminController {
+	
 	@Autowired
 	AdminServiceImpl as;
 	
