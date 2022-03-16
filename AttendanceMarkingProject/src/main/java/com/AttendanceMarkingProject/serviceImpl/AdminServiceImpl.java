@@ -9,7 +9,7 @@ import com.AttendanceMarkingProject.service.AdminService;
 
 @Component
 public class AdminServiceImpl implements AdminService {
-	
+		
 	@Autowired
 	JdbcTemplate jt;
 
