@@ -14,7 +14,7 @@ public class SuperUserController{
 		return "SuperUser";
 	}
 	
-	@PostMapping("Superlogin")
+	@PostMapping("adminreg")
 	public String Login1(@RequestParam String userName,@RequestParam String password,Model m) {
 		if(userName.equals("superuser")&&password.equals("superuser@123")) {
 			return "AdminReg";

@@ -17,6 +17,15 @@ public class AdminController {
 	@Autowired
 	AdminServiceImpl as;
 	
+	@GetMapping("adminlogin")
+	public String Login() {
+		return "Adminlogin";
+	}
+	
+	@PostMapping("adminloginprocess")
+	public String adminloginprocess() {
+		return "Adminlogin";
+	}
 	
 	@GetMapping("adminreg")
 	public String adminreg(){
