@@ -15,11 +15,11 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public String registerAdmin(Admin admin) {
-		String sql = "Insert into adminreg(firstname,lastname,age,gender,number,adminid,password)values(?,?,?,?,?,?,?)";
+		String sql = "Insert into adminregtest(firstname,lastname,age,gender,number,password)values(?,?,?,?,?,?)";
 		try
 		{
 			int a = jt.update(sql,new Object[] {admin.getFirstName(),admin.getLastName(),admin.getAge(),admin.getGender(),
-					admin.getNumber(),admin.getAdminId(),admin.getPassword()});
+					admin.getNumber(),admin.getPassword()});
 			if(a>=1)
 			{
 				return "Admin details added successfully";

@@ -17,6 +17,7 @@ public class AdminController {
 	@Autowired
 	AdminServiceImpl as;
 	
+	
 	@GetMapping("adminreg")
 	public String adminreg(){
 		return "AdminReg";
@@ -24,9 +25,9 @@ public class AdminController {
 	
 	@PostMapping("adminregprocess")
 	public String adminregprocess(@RequestParam String firstname,@RequestParam String lastname,@RequestParam int age,
-			@RequestParam String gender,@RequestParam String number,@RequestParam int adminid,@RequestParam String password,
+			@RequestParam String gender,@RequestParam String number,@RequestParam String password,
 			Model m) {
-		Admin adm = new Admin(firstname,lastname,age,gender,number,adminid,password);
+		Admin adm = new Admin(firstname,lastname,age,gender,number,password);
 		String adm1 = as.registerAdmin(adm);
 		if(adm1!=null) {
 			m.addAttribute("msg","Admin Details Addedd Successfully");
