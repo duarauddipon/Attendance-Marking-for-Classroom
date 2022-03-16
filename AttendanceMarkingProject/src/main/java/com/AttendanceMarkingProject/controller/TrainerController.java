@@ -20,11 +20,12 @@ public class TrainerController {
 	public String trainer(){
 		return "TrainerReg";
 	}
+	
 	@PostMapping("trainerregprocess")
-	public String trainerregprocess(@RequestParam int trainerid,@RequestParam String trainername,@RequestParam String contactnumber,
-			@RequestParam String email,@RequestParam String skillset,
+	public String trainerregprocess(@RequestParam int trainerId,@RequestParam String trainerName,@RequestParam String contactNumber,
+			@RequestParam String email,@RequestParam String skillSet,
 			Model m) {
-		Trainer trn = new Trainer(trainerid,trainername,contactnumber,email,skillset);
+		Trainer trn = new Trainer(trainerId,trainerName,contactNumber,email,skillSet);
 		String trn1 = ts.addTrainer(trn);
 		if(trn1!=null) {
 			m.addAttribute("msg","Trainer Details Addedd Successfully");
