@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="loginprocess" method="post">
+	<form action="Superlogin" method="post">
 		<table>
 		<tr>
 			<td>UserName</td>
@@ -18,7 +18,7 @@
 			<td><input type="text" name="password"></td>
 		</tr>
 		<tr>
-			<td><input type="button" value="Submit" name="submit"></td>
+			<td><input type="submit" value="Submit" name="submit"></td>
 		</tr>
 		</table>
 	</form>
