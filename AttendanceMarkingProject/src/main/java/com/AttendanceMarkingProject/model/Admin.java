@@ -50,15 +50,15 @@ public class Admin {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Admin(String firstName, String lastName, int age, String gender, String number, int adminId,
-			String password) {
+
+	
+	public Admin(String firstName, String lastName, int age, String gender, String number, String password) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
 		this.gender = gender;
 		this.number = number;
-		this.adminId = adminId;
 		this.password = password;
 	}
 	
