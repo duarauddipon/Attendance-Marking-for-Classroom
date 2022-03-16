@@ -1,11 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+     <%@ page isELIgnored="false" %>
+      <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+<meta charset="ISO-8859-1">
+<title>Add new Skill!!</title>
+<link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
      rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -16,6 +18,7 @@
              font-family: Arial, Helvetica, sans-serif;
          }
      </style>
+
 </head>
 <body>
 <!-- Navbar -->
@@ -143,13 +146,13 @@
       
                       <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Add a new Skill</p>
       
-                      <form class="mx-1 mx-md-4">
+                      <form class="mx-1 mx-md-4" name="form1" method="post" action="addSk">
       
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">Skill ID</label>
-                            <input type="password" id="form3Example4c" class="form-control" />
+                            <input type="text" id="form3Example4c" id="skillId" name="skillId" class="form-control" placeholder="Skill ID" />
                           </div>
                         </div>                  
       
@@ -158,7 +161,7 @@
                           <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">Skill Type</label>
-                            <input type="password" id="form3Example4c" class="form-control" />
+                            <input type="text" id="form3Example4c" id="skillType" name="skillType" class="form-control" placeholder="Skill Type"/>
                           </div>
                         </div>
       
@@ -166,22 +169,23 @@
                           <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4cd">Add Description</label>
-                            <input type="password" id="form3Example4cd" class="form-control" />
+                            <input type="text" id="form3Example4cd" id="skillDesc" name="skillDesc" class="form-control" placeholder="Description"/>
                           </div>
                         </div>
       
                       
       
                         <div class="d-flex justify-co ntent-center mx-4 mb-3 mb-lg-4">
-                          <button type="button" class="btn" style="color: white; background-color: #485157;">Register Skill</button>
+                          
+                           <input type="submit"  value="Add Skill" class="btn btn-primary" />
                         </div>
-      
+       <h3 style="font-style:italic;color:red" class="">${msg}</h3>
                       </form>
       
                     </div>
                     <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
       
-                      <img src="skill_img.PNG" style="border-radius: 25px;" class="img-fluid" alt="Sample image">
+                      <img src="https://assets.justinmind.com/wp-content/uploads/2019/04/top-skills-for-UX-designers-collaboration.png" style="border-radius: 25px;" class="img-fluid" alt="Sample image">
       
                     </div>
                   </div>

@@ -1,6 +1,10 @@
 package com.AttendanceMarkingProject.serviceImpl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
@@ -24,6 +28,20 @@ public class SkillServiceImpl implements SkillService {
 			return "Skill Added";
 		else
 			return "Error....";
+		
+		
+	}
+
+	@Override
+	public List<Skill> showSkill() {
+		// TODO Auto-generated method stub
+		
+		List<Skill> sklist = new ArrayList<>();
+		String str = "select * from  skillset";
+		
+		sklist=jt.query(str, new BeanPropertyRowMapper(Skill.class));
+		return sklist;
+		
 		
 		
 	}
