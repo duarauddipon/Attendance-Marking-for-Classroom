@@ -21,7 +21,7 @@ public class TrainerServiceImpl implements TrainerService {
 		
 		String sql = "Insert into trainer(trainerId,trainerName,contactNumber,email,skillset) values(?,?,?,?,?);";
 		try {
-		int r = jt.update(sql, new Object[] {trainer.getTrainerId(),trainer.getSkillSet(),trainer.getContactNumber(),trainer.getEmail(),trainer.getTrainerName()});
+		int r = jt.update(sql, new Object[] {trainer.getTrainerId(),trainer.getTrainerName(),trainer.getContactNumber(),trainer.getEmail(),trainer.getSkillSet()});
 		if(r>=1)
 			return "Trainer Added";
 		else
