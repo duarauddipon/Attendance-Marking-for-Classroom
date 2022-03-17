@@ -10,6 +10,7 @@
 </head>
 <body>
 <section class="vh-100">
+
         <div class="container h-100">
           <div class="row d-flex justify-content-center align-items-center h-100" > 
             <div class="col-lg-12 col-xl-11" >
@@ -18,13 +19,14 @@
               inset -2px -2px 4px #f9f9f9;">
               
               <div class="card-header h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" style=" border-top-left-radius: 25px;border-top-right-radius: 25px;">Trainer Registration</div>
+              
                 <div class="card-body p-md-5" >
                   <div class="row justify-content-center">
                     <div class="col-md-10 col-lg-4 col-xl-5 order-2 order-lg-1">
       
                       <form class="mx-1 mx-md-4" name="form1" method="post" action="trainerregprocess">
       
-      					<%--trainer id Field--%>
+      					<%--Trainer id Field--%>
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
