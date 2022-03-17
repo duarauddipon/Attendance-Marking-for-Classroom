@@ -57,9 +57,9 @@
             <div class="col-md-9 col-lg-6 col-xl-5">
               <img src="https://media.licdn.com/media//AAYQAgSrAAgAAQAAAAAAADCLr3coQt8AQiyj4giyWxfjsg.svg" class="img-fluid"
                 alt="Sample image" id="img1">
-                <img src="https://img.freepik.com/free-vector/follow-me-social-business-theme-design_24877-50426.jpg?t=st=1647501988~exp=1647502588~hmac=ee870abc5cf0f13f0c205cd2e39080d4ef716742d1ce427ba50fb98dd38af704&w=740" class="img-fluid"
+                <img src="https://i.pinimg.com/564x/64/b6/63/64b663713de1cf9327be55e7aa4f92aa.jpg" class="img-fluid"
                 alt="Sample image" style="display:none" id="img2">
-                <img src="https://img.freepik.com/free-vector/flat-customer-support-illustration_23-2148899113.jpg?t=st=1647502266~exp=1647502866~hmac=f486d8a041ac25fb3079cf0d33ce92917375072223c1502ac53b41da20a6d0fc&w=740" class="img-fluid"
+                <img src="https://i.pinimg.com/564x/e6/0b/0c/e60b0cedbf8e454232b313c35a2fe398.jpg" class="img-fluid"
                 alt="Sample image" style="display:none" id="img3">
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">

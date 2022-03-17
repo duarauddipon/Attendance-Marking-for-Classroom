@@ -6,15 +6,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class UserController {
 	
-	@GetMapping("userlogin")
+	@GetMapping("Userlogin")
 	public String userLogin()
 	{
-		return "UserLogin";
+		return "userlogin";
 	}
 	
-	@GetMapping("userreg")
+	@GetMapping("Userreg")
 	public String userregistration()
 	{
-		return "UserRegister";
+		return "userreg";
 	}
 }
