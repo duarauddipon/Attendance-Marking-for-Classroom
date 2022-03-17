@@ -48,7 +48,7 @@
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4cd">Email Id</label>
                             <input type="email" id="email" name="email" class="form-control" 
-                             required/>
+                             placeholder="Ex.miller@gmail.com" required/>
                           </div>
                         </div>
                         
