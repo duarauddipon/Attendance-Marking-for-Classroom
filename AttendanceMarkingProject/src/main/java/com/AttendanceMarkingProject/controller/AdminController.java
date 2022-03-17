@@ -37,14 +37,9 @@ public class AdminController {
 			@RequestParam String gender,@RequestParam String number,@RequestParam String password,
 			Model m) {
 		Admin adm = new Admin(firstname,lastname,age,gender,number,password);
-		String adm1 = as.registerAdmin(adm);
-		if(adm1!=null) {
-			m.addAttribute("msg","Admin Details Addedd Successfully");
-			return "AdminReg";
-		}else {
-			m.addAttribute("msg","Admin Details Not Addedd");
-			return "AdminReg";
-		}
+		String res = as.registerAdmin(adm);
+		m.addAttribute("msg",res);
+		return "AdminReg";
 		
 	}
 }
