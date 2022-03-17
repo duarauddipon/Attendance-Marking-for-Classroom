@@ -22,14 +22,14 @@
                   <div class="row justify-content-center">
                     <div class="col-md-10 col-lg-4 col-xl-5 order-2 order-lg-1">
       
-                      <form class="mx-1 mx-md-4" name="form1" method="post" action="">
+                      <form class="mx-1 mx-md-4" name="form1" method="post" action="userregprocess">
       
       					<%--Firstname Field--%>
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">First Name</label>
-                            <input type="text" id="firstname" name="firstname" class="form-control" placeholder="Ex.Jhon" required/>
+                            <input type="text" id="firstname" name="firstname" class="form-control" placeholder="Ex.John" required/>
                           </div>
                         </div>                  
       

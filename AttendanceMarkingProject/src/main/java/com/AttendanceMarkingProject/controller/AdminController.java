@@ -18,22 +18,22 @@ public class AdminController {
 	AdminServiceImpl as;
 	
 	@GetMapping("adminlogin")
-	public String Login() {
+	public String adminLogin() {
 		return "Adminlogin";
 	}
 	
 	@PostMapping("adminloginprocess")
-	public String adminloginprocess() {
+	public String adminLoginProcess() {
 		return "Adminlogin";
 	}
 	
 	@GetMapping("adminreg")
-	public String adminreg(){
+	public String adminRegistration(){
 		return "AdminReg";
 	}
 	
 	@PostMapping("adminregprocess")
-	public String adminregprocess(@RequestParam String firstname,@RequestParam String lastname,@RequestParam int age,
+	public String adminRegProcess(@RequestParam String firstname,@RequestParam String lastname,@RequestParam int age,
 			@RequestParam String gender,@RequestParam String number,@RequestParam String password,
 			Model m) {
 		Admin adm = new Admin(firstname,lastname,age,gender,number,password);
