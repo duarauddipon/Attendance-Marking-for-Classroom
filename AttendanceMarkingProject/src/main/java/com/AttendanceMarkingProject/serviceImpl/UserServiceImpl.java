@@ -36,6 +36,7 @@ public class UserServiceImpl implements UserService {
 		return "User not added!";
 	}
 
+	@SuppressWarnings({ "deprecation", "unchecked", "rawtypes" })
 	@Override
 	public User validateUser(int empId, String password) {
 		String str="select * from userreg where empId=? and password=?;";

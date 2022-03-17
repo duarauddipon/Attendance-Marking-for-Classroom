@@ -13,9 +13,12 @@
         <div class="container h-100">
           <div class="row d-flex justify-content-center align-items-center h-100" > 
             <div class="col-lg-12 col-xl-11" >
+            
               <div class="card text-black" style="border-radius: 25px;box-shadow: inset 2px 2px 4px #d1d9e6,
               inset -2px -2px 4px #f9f9f9;">
+              
               <div class="card-header h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" style=" border-top-left-radius: 25px;border-top-right-radius: 25px;">Admin Login</div>
+              
                 <div class="card-body p-md-5" >
                   <div class="row justify-content-center">
                     <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
@@ -28,7 +31,8 @@
                             <label class="form-label" for="form3Example4c">Email Id</label>
                             <input type="email" id="email" name="email" class="form-control" placeholder="Email Id" />
                           </div>
-                        </div>                  
+                        </div>             
+                             
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
@@ -53,7 +57,6 @@
                     <br>
                     <br>
                     <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-      
                       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXbu5A0qV9XVr07DkKtb80qH3vQKjJHbjD6w&usqp=CAU" style="border-radius: 25px;" class="img-fluid" alt="Sample image">
                       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdCcf4gyJ18jZyY12kuYsdsOB5-XMOn4O07A&usqp=CAU" style="border-radius: 25px;" class="img-fluid" alt="Sample image">
       
