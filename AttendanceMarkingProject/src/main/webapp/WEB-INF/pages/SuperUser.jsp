@@ -36,19 +36,16 @@
                             <input type="password" id="form3Example4c" id="password" name="password" class="form-control" placeholder="Password"/>
                           </div>
                         </div>      
-                        <div class="d-flex justify-co ntent-center mx-4 mb-3 mb-lg-4">
+                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                           
                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit"  value="Login" class="btn btn-primary" />
                         </div>
        						<h3 style="font-style:italic;color:red" class="">${msg}</h3>
                       </form>
-      
-                    </div>
-                    <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-      
-                      <img src="https://i.pinimg.com/564x/12/75/eb/1275eb42797649849260198e65b1e0c6.jpg" style="border-radius: 25px;" class="img-fluid" alt="Sample image">
-      
-                    </div>
+                   </div>
+                   		 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                      		<img src="./images/superuserlogin.gif" style="border-radius: 25px;" class="img-fluid" alt="Sample image">
+                    	</div>
                   </div>
                 </div>
               </div>

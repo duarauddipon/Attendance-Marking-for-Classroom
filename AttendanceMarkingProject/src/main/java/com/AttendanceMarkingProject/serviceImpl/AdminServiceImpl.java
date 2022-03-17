@@ -6,7 +6,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 import com.AttendanceMarkingProject.model.Admin;
-import com.AttendanceMarkingProject.model.User;
 import com.AttendanceMarkingProject.service.AdminService;
 
 @Component
@@ -36,6 +35,7 @@ public class AdminServiceImpl implements AdminService {
 		return "Error registering!";
 	}
 
+	@SuppressWarnings({ "deprecation", "unchecked", "rawtypes" })
 	@Override
 	public Admin validateAdmin(int adminId, String password) {
 		String str="select * from adminreg where adminid=? and password=?;";
