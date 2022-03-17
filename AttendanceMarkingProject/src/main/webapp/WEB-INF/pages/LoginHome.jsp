@@ -67,11 +67,11 @@
                 <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                   <p class="lead fw-normal mb-0 me-3">Sign in as</p>
                   
-                  <a class="btn btn-primary" href="#" role="button" id="btn1">Super User</a>
+                  <a class="btn btn-primary" href="Superlogin" role="button" id="btn1">Super User</a>
       				&nbsp;&nbsp;
-                  <a class="btn btn-primary" href="#" role="button" id="btn2">User</a>
+                  <a class="btn btn-primary" href="userlogin" role="button" id="btn2">User</a>
       				&nbsp;&nbsp;
-                  <a class="btn btn-primary" href="#" role="button" id="btn3">Admin</a>
+                  <a class="btn btn-primary" href="adminlogin" role="button" id="btn3">Admin</a>
                   
                 </div>
       
@@ -82,9 +82,9 @@
                     <p class="lead fw-normal mb-0 me-3">Register for</p>
         			&nbsp;&nbsp;&nbsp;
         			
-                    <a class="btn btn-warning" href="#" role="button" id="btn4">User</a>
+                    <a class="btn btn-warning" href="userreg" role="button" id="btn4">User</a>
         				&nbsp;&nbsp;
-                    <a class="btn btn-warning" href="#" role="button" id="btn5">Admin</a>
+                    <a class="btn btn-warning" href="adminreg" role="button" id="btn5">Admin</a>
                     
                   </div>
               </form>
