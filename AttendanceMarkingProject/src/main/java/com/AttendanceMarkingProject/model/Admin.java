@@ -8,6 +8,7 @@ public class Admin {
 	private String number;
 	private int adminId;
 	private String password;
+	
 	public String getFirstName() {
 		return firstName;
 	}
