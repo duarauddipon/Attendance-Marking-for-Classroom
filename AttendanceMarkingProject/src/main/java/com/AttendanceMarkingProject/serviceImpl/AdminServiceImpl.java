@@ -15,23 +15,23 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public String registerAdmin(Admin admin) {
-		String sql = "Insert into adminregtest(firstname,lastname,age,gender,number,password)values(?,?,?,?,?,?)";
+		String sql = "Insert into adminreg(firstname,lastname,age,gender,number,password)values(?,?,?,?,?,?)";
 		try
 		{
 			int a = jt.update(sql,new Object[] {admin.getFirstName(),admin.getLastName(),admin.getAge(),admin.getGender(),
 					admin.getNumber(),admin.getPassword()});
 			if(a>=1)
 			{
-				return "Admin details added successfully";
+				return "Admin registered successfully";
 			}
 			else
-				return "Erorr..";
+				return "Error registering!";
 		}
 		catch(Exception ex)
 		{
 			System.out.println(ex.getMessage());
 		}
-		return "Error..";
+		return "Error registering!";
 	}
 
 }
