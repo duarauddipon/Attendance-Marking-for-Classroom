@@ -85,7 +85,6 @@
                     <a class="btn btn-warning" href="Userreg" role="button" id="btn4">User</a>
         				&nbsp;&nbsp;
                     <a class="btn btn-warning" href="adminreg" role="button" id="btn5">Admin</a>
-                    
                   </div>
               </form>
             </div>

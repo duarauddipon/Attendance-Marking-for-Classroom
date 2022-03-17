@@ -17,13 +17,39 @@ public class AdminController {
 	@Autowired
 	AdminServiceImpl as;
 	
+	private static Admin modelAdmin=null;
+	
+	public static void setModelAdmin(Admin admin)
+	{
+		modelAdmin=admin;
+	}
+	
 	@GetMapping("adminlogin")
 	public String adminLogin() {
 		return "Adminlogin";
 	}
 	
 	@PostMapping("adminloginprocess")
-	public String adminLoginProcess() {
+	public String adminLoginProcess(@RequestParam int adminid,@RequestParam String password,Model m) {
+		Admin admin=as.validateAdmin(adminid, password);
+		setModelAdmin(admin);
+		if(modelAdmin!=null)
+		{
+			if(modelAdmin.getApproval()==0)
+			{
+				m.addAttribute("msg","Approval pending");
+				setModelAdmin(null);
+				return "Adminlogin";
+			}
+			else if(modelAdmin.getApproval()==-1)
+			{
+				m.addAttribute("msg","Registration rejected! Kindly register again");
+				setModelAdmin(null);
+				return "Adminlogin";
+			}
+			return "AdminHome";
+		}
+		m.addAttribute("msg","Wrong id/password");
 		return "Adminlogin";
 	}
 	
@@ -37,6 +63,7 @@ public class AdminController {
 			@RequestParam String gender,@RequestParam String number,@RequestParam String password,
 			Model m) {
 		Admin adm = new Admin(firstname,lastname,age,gender,number,password);
+		adm.setApproval((byte) 0);
 		String res = as.registerAdmin(adm);
 		m.addAttribute("msg",res);
 		return "AdminReg";

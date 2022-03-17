@@ -20,7 +20,7 @@
                   <div class="row justify-content-center">
                     <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
     
-                      <form class="mx-1 mx-md-4" name="form1" method="post" action="adminreg">
+                      <form class="mx-1 mx-md-4" name="form1" method="post" action="superuserlogin">
       
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-lock fa-lg me-3 fa-fw"></i>

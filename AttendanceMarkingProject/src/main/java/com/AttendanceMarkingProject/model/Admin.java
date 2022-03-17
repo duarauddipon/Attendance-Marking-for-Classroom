@@ -8,6 +8,7 @@ public class Admin {
 	private String number;
 	private int adminId;
 	private String password;
+	private byte approval;
 	public String getFirstName() {
 		return firstName;
 	}
@@ -50,8 +51,13 @@ public class Admin {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
 	
+	public byte getApproval() {
+		return approval;
+	}
+	public void setApproval(byte approval) {
+		this.approval = approval;
+	}
 	public Admin(String firstName, String lastName, int age, String gender, String number, String password) {
 		super();
 		this.firstName = firstName;

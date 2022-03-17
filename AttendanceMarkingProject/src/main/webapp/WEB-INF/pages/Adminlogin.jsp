@@ -22,14 +22,14 @@
                 <div class="card-body p-md-5" >
                   <div class="row justify-content-center">
                     <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                      <form class="mx-1 mx-md-4" name="form1" method="post" action="adminlogin">
+                      <form class="mx-1 mx-md-4" name="form1" method="post" action="adminloginprocess">
       					
       					
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
-                            <label class="form-label" for="form3Example4c">Email Id</label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="Email Id" />
+                            <label class="form-label" for="form3Example4c">Admin Id</label>
+                            <input type="number" id="adminid" name="adminid" class="form-control" placeholder="Admin Id" />
                           </div>
                         </div>             
                              
