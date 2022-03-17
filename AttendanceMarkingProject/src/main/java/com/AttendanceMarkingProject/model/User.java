@@ -36,6 +36,10 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public User()
+	{
+		super();
+	}
 	public User(String firstName, String lastName, String email, String password) {
 		super();
 		this.firstName = firstName;
