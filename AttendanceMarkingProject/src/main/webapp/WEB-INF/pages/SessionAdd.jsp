@@ -183,13 +183,6 @@
                             
                           </div>
                         </div>
-                        <!--  <select class="form-control" name="fname" id="fname">
-                      <option Selected>Select Faculty</option>
-                      <c:forEach var="fls" items="${flist}">
-                      	<option value="${fls.fid}">${fls.factname}</option>
-                      </c:forEach>
-                      
-                      </select> -->
 
                         <div class="d-flex flex-row align-items-center mb-4">
                             <i class="fas fa-key fa-lg me-3 fa-fw"></i>

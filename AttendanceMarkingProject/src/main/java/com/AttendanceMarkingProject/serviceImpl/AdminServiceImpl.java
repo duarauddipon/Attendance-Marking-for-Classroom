@@ -1,6 +1,7 @@
 package com.AttendanceMarkingProject.serviceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
@@ -15,23 +16,39 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public String registerAdmin(Admin admin) {
-		String sql = "Insert into adminregtest(firstname,lastname,age,gender,number,password)values(?,?,?,?,?,?)";
+		String sql = "Insert into adminreg(firstname,lastname,age,gender,number,password,approval)values(?,?,?,?,?,?,?)";
 		try
 		{
 			int a = jt.update(sql,new Object[] {admin.getFirstName(),admin.getLastName(),admin.getAge(),admin.getGender(),
-					admin.getNumber(),admin.getPassword()});
+					admin.getNumber(),admin.getPassword(),admin.getApproval()});
 			if(a>=1)
 			{
-				return "Admin details added successfully";
+				return "Admin registered successfully";
 			}
 			else
-				return "Erorr..";
+				return "Error registering!";
 		}
 		catch(Exception ex)
 		{
 			System.out.println(ex.getMessage());
 		}
-		return "Error..";
+		return "Error registering!";
+	}
+
+	@SuppressWarnings({ "deprecation", "unchecked", "rawtypes" })
+	@Override
+	public Admin validateAdmin(int adminId, String password) {
+		String str="select * from adminreg where adminid=? and password=?;";
+		try
+		{
+			Admin admin=(Admin) jt.queryForObject(str, new Object[] {adminId,password}, new BeanPropertyRowMapper(Admin.class));
+			return admin;
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+		return null;
 	}
 
 }

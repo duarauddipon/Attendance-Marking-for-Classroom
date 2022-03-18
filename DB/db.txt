@@ -24,6 +24,8 @@ CREATE TABLE `gencproject`.`adminreg` (
 
 	trainer_details table
 
+alter table trainerreg add foreign key(skillset) references skillset(skilltype);
+
 	session_details table
 CREATE TABLE `gencproject`.`sessiondet` (
   `sessionid` INT NOT NULL,
@@ -43,4 +45,5 @@ CREATE TABLE `gencproject`.`skillset` (
 
 alter table sessiondet add foreign key(skillset) references skillset(skilltype);
 
-
+ALTER TABLE `gencproject`.`adminreg` 
+ADD COLUMN `approval` TINYINT(1) NULL AFTER `password`;

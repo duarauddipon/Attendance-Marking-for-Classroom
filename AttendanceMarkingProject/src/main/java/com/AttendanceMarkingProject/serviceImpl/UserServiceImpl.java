@@ -1,6 +1,7 @@
 package com.AttendanceMarkingProject.serviceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
@@ -33,6 +34,22 @@ public class UserServiceImpl implements UserService {
 			System.out.println(ex.getMessage());
 		}
 		return "User not added!";
+	}
+
+	@SuppressWarnings({ "deprecation", "unchecked", "rawtypes" })
+	@Override
+	public User validateUser(int empId, String password) {
+		String str="select * from userreg where empId=? and password=?;";
+		try
+		{
+			User user=(User) jt.queryForObject(str, new Object[] {empId,password}, new BeanPropertyRowMapper(User.class));
+			return user;
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+		return null;
 	}
 
 }

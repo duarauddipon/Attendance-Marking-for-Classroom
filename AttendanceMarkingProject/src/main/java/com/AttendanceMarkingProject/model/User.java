@@ -36,11 +36,14 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public User(String firstName, String lastName, int empId, String email, String password) {
+	public User()
+	{
+		super();
+	}
+	public User(String firstName, String lastName, String email, String password) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.empId = empId;
 		this.email = email;
 		this.password = password;
 	}
