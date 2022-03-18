@@ -44,7 +44,7 @@ public class AdminController {
 			{
 				m.addAttribute("msg","Registration rejected! Kindly register again");
 				setModelAdmin(null);
-				return "Adminlogin";
+				return "./Admin/Adminlogin";
 			}
 			return "./Admin/AdminHome";
 		}
