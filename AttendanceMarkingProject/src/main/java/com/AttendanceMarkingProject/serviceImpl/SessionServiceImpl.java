@@ -22,12 +22,19 @@ public class SessionServiceImpl implements SessionService {
 	public String addSession(Session session) {
 		// TODO Auto-generated method stub
 		String sql = "Insert into sessiondet(sessionid,sessiondes,skillset,sessiondate,sessiontime,availslots) values(?,?,?,?,?,?);";
-		int r = jt.update(sql, new Object[] {session.getSessionId(),session.getSessionDes(),session.getSkillSet(),session.getSessionDate(),session.getSessionTime(),session.getAvailSlots()});
-		if(r>=1)
-			return "Session Added";
-		else
-			return "Error....";
-		
+		try
+		{
+			int r = jt.update(sql, new Object[] {session.getSessionId(),session.getSessionDes(),session.getSkillSet(),session.getSessionDate(),session.getSessionTime(),session.getAvailSlots()});
+			if(r>=1)
+				return "Session Added";
+			else
+				return "Error...";
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+		return "Error...";
 	}
 
 	@Override
