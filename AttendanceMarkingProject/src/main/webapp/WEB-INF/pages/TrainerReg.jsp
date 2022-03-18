@@ -49,7 +49,7 @@
                           <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4cd">Contact Number</label>
-                            <input type="text" id="age" name="age" class="form-control" 
+                            <input type="text" id="contactNumber" name="contactNumber" class="form-control" 
                             placeholder="EG.999-999-9999" pattern="[7-9]{1}[0-9]{9}" title="Please enter valid phone number"
                             onKeyPress="if(this.value.length==10) return false;" 
                             oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  required/>
