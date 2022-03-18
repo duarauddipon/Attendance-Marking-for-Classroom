@@ -27,13 +27,13 @@ public class UserController {
 	@GetMapping("Userlogin")
 	public String userLogin()
 	{
-		return "Userlogin";
+		return "./User/Userlogin";
 	}
 	
 	@GetMapping("Userreg")
 	public String userRegistration()
 	{
-		return "Userreg";
+		return "./User/Userreg";
 	}
 	
 	@PostMapping("userregprocess")
@@ -43,7 +43,7 @@ public class UserController {
 		User usr = new User(firstname,lastname,email,password);
 		String res=us.registeruser(usr);
 		m.addAttribute("msg", res);
-		return "Userreg";
+		return "./User/Userreg";
 	}
 	
 	@PostMapping("userloginprocess")
@@ -53,9 +53,9 @@ public class UserController {
 		setModelUser(user);
 		if(modelUser!=null)
 		{
-			return "UserHome";
+			return "./User/UserHome";
 		}
 		m.addAttribute("msg","Wrong id/password");
-		return "Userlogin";
+		return "./User/Userlogin";
 	}
 }

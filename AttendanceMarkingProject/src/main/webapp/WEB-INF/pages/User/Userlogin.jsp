@@ -28,7 +28,7 @@
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
-                            <label class="form-label" for="form3Example4c">Email Id</label>
+                            <label class="form-label" for="form3Example4c">User Id</label>
                             <input type="number" id="userid" name="userid" class="form-control" placeholder="Id" />
                           </div>
                         </div>             

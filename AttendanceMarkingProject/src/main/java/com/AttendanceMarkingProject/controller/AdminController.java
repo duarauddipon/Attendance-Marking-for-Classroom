@@ -26,7 +26,7 @@ public class AdminController {
 	
 	@GetMapping("adminlogin")
 	public String adminLogin() {
-		return "Adminlogin";
+		return "./Admin/Adminlogin";
 	}
 	
 	@PostMapping("adminloginprocess")
@@ -39,7 +39,7 @@ public class AdminController {
 			{
 				m.addAttribute("msg","Approval pending");
 				setModelAdmin(null);
-				return "Adminlogin";
+				return "./Admin/Adminlogin";
 			}
 			else if(modelAdmin.getApproval()==-1)
 			{
@@ -47,15 +47,15 @@ public class AdminController {
 				setModelAdmin(null);
 				return "Adminlogin";
 			}
-			return "AdminHome";
+			return "./Admin/AdminHome";
 		}
 		m.addAttribute("msg","Wrong id/password");
-		return "Adminlogin";
+		return "./Admin/Adminlogin";
 	}
 	
 	@GetMapping("adminreg")
 	public String adminRegistration(){
-		return "AdminReg";
+		return "./Admin/AdminReg";
 	}
 	
 	@PostMapping("adminregprocess")
@@ -66,7 +66,7 @@ public class AdminController {
 		adm.setApproval((byte) 0);
 		String res = as.registerAdmin(adm);
 		m.addAttribute("msg",res);
-		return "AdminReg";
+		return "./Admin/AdminReg";
 		
 	}
 }
