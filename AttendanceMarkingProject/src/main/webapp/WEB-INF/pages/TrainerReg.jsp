@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +32,7 @@
                           <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">Trainer Id</label>
-                            <input type="text" id="trainerId" name="trainerId" class="form-control" placeholder="Trainer Id" required/>
+                            <input type="number" id="trainerId" name="trainerId" class="form-control" placeholder="Trainer Id" required/>
                           </div>
                         </div>                  
       
@@ -49,7 +50,7 @@
                           <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4cd">Contact Number</label>
-                            <input type="text" id="age" name="age" class="form-control" 
+                            <input type="text" id="contactNumber" name="contactNumber" class="form-control" 
                             placeholder="EG.999-999-9999" pattern="[7-9]{1}[0-9]{9}" title="Please enter valid phone number"
                             onKeyPress="if(this.value.length==10) return false;" 
                             oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  required/>
@@ -70,13 +71,20 @@
                           <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4cd">Skill Set</label>
-                            <input type="text" id="form3Example4cd" id="skillSet" name="skillSet" class="form-control"
-                            placeholder="SkillSet" 
-                              required/>
+                         <!-- <input type="text" id="form3Example4cd" id="skillSet" name="skillSet" placeholder="SkillSet" class="form-control" />
+                          --> 
+                          
+                          <select class="form-control" name="skillSet" id="skillSet">
+                      <option Selected>Select Skill</option>
+                      <c:forEach var="fls" items="${salist}">
+                      	<option value="${fls.skillType}">${fls.skillType}</option>
+                      </c:forEach>
+                      
+                      </select>
+                            
                           </div>
                         </div>
-          
-                        
+
                         <%--Register Button--%>          
                         <div class="d-flex justify-co ntent-center mx-4 mb-3 mb-lg-4">
                            <input type="submit"  value="Register" class="btn btn-primary" />

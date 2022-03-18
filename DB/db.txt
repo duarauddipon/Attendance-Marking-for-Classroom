@@ -24,6 +24,8 @@ CREATE TABLE `gencproject`.`adminreg` (
 
 	trainer_details table
 
+alter table trainerreg add foreign key(skillset) references skillset(skilltype);
+
 	session_details table
 CREATE TABLE `gencproject`.`sessiondet` (
   `sessionid` INT NOT NULL,
