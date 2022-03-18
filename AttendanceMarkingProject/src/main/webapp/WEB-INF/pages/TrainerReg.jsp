@@ -31,7 +31,7 @@
                           <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">Trainer Id</label>
-                            <input type="text" id="trainerId" name="trainerId" class="form-control" placeholder="Trainer Id" required/>
+                            <input type="number" id="trainerId" name="trainerId" class="form-control" placeholder="Trainer Id" required/>
                           </div>
                         </div>                  
       
