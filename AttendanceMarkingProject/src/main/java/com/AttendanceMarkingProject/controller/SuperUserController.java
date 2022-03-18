@@ -1,13 +1,22 @@
 package com.AttendanceMarkingProject.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.AttendanceMarkingProject.model.Admin;
+import com.AttendanceMarkingProject.serviceImpl.AdminServiceImpl;
+
 @Controller
 public class SuperUserController{
+	
+	@Autowired
+	AdminServiceImpl as;
 	
 	@GetMapping("Superlogin")
 	public String Login() {
@@ -25,7 +34,9 @@ public class SuperUserController{
 	}
 	
 	@GetMapping("TaskPage")
-	public String task() {
+	public String task(Model m) {
+		List<Admin> alist = as.showregadmins();
+		m.addAttribute("alist",alist);
 		return "./SuperUser/TaskPage";
 	}
 }

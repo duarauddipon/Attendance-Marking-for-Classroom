@@ -1,6 +1,8 @@
 package com.AttendanceMarkingProject.controller;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -60,13 +62,13 @@ public class AdminController {
 	
 	@PostMapping("adminregprocess")
 	public String adminRegProcess(@RequestParam String firstname,@RequestParam String lastname,@RequestParam int age,
-			@RequestParam String gender,@RequestParam String number,@RequestParam String password,
+			@RequestParam String gender,@RequestParam String number,@RequestParam String password,@RequestParam  int adminid,
 			Model m) {
 		Admin adm = new Admin(firstname,lastname,age,gender,number,password);
 		adm.setApproval((byte) 0);
 		String res = as.registerAdmin(adm);
 		m.addAttribute("msg",res);
 		return "./Admin/AdminReg";
-		
 	}
+
 }
