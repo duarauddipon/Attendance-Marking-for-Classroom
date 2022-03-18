@@ -40,19 +40,23 @@ public class SessionController {
 	 * @return
 	 */
 	@PostMapping("addSs")
-	public String showSkill(@RequestParam String sessionId,
+	public String sessionAddProcess(@RequestParam String sessionId,
 			
 			@RequestParam String sessionDes,
-			@RequestParam(name="skillSet") String skillId,
+			@RequestParam String skillSet,
 			@RequestParam String sessionDate,
 			@RequestParam String sessionTime,
 			@RequestParam String availSlots,
 			Model m) { 
+		
+		System.out.println(sessionDate);
+		System.out.println(sessionTime);
+		
 		Session sn = new Session();
 		
 		sn.setSessionId(Integer.parseInt(sessionId));
 		sn.setSessionDes(sessionDes);
-		sn.setSkillSet(skillId);
+		sn.setSkillSet(skillSet);
 		sn.setSessionDate(sessionDate);
 		sn.setSessionTime(sessionTime);
 		sn.setAvailSlots(Integer.parseInt(availSlots));

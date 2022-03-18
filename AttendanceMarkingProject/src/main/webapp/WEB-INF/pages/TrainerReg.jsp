@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,13 +71,20 @@
                           <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4cd">Skill Set</label>
-                            <input type="text" id="form3Example4cd" id="skillSet" name="skillSet" class="form-control"
-                            placeholder="SkillSet" 
-                              required/>
+                         <!-- <input type="text" id="form3Example4cd" id="skillSet" name="skillSet" placeholder="SkillSet" class="form-control" />
+                          --> 
+                          
+                          <select class="form-control" name="skillSet" id="skillSet">
+                      <option Selected>Select Skill</option>
+                      <c:forEach var="fls" items="${salist}">
+                      	<option value="${fls.skillType}">${fls.skillType}</option>
+                      </c:forEach>
+                      
+                      </select>
+                            
                           </div>
                         </div>
-          
-                        
+
                         <%--Register Button--%>          
                         <div class="d-flex justify-co ntent-center mx-4 mb-3 mb-lg-4">
                            <input type="submit"  value="Register" class="btn btn-primary" />

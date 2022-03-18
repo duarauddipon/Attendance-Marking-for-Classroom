@@ -19,7 +19,7 @@ public class TrainerServiceImpl implements TrainerService {
 	public String addTrainer(Trainer trainer) {
 		// TODO Auto-generated method stub
 		
-		String sql = "Insert into trainer(trainerId,trainerName,contactNumber,email,skillset) values(?,?,?,?,?);";
+		String sql = "insert into trainerreg(trainerid,trainername,contactnumber,email,skillset) values(?,?,?,?,?);";
 		try {
 		int r = jt.update(sql, new Object[] {trainer.getTrainerId(),trainer.getTrainerName(),trainer.getContactNumber(),trainer.getEmail(),trainer.getSkillSet()});
 		if(r>=1)
@@ -34,18 +34,6 @@ public class TrainerServiceImpl implements TrainerService {
 		return "Error..";
 	}
 	
-	//@Override
-	//public String UpdateTrainer(Trainer) {
-	//	Trainer t = trainerrepo.saveAndFlush(std); // for updating entity details
-	//	if(t!=null)
-	//		return "Success";
-	//	else
-	//		return "Fail";
-	//}
-
-
-
-
 	@Override
 	public String updateTrainer(Trainer utrainer) {
 		// TODO Auto-generated method stub
