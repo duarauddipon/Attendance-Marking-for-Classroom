@@ -5,7 +5,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Welcome</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
@@ -71,7 +71,8 @@
             background-color: rgb(215, 226, 235);
             font-family: 'Alegreya Sans',sans-serif;
             font-weight: bold;
-            
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
         }
     </style>
 </head>

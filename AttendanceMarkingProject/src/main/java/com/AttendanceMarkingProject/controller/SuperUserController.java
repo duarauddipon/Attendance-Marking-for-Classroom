@@ -11,16 +11,21 @@ public class SuperUserController{
 	
 	@GetMapping("Superlogin")
 	public String Login() {
-		return "SuperUser";
+		return "./SuperUser/SuperUser";
 	}
 	
 	@PostMapping("superuserlogin")
 	public String Login1(@RequestParam String userName,@RequestParam String password,Model m) {
 		if(userName.equals("superuser")&&password.equals("superuser@123")) {
-			return "SuperUserHome";
+			return "./SuperUser/SuperUserHome";
 		}else {
 			m.addAttribute("msg","Wrong username or password");
-			return "SuperUser";
+			return "./SuperUser/SuperUser";
 		}
+	}
+	
+	@GetMapping("TaskPage")
+	public String task() {
+		return "./SuperUser/TaskPage";
 	}
 }
