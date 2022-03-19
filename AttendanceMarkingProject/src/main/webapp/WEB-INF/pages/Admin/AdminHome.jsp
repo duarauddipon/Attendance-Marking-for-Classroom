@@ -4,9 +4,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-     rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<title>Insert title here</title>
+
+         <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>User Home</title>
 <style>
       #navigation{
         color: black;
@@ -19,6 +22,11 @@
         font-weight: bold;
         border-bottom-left-radius: 25px;
         border-bottom-right-radius: 25px;
+    }
+    .responsive{
+    	width: 100%;
+    	max-width: 400px;
+    	height: auto;
     }
 </style>
 </head>
@@ -34,12 +42,18 @@
                 <li class="nav-item"><a class="nav-link" href="sessionadd" id="navigation">Add Session</a></li>
                 <li class="nav-item"><a class="nav-link" href="skilladd" id="navigation">Add Skill</a></li>
                 <li class="nav-item"><a class="nav-link" href="#updatetrainer" id="navigation">Update Trainer</a></li>
+                <li class="nav-item"><a class="nav-link" href="#deletetrainer" id="navigation">Delete Trainer</a></li>
             </ul>
         </div>
     </nav>
-	<div class="img-fluid" style="align-content: center;padding-left: 300px">
-		<img alt="" src="./images/aconst.gif" style="background-position: 1ex;">
-		<p style="text-align: center; font-weight: bold;">Under Developement</p>
+    <section class="vh-100">
+    	<div class="container h-100">
+    	<div class="row d-flex justify-content-center align-items-center h-100" >
+    	<p style="font-weight: bold;">Home Page Under Developement <img alt="img" src="./images/aconst.gif" class="responsive" style="width:600;height: 400;"></p>
+		</div>
 	</div>
+    </section>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" 
+	integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 </body>
 </html>
