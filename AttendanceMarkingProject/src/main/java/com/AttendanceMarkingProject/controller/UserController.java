@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.AttendanceMarkingProject.model.Admin;
 import com.AttendanceMarkingProject.model.User;
 import com.AttendanceMarkingProject.serviceImpl.UserServiceImpl;
 
