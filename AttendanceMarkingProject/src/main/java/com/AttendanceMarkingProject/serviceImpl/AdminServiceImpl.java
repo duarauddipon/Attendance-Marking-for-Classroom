@@ -56,9 +56,9 @@ public class AdminServiceImpl implements AdminService {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public List<Admin> showregadmins() {
-		String sql = "select adminid ,firstname+''+lastname as name from adminreg;";
+		String sql = "select * from adminreg;";
 		try {
-			List alist = jt.query(sql, new BeanPropertyRowMapper(Admin.class));
+			List<Admin> alist = jt.query(sql, new BeanPropertyRowMapper(Admin.class));
 			return alist;
 		}catch(Exception e) {
 			e.getMessage();

@@ -1,8 +1,6 @@
 package com.AttendanceMarkingProject.service;
 
-import com.AttendanceMarkingProject.model.Admin;
-
 public interface SuperUserService {
-	public String approveAdmin(Admin admin);
-	public String rejectAdmin(Admin admin);
+	public String approveAdmin(int adminId);
+	public String rejectAdmin(int adminId);
 }
