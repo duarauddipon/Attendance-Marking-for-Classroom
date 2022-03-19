@@ -6,17 +6,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.AttendanceMarkingProject.model.Admin;
 import com.AttendanceMarkingProject.serviceImpl.AdminServiceImpl;
+import com.AttendanceMarkingProject.serviceImpl.SuperUserServiceImpl;
 
 @Controller
 public class SuperUserController{
 	
 	@Autowired
 	AdminServiceImpl as;
+	
+	@Autowired
+	SuperUserServiceImpl sus;
 	
 	@GetMapping("Superlogin")
 	public String Login() {
@@ -33,8 +40,45 @@ public class SuperUserController{
 		}
 	}
 	
-	@GetMapping("TaskPage")
+	@GetMapping("taskpage")
 	public String task(Model m) {
+		List<Admin> alist = as.showregadmins();
+		m.addAttribute("alist",alist);
+		return "./SuperUser/TaskPage";
+	}
+	
+	/*
+	@GetMapping("approve")
+	public String approveAdmin(@RequestParam int id,Model m)
+	{
+		sus.approveAdmin(id);
+		List<Admin> alist = as.showregadmins();
+		m.addAttribute("alist",alist);
+		return "./SuperUser/TaskPage";
+	}
+	
+	@GetMapping("reject")
+	public String rejectAdmin(@PathVariable int id,Model m)
+	{
+		sus.rejectAdmin(id);
+		List<Admin> alist = as.showregadmins();
+		m.addAttribute("alist",alist);
+		return "./SuperUser/TaskPage";
+	}
+	*/
+	@RequestMapping(value="doaction",params="approve",method=RequestMethod.POST)
+	public String doApprove(@RequestParam(name="aid") String adminId,Model m)
+	{
+		sus.approveAdmin(Integer.parseInt(adminId));
+		List<Admin> alist = as.showregadmins();
+		m.addAttribute("alist",alist);
+		return "./SuperUser/TaskPage";
+	}
+	
+	@RequestMapping(value="doaction",params="reject",method=RequestMethod.POST)
+	public String doReject(@RequestParam(name="aid") String adminId,Model m)
+	{
+		sus.rejectAdmin(Integer.parseInt(adminId));
 		List<Admin> alist = as.showregadmins();
 		m.addAttribute("alist",alist);
 		return "./SuperUser/TaskPage";
