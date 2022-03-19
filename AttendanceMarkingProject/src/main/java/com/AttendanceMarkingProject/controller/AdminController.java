@@ -1,6 +1,5 @@
 package com.AttendanceMarkingProject.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -45,7 +44,7 @@ public class AdminController {
 			{
 				m.addAttribute("msg","Registration rejected! Kindly register again");
 				setModelAdmin(null);
-				return "Adminlogin";
+				return "./Admin/Adminlogin";
 			}
 			return "./Admin/AdminHome";
 		}
@@ -67,6 +66,6 @@ public class AdminController {
 		String res = as.registerAdmin(adm);
 		m.addAttribute("msg",res);
 		return "./Admin/AdminReg";
-		
 	}
+
 }

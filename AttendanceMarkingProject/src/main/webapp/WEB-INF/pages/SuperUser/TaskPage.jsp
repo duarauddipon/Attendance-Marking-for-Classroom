@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page isELIgnored="false" %>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,21 +24,28 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
         <div class="table-responsive">
           <table class="table table-striped">
             <tbody><tr>
-              <th>Registered Admins</th>
+              <th>Admin Id</th>
+              <th>Admin Name</th>
               <th>Status</th>
               <th>Action</th>
             </tr>
+            <c:forEach var="adm" items="${alist }">
+            <form name="frm" method="post" action="doaction">
             <tr>
-         
-              <td>Admin Details</td>
-              <td class="align-middle">
-                  <div class="text" style="width: 100px;">Pending</div>
-              </td>
-              <td>
-                <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="" data-original-title="Edit">Approve</a>
-                <a class="btn btn-danger btn-action" data-toggle="tooltip" title="" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')" data-original-title="Delete">Reject</a>
-              </td>
+         		<td>${adm.adminId }</td>
+              	<td>${adm.firstName }&nbsp;${adm.lastName }</td>
+              
+	             <td class="align-middle">
+	                 <div class="text" style="width: 100px;">Pending</div>
+	             </td>
+              	<td>
+                <input type="submit" class="btn btn-primary btn-action" name="approve" value="Approve"/>&nbsp;&nbsp;
+                <input type="submit" class="btn btn-danger btn-action" name="reject" value="Reject"/>
+              </td> 
             </tr>
+            <input type="hidden" name="aid" value="${adm.adminId }"/>
+            </form>
+            </c:forEach>
           </tbody></table>
         </div>
       </div>
