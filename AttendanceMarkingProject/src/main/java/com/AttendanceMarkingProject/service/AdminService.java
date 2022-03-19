@@ -8,4 +8,5 @@ public interface AdminService {
 	public String registerAdmin(Admin admin);
 	public Admin validateAdmin(int adminId,String password);
 	public List<Admin> showregadmins();
+
 }
