@@ -32,6 +32,7 @@ public class SkillServiceImpl implements SkillService {
 		
 	}
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public List<Skill> showSkill() {
 		// TODO Auto-generated method stub

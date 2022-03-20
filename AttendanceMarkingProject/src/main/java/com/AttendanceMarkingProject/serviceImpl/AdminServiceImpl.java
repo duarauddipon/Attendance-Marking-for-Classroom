@@ -1,5 +1,7 @@
 package com.AttendanceMarkingProject.serviceImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -47,6 +49,19 @@ public class AdminServiceImpl implements AdminService {
 		catch(Exception ex)
 		{
 			System.out.println(ex.getMessage());
+		}
+		return null;
+	}
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@Override
+	public List<Admin> showregadmins() {
+		String sql = "select * from adminreg;";
+		try {
+			List<Admin> alist = jt.query(sql, new BeanPropertyRowMapper(Admin.class));
+			return alist;
+		}catch(Exception e) {
+			e.getMessage();
 		}
 		return null;
 	}
