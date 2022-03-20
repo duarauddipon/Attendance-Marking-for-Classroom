@@ -22,12 +22,26 @@ public class TrainerController {
 	@Autowired
 	SkillService ss;
 	
+	
 	@GetMapping("trainerreg")
-	public String trainer(Model m){
+	public String trainer1(Model m){
 		List<Skill> slist = ss.showSkill();
 		m.addAttribute("salist",slist);
 		return "TrainerReg";
 	}
+	@GetMapping("updatetrainer")
+	public String trainer(Model m){
+		List<Skill> slist = ss.showSkill();
+		m.addAttribute("salist",slist);
+		return "UpdateTrainer";
+	}
+	@GetMapping("deletetrainer")
+	public String trainer2(Model m){
+		List<Trainer> tlist = ts.showTrainer();
+		m.addAttribute("salist",tlist);
+		return "DeleteTrainer";
+	}
+	
 	
 	@PostMapping("trainerregprocess")
 	public String trainerregprocess(@RequestParam int trainerId,@RequestParam String trainerName,@RequestParam String contactNumber,
@@ -39,23 +53,33 @@ public class TrainerController {
 		return "TrainerReg";
 	
 }
-	@PostMapping("trainerUpdateProcess")
+	@PostMapping("trainerupdateprocess")
 	public String UpdateTrainerDetails(@RequestParam int trainerId,@RequestParam String trainerName,@RequestParam String contactNumber,
 			@RequestParam String email,@RequestParam String skillSet,
 			Model m )
 	{
+		Trainer t = new Trainer(trainerId,trainerName,contactNumber,email,skillSet);
+	
+		
+		String res = ts.updateTrainer(t);
+		m.addAttribute("msg",res);
+		return "UpdateTrainer";
+
+	}
+	
+	@PostMapping("trainerdeletionprocess")
+	public String DeleteTrainerDetails(@RequestParam int trainerId,
+			Model m )
+	{
 		Trainer t = new Trainer();
 		t.setTrainerId(trainerId);
-		t.setTrainerName(trainerName);
-		t.setContactNumber(contactNumber);
-		t.setEmail(email);
-		t.setSkillSet(skillSet);
 		
-		String ut1 = ts.updateTrainer(t);
-		if(ut1.equals("Success"))
-			m.addAttribute("msg", "Trainer Updated...");
-		else
-			m.addAttribute("msg", "Trainer Not Updated...");
-		return "TrainerReg";		
+		
+		String res = ts.deleteTrainer(t);
+		m.addAttribute("msg",res);
+		return "DeleteTrainer";
+		
+		
+		
 	}
 }
