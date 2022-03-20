@@ -1,6 +1,5 @@
 package com.AttendanceMarkingProject.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,9 +23,14 @@ public class AdminController {
 		modelAdmin=admin;
 	}
 	
+	@GetMapping("adminhome")
+	public String adminhome(){
+		return "./Admin/AdminHome";
+	}
+	
 	@GetMapping("adminlogin")
 	public String adminLogin() {
-		return "Adminlogin";
+		return "./Admin/Adminlogin";
 	}
 	
 	@PostMapping("adminloginprocess")
@@ -39,23 +43,23 @@ public class AdminController {
 			{
 				m.addAttribute("msg","Approval pending");
 				setModelAdmin(null);
-				return "Adminlogin";
+				return "./Admin/Adminlogin";
 			}
 			else if(modelAdmin.getApproval()==-1)
 			{
 				m.addAttribute("msg","Registration rejected! Kindly register again");
 				setModelAdmin(null);
-				return "Adminlogin";
+				return "./Admin/Adminlogin";
 			}
-			return "AdminHome";
+			return "./Admin/AdminHome";
 		}
 		m.addAttribute("msg","Wrong id/password");
-		return "Adminlogin";
+		return "./Admin/Adminlogin";
 	}
 	
 	@GetMapping("adminreg")
 	public String adminRegistration(){
-		return "AdminReg";
+		return "./Admin/AdminReg";
 	}
 	
 	@PostMapping("adminregprocess")
@@ -66,7 +70,7 @@ public class AdminController {
 		adm.setApproval((byte) 0);
 		String res = as.registerAdmin(adm);
 		m.addAttribute("msg",res);
-		return "AdminReg";
-		
+		return "./Admin/AdminReg";
 	}
+
 }

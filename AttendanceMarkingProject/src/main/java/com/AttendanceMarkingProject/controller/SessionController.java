@@ -67,4 +67,11 @@ public class SessionController {
 		return "SessionAdd";
 	}
 	
+	@GetMapping("search")
+	public String searchSession(Model m) {
+		List<Session> elist = sr.showSession();
+		m.addAttribute("sslist",elist);
+		return "SearchPage";
+	}
+	
 }

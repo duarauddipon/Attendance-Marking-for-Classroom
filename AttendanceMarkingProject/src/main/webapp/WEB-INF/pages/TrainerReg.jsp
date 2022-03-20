@@ -35,8 +35,13 @@
                 <li class="nav-item"><a class="nav-link" href="trainerreg" id="navigation">Add Trainer</a></li>
                 <li class="nav-item"><a class="nav-link" href="sessionadd" id="navigation">Add Session</a></li>
                 <li class="nav-item"><a class="nav-link" href="skilladd" id="navigation">Add Skill</a></li>
+
                 <li class="nav-item"><a class="nav-link" href="updatetrainer" id="navigation">Update Trainer</a></li>
                 <li class="nav-item"><a class="nav-link" href="deletetrainer" id="navigation">Delete Trainer</a></li>
+
+                <li class="nav-item"><a class="nav-link" href="#updatetrainer" id="navigation">Update Trainer</a></li>
+                <li class="nav-item"><a class="nav-link" href="#Deletetrainer" id="navigation">Delete Trainer</a></li>
+
             </ul>
         </div>
     </nav>
