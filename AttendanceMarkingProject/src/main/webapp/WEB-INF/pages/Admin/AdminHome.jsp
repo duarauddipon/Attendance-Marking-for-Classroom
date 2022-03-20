@@ -43,6 +43,7 @@
                 <li class="nav-item"><a class="nav-link" href="skilladd" id="navigation">Add Skill</a></li>
                 <li class="nav-item"><a class="nav-link" href="#updatetrainer" id="navigation">Update Trainer</a></li>
                 <li class="nav-item"><a class="nav-link" href="#deletetrainer" id="navigation">Delete Trainer</a></li>
+                <li class="nav-item"><a class="nav-link" href="login" id="navigation" onclick="window.location.reload()">LogOut</a></li>
             </ul>
         </div>
     </nav>
