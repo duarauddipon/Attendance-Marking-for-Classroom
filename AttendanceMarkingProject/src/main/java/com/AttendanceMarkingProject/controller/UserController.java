@@ -56,13 +56,10 @@ public class UserController {
 		m.addAttribute("slist",slist);
 		return "showallsessions";
 	}
+	
 	@GetMapping("searchSession")
 	public String searchSession() {
 		return "searchSession";
-	}
-	@GetMapping("searchSession")
-	public String searchSession() {
-		return "SearchSession";
 	}
 		
 	@PostMapping("userregprocess")
