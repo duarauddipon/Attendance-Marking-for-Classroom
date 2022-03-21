@@ -1,12 +1,16 @@
 package com.AttendanceMarkingProject.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.AttendanceMarkingProject.model.Session;
 import com.AttendanceMarkingProject.model.User;
 import com.AttendanceMarkingProject.serviceImpl.UserServiceImpl;
 
@@ -15,6 +19,7 @@ public class UserController {
 	
 	@Autowired
 	UserServiceImpl us;
+	
 	
 	private static User modelUser=null;
 	
@@ -35,6 +40,21 @@ public class UserController {
 		return "./User/Userreg";
 	}
 	
+	@GetMapping("showAllSessions")
+	public String showallsessions(Model m) {
+		List<Session> slist = us.showAllSession();
+		m.addAttribute("slist",slist);
+		return "showallsessions";
+	}
+	
+	@GetMapping("sessionDetails/{id}")
+	public String sessionDetails(@PathVariable int id,Model m) {
+		Session dlist = us.showSessionDetails(id);
+		m.addAttribute("dlist",dlist);
+		System.err.println(dlist.getSkillSet());
+		return "sessiondetails";
+	}
+		
 	@PostMapping("userregprocess")
 	public String userRegProcess(@RequestParam String firstname,@RequestParam String lastname,
 			@RequestParam String email,@RequestParam String password,Model m)
