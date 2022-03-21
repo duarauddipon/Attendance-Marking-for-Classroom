@@ -23,6 +23,11 @@ public class AdminController {
 		modelAdmin=admin;
 	}
 	
+	@GetMapping("adminhome")
+	public String adminhome(){
+		return "./Admin/AdminHome";
+	}
+	
 	@GetMapping("adminlogin")
 	public String adminLogin() {
 		return "./Admin/Adminlogin";

@@ -38,32 +38,39 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation-bar">
             <span class="navbar-toggler-icon">&#9776;</span>
         </button>
-        &nbsp;&nbsp;&nbsp;<a class="navbar-brand" href="#" style="border-radius: 25px; margin-left: "><img src="https://i.pinimg.com/564x/61/6f/90/616f900fb165b3a61464d56a87f4d824.jpg" height="150" width="300" class="img-fluid" style="border-radius: 25px;"></a>
+        &nbsp;&nbsp;&nbsp;<a class="navbar-brand" href="#" style="border-radius: 25px; margin-left: ">
+        <img src="https://i.pinimg.com/564x/61/6f/90/616f900fb165b3a61464d56a87f4d824.jpg" height="100" width="200" class="img-fluid" style="border-radius: 25px;"></a>
         <div class="collapse navbar-collapse" id="navigation-bar">
             <ul class="navbar-nav" style="margin-left: auto;">
+            	<li class="nav-item"><a class="nav-link" href="adminhome" id="navigation">Admin Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="trainerreg" id="navigation">Add Trainer</a></li>
                 <li class="nav-item"><a class="nav-link" href="sessionadd" id="navigation">Add Session</a></li>
                 <li class="nav-item"><a class="nav-link" href="skilladd" id="navigation">Add Skill</a></li>
                 <li class="nav-item"><a class="nav-link" href="#updatetrainer" id="navigation">Update Trainer</a></li>
+                <li class="nav-item"><a class="nav-link" href="#Deletetrainer" id="navigation">Delete Trainer</a></li>
+                <li class="nav-item"><a class="nav-link" href="login" id="navigation" onclick="window.location.reload()">LogOut</a></li>
             </ul>
         </div>
     </nav>
 
     <section class="vh-100">
-        <div class="container h-100">
+        <div class="container h-100" style="padding-top: 70px">
           <div class="row d-flex justify-content-center align-items-center h-100" > 
             <div class="col-lg-12 col-xl-11" >
               <div class="card text-black" style="border-radius: 25px;box-shadow: inset 2px 2px 4px #d1d9e6,
               inset -2px -2px 4px #f9f9f9;">
               
-                <div class="card-body p-md-5" >
+              <div class="card-header h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Add Session</div>
+              
+                <div class="card-body " style="padding-bottom: 0px;padding-top: 0px">
                   <div class="row justify-content-center">
                     <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
       
-                      <div class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Add Session</div>
+                      
       
                       <form class="mx-1 mx-md-4" name="form2" method="post" action="addSs">
-      
+      					
+      					<!-- Session Id -->
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
@@ -72,7 +79,7 @@
                           </div>
                         </div>                  
       
-      
+      					<!-- Add Description -->
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
@@ -93,22 +100,19 @@
                       <c:forEach var="fls" items="${salist}">
                       	<option value="${fls.skillType}">${fls.skillType}</option>
                       </c:forEach>
-                      
                       </select>
-                            
-                          </div>
+                            </div>
                         </div>
 
                         <div class="d-flex flex-row align-items-center mb-4">
+                        	<!-- Session Date -->
                             <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                             <div class="form-outline flex-fill mb-0">
                               <label class="form-label" for="form3Example4cd">Session Date</label>
                               <input type="date" id="form3Example4cd" id="sessionDate" name="sessionDate" placeholder="Session Date" class="form-control" />
                             </div>
-                          </div>
-
-
-                          <div class="d-flex flex-row align-items-center mb-4">
+                            
+                            <!-- Session Time -->
                             <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                             <div class="form-outline flex-fill mb-0">
                               <label class="form-label" for="form3Example4cd">Session Time</label>
@@ -116,7 +120,7 @@
                             </div>
                           </div>
 
-
+						<!-- Avail Slots -->
                           <div class="d-flex flex-row align-items-center mb-4">
                             <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                             <div class="form-outline flex-fill mb-0">
@@ -125,13 +129,12 @@
                             </div>
                           </div>
       
-                      
-      
+                      	<!-- Add Session -->
                         <div class="d-flex justify-co ntent-center mx-4 mb-3 mb-lg-4">
                          <input type="submit"  value="Add Session" class="btn btn-primary" />
                          
                         </div>
-      <h3 style="font-style:italic;color:red" class="">${msg}</h3>
+      						<h3 style="font-family: sans-serif;color: black;font-size: 20px" class="" >${msg}</h3>
                       </form>
       
                     </div>
