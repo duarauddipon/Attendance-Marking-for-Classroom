@@ -43,7 +43,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
         </div>
     </nav>
 <div class="row">
-        <div class=" col-lg-6 col-xl-5">
+        <div class=" col-lg-6 col-xl-6">
             <div class="table-responsive" style="padding: 40px;padding-top: 250px;">
                 <table class="table table-striped">
                   <tbody><tr>
@@ -51,11 +51,12 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
                     <th>Session Description</th>
                   </tr>
                   <c:forEach var="sess" items="${slist }">
-                  <form name="frm" method="post" action="showAllSessions">
-                  <tr>
-                       <td style="text-decoration: none;cursor: pointer;"><a href="sessionDetails/${sess.sessionId }"  style="text-decoration: none;color: black;">${sess.sessionId }</a></td>
+                  <form name="frm" id="frm" method="post" action="showsessiondetails">
+                  	<tr>
+                  	   <input type="hidden" name="sid" value="${sess.sessionId }"/>
+                       <td style="text-decoration: none;cursor: pointer;"><input type="submit" class="btn btn-white" value="${sess.sessionId }"></td>
                         <td>${sess.sessionDes }</td>
-                  </tr>
+                  	</tr>
                   </form>
                   </c:forEach>
                 </tbody>
@@ -63,7 +64,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
                 <p>Click Session Id to view sessions Details and to enroll</p>
               </div>
         </div>
-        <div class=" col-lg-6 col-xl-5">
+        <div class=" col-lg-6 col-xl-6">
             <div class="table-responsive" style="padding: 40px;padding-top: 250px;">
                 <table class="table table-striped">
                   <tbody><tr>
@@ -84,7 +85,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
                   </tr>
                 </tbody>
                 </table>
-                <div style="padding-left: 25px;padding-top: 10px"><input type="submit" class="btn btn-primary" value="Enroll"></div>
+                <div style="padding-left: 25px;padding-top: 10px;"><input type="submit" class="btn btn-primary" value="Enroll"></div>
         </div>
     </div> 
     </div>

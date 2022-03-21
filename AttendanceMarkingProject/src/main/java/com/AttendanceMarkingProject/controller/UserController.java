@@ -47,13 +47,13 @@ public class UserController {
 		return "showallsessions";
 	}
 	
-	@GetMapping("sessionDetails/{id}")
-	public String sessionDetails(@PathVariable int id,Model m) {
-		Session dlist = us.showSessionDetails(id);
-		m.addAttribute("dlist",dlist);
-
+	@PostMapping("showsessiondetails")
+	public String showSessionDetails(@RequestParam int sid,Model m)
+	{
 		List<Session> slist = us.showAllSession();
 		m.addAttribute("slist",slist);
+		Session res=us.searchSession(sid);
+		m.addAttribute("dlist", res);
 		return "showallsessions";
 	}
 	
