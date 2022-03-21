@@ -8,7 +8,7 @@ public class Admin {
 	private String number;
 	private int adminId;
 	private String password;
-	private byte approval;
+	private String approval;
 
 	public String getFirstName() {
 		return firstName;
@@ -53,10 +53,10 @@ public class Admin {
 		this.password = password;
 	}
 	
-	public byte getApproval() {
+	public String getApproval() {
 		return approval;
 	}
-	public void setApproval(byte approval) {
+	public void setApproval(String approval) {
 		this.approval = approval;
 	}
 	public Admin(String firstName, String lastName, int age, String gender, String number, String password) {
