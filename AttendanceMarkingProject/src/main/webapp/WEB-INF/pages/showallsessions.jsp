@@ -43,8 +43,8 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
         </div>
     </nav>
 <div class="row">
-        <div class="col-md-6">
-            <div class="table-responsive" style="padding: 40px;padding-top: 350px;">
+        <div class=" col-lg-6 col-xl-5">
+            <div class="table-responsive" style="padding: 40px;padding-top: 250px;">
                 <table class="table table-striped">
                   <tbody><tr>
                     <th>Session Id</th>
@@ -63,8 +63,8 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
                 <p>Click Session Id to view sessions Details and to enroll</p>
               </div>
         </div>
-        <div class="col-md-6">
-            <div class="table-responsive" style="padding: 40px;padding-top: 350px;">
+        <div class=" col-lg-6 col-xl-5">
+            <div class="table-responsive" style="padding: 40px;padding-top: 250px;">
                 <table class="table table-striped">
                   <tbody><tr>
                     <th>Session Id</th>
