@@ -42,35 +42,52 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
             </ul>
         </div>
     </nav>
-	<div class="container" style="padding-top: 170px;">
-<div class="col-md-5 col-5 col-lg-5">
- <div class="row d-flex justify-content-center align-items-center"><img alt="" src="https://fienta.com/uploads/16894.jpg" class="responsive" style="width:600;height: 400;"></div>
-    <div class="card" >
-      <div class="card-header">
-        <h4>Available Sessions</h4>
-      </div>
-      <div class="card-body">
-        <div class="table-responsive">
-          <table class="table table-striped">
-            <tbody><tr>
-              <th>Session Id</th>
-              <th>Session Description</th>
-            </tr>
-            <c:forEach var="sess" items="${slist }">
-            <form name="frm" method="post" action="">
-            <tr>
-         		<td style="text-decoration: none;cursor: pointer;"><a href="sessionDetails/${sess.sessionId }"  style="text-decoration: none;color: black;">${sess.sessionId }</a></td>
-              	<td>${sess.sessionDes }</td>
-            </tr>
-            </form>
-            </c:forEach>
-          </tbody>
-          </table>
-          <p>Click Session Id to view sessions Details and to enroll</p>
+<div class="row">
+        <div class=" col-lg-6 col-xl-6">
+            <div class="table-responsive" style="padding: 40px;padding-top: 250px;">
+                <table class="table table-striped">
+                  <tbody><tr>
+                    <th>Session Id</th>
+                    <th>Session Description</th>
+                  </tr>
+                  <c:forEach var="sess" items="${slist }">
+                  <form name="frm" id="frm" method="post" action="showsessiondetails">
+                  	<tr>
+                  	   <input type="hidden" name="sid" value="${sess.sessionId }"/>
+                       <td style="text-decoration: none;cursor: pointer;"><input type="submit" class="btn btn-white" value="${sess.sessionId }"></td>
+                        <td>${sess.sessionDes }</td>
+                  	</tr>
+                  </form>
+                  </c:forEach>
+                </tbody>
+                </table>
+                <p>Click Session Id to view sessions Details and to enroll</p>
+              </div>
         </div>
-      </div>
+        <div class=" col-lg-6 col-xl-6">
+            <div class="table-responsive" style="padding: 40px;padding-top: 250px;">
+                <table class="table table-striped">
+                  <tbody><tr>
+                    <th>Session Id</th>
+                    <th>Session Description</th>
+                    <th>SkillSet</th>
+                    <th>SessionDate</th>
+                    <th>SessionTime</th>
+                    <th>Available Slots</th>
+                  </tr>
+                  <tr>
+                      <td>${dlist.sessionId}</td>
+                      <td>${dlist.sessionDes}</td>
+                      <td>${dlist.skillSet}</td>
+                      <td>${dlist.sessionDate}</td>
+                      <td>${dlist.sessionTime}</td>
+                      <td>${dlist.availSlots }</td>
+                  </tr>
+                </tbody>
+                </table>
+                <div style="padding-left: 25px;padding-top: 10px;"><input type="submit" class="btn btn-primary" value="Enroll"></div>
+        </div>
+    </div> 
     </div>
-  </div>
-</div>
 </body>
 </html>

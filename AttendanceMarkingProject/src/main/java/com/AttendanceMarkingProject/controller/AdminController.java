@@ -39,19 +39,22 @@ public class AdminController {
 		setModelAdmin(admin);
 		if(modelAdmin!=null)
 		{
-			if(modelAdmin.getApproval()==0)
+			if(modelAdmin.getApproval().equals("Pending"))
 			{
 				m.addAttribute("msg","Approval pending");
 				setModelAdmin(null);
 				return "./Admin/Adminlogin";
 			}
-			else if(modelAdmin.getApproval()==-1)
+			else if(modelAdmin.getApproval().equals("Rejected"))
 			{
 				m.addAttribute("msg","Registration rejected! Kindly register again");
 				setModelAdmin(null);
 				return "./Admin/Adminlogin";
 			}
-			return "./Admin/AdminHome";
+			else
+			{
+				return "./Admin/AdminHome";
+			}
 		}
 		m.addAttribute("msg","Wrong id/password");
 		return "./Admin/Adminlogin";
@@ -67,7 +70,7 @@ public class AdminController {
 			@RequestParam String gender,@RequestParam String number,@RequestParam String password,
 			Model m) {
 		Admin adm = new Admin(firstname,lastname,age,gender,number,password);
-		adm.setApproval((byte) 0);
+		adm.setApproval("Pending");
 		String res = as.registerAdmin(adm);
 		m.addAttribute("msg",res);
 		return "./Admin/AdminReg";
