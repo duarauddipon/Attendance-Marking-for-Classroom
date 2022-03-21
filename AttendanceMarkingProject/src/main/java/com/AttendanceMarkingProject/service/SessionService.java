@@ -11,4 +11,6 @@ public interface SessionService {
 	public Session searchSession(String sessionId);
 	
 	public List<Session> showSession();
+	public String updateSession(Session session);
+	
 }

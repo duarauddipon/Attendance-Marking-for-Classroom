@@ -73,4 +73,26 @@ String str = "select * from sessiondet";
 		
 	}
 
+	@Override
+	public String updateSession(Session session) {
+		// TODO Auto-generated method stub
+		
+		
+		
+		String sql = "update sessiondet set sessiondes=?,skillset=?,sessiondate=?,sessiontime=?,availslots=?  where sessionid=? ;";
+		try {
+			int r = jt.update(sql, new Object[] {session.getSessionDes(),session.getSkillSet(),session.getSessionDate(),session.getSessionTime(),session.getAvailSlots(),session.getSessionId()});
+			if(r>=1)
+				return "Session Updated";
+			else
+				return "Error....";
+		}
+			catch(Exception ex)
+			{
+				System.out.println(ex.getMessage());
+			}
+			return "Error..";
+		
+	}
+
 }
