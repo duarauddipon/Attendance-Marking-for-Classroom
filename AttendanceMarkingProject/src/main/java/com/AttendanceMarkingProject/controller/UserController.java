@@ -51,8 +51,14 @@ public class UserController {
 	public String sessionDetails(@PathVariable int id,Model m) {
 		Session dlist = us.showSessionDetails(id);
 		m.addAttribute("dlist",dlist);
-		System.err.println(dlist.getSkillSet());
-		return "sessiondetails";
+
+		List<Session> slist = us.showAllSession();
+		m.addAttribute("slist",slist);
+		return "showallsessions";
+	}
+	@GetMapping("searchSession")
+	public String searchSession() {
+		return "searchSession";
 	}
 	@GetMapping("searchSession")
 	public String searchSession() {

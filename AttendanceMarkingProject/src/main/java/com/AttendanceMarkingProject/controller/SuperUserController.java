@@ -51,25 +51,6 @@ public class SuperUserController{
 		return "./SuperUser/TaskPage";
 	}
 	
-	/*
-	@GetMapping("approve")
-	public String approveAdmin(@RequestParam int id,Model m)
-	{
-		sus.approveAdmin(id);
-		List<Admin> alist = as.showregadmins();
-		m.addAttribute("alist",alist);
-		return "./SuperUser/TaskPage";
-	}
-	
-	@GetMapping("reject")
-	public String rejectAdmin(@PathVariable int id,Model m)
-	{
-		sus.rejectAdmin(id);
-		List<Admin> alist = as.showregadmins();
-		m.addAttribute("alist",alist);
-		return "./SuperUser/TaskPage";
-	}
-	*/
 	@RequestMapping(value="doaction",params="approve",method=RequestMethod.POST)
 	public String doApprove(@RequestParam(name="aid") String adminId,Model m)
 	{

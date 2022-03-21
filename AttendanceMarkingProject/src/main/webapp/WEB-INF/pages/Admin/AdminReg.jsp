@@ -117,7 +117,8 @@
                         <div>
 							  Alrady have an account? <a href="adminlogin" class="btn btn-primary"> Login!</a>
                         </div>
-       						<h3 style="font-family: sans-serif;color: black;font-size: 20px" class="" >${msg}</h3>
+                        <br>
+       						<h4 style="font-family: sans-serif;color: red;font-style:italic" >${msg}</h4>
                       </form>
                     </div>
                     <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
