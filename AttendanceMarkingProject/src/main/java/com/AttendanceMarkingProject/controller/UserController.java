@@ -54,6 +54,10 @@ public class UserController {
 		System.err.println(dlist.getSkillSet());
 		return "sessiondetails";
 	}
+	@GetMapping("searchSession")
+	public String searchSession() {
+		return "SearchSession";
+	}
 		
 	@PostMapping("userregprocess")
 	public String userRegProcess(@RequestParam String firstname,@RequestParam String lastname,
