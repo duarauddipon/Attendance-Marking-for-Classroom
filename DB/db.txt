@@ -23,6 +23,13 @@ CREATE TABLE `gencproject`.`adminreg` (
   PRIMARY KEY (`adminid`));
 
 	trainer_details table
+CREATE TABLE `gencproject`.`trainerreg` (
+  `trainerId` INT NOT NULL,
+  `trainerName` VARCHAR(45) NOT NULL,
+  `contactNumber` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `skillset` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`trainerId`));
 
 alter table trainerreg add foreign key(skillset) references skillset(skilltype);
 
