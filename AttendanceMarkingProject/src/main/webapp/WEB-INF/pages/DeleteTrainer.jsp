@@ -28,15 +28,17 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation-bar">
             <span class="navbar-toggler-icon">&#9776;</span>
         </button>
-        &nbsp;&nbsp;&nbsp;<a class="navbar-brand" href="#" style="border-radius: 25px; margin-left: "><img src="https://i.pinimg.com/564x/61/6f/90/616f900fb165b3a61464d56a87f4d824.jpg" height="150" width="300" class="img-fluid" style="border-radius: 25px;"></a>
+        &nbsp;&nbsp;&nbsp;<a class="navbar-brand" href="#" style="border-radius: 25px; margin-left: ">
+        <img src="https://i.pinimg.com/564x/61/6f/90/616f900fb165b3a61464d56a87f4d824.jpg" height="100" width="200" class="img-fluid" style="border-radius: 25px;"></a>
         <div class="collapse navbar-collapse" id="navigation-bar">
             <ul class="navbar-nav" style="margin-left: auto;">
-            <li class="nav-item"><a class="nav-link" href="adminhome" id="navigation">Admin Homer</a></li>
+            <li class="nav-item"><a class="nav-link" href="adminhome" id="navigation">Admin Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="trainerreg" id="navigation">Add Trainer</a></li>
                 <li class="nav-item"><a class="nav-link" href="sessionadd" id="navigation">Add Session</a></li>
                 <li class="nav-item"><a class="nav-link" href="skilladd" id="navigation">Add Skill</a></li>
                 <li class="nav-item"><a class="nav-link" href="updatetrainer" id="navigation">Update Trainer</a></li>
-                
+                <li class="nav-item"><a class="nav-link" href="deletetrainer" id="navigation">Delete Trainer</a></li>
+                <li class="nav-item"><a class="nav-link" href="login" id="navigation" onclick="window.location.reload()">LogOut</a></li>
             </ul>
         </div>
     </nav>
@@ -56,14 +58,9 @@
                     <div class="col-md-10 col-lg-4 col-xl-5 order-2 order-lg-1">
       
                       <form class="mx-1 mx-md-4" name="form1" method="post" action="trainerdeletionprocess">
-      
-      				
-      
       <br>
       <br>
       <br>
-      				
-                          
                           <select class="form-control" name="trainerId" id="trainerId">
                       <option Selected>Trainer Id</option>
                       <c:forEach var="fls" items="${salist}">
