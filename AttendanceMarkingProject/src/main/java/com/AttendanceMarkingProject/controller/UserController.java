@@ -51,7 +51,6 @@ public class UserController {
 	public String sessionDetails(@PathVariable int id,Model m) {
 		Session dlist = us.showSessionDetails(id);
 		m.addAttribute("dlist",dlist);
-		System.err.println(dlist.getSkillSet());
 		return "sessiondetails";
 	}
 		
