@@ -47,7 +47,7 @@ public class UserController {
 		return "showallsessions";
 	}
 	
-	@PostMapping("showsessiondetails")
+  @PostMapping("showsessiondetails")
 	public String showSessionDetails(@RequestParam int sid,Model m)
 	{
 		List<Session> slist = us.showAllSession();
