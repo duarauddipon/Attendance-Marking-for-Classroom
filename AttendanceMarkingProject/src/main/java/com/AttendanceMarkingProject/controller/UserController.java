@@ -60,10 +60,6 @@ public class UserController {
 	public String searchSession() {
 		return "searchSession";
 	}
-	@GetMapping("searchSession")
-	public String searchSession() {
-		return "SearchSession";
-	}
 		
 	@PostMapping("userregprocess")
 	public String userRegProcess(@RequestParam String firstname,@RequestParam String lastname,
