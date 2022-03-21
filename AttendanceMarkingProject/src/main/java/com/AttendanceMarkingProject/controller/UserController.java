@@ -54,7 +54,6 @@ public class UserController {
 
 		List<Session> slist = us.showAllSession();
 		m.addAttribute("slist",slist);
-		System.err.println(dlist.getSkillSet());
 		return "showallsessions";
 	}
 	@GetMapping("searchSession")
