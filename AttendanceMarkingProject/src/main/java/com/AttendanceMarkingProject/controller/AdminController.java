@@ -51,7 +51,10 @@ public class AdminController {
 				setModelAdmin(null);
 				return "./Admin/Adminlogin";
 			}
-			return "./Admin/AdminHome";
+			else
+			{
+				return "./Admin/AdminHome";
+			}
 		}
 		m.addAttribute("msg","Wrong id/password");
 		return "./Admin/Adminlogin";
