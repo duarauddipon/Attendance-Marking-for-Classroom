@@ -92,11 +92,28 @@
                           <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4cd">Contact Number</label>
-                            <input type="text" id="form3Example4cd" id="number" name="number" class="form-control" 
+                            <input type="text" id="number" name="number" class="form-control" 
                             placeholder="EG.999-999-9999" pattern="[7-9]{1}[0-9]{9}" title="Please enter valid phone number"
                             onKeyPress="if(this.value.length==10) return false;" 
                             oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  required/>
                           </div>
+                        </div>
+                        
+                        <!-- Question for to reset password -->
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" for="form3Example4cd">Select a question..</label>
+                            <select class="dropdown-btn form-control">
+                            	<option>Select a question to reset the password</option>
+                            	<option>What's your favourite food?</option>
+                            	<option>What's your favourite teacher's name/</option>
+                            	<option>What's your favourite destination?</option>
+                            </select>
+                            <div>
+                            <input class="form-control" type="text" name="answer" id="answer" placeholder="Answer" required/>
+                          </div>
+                            </div>
                         </div>
                         
                         <%-- Password Field--%>

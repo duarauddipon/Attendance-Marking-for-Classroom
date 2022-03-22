@@ -77,6 +77,23 @@
                           </div>
                         </div>
                         
+                         <!-- Question for to reset password -->
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" for="form3Example4cd">Select a question..</label>
+                            <select class="dropdown-btn form-control">
+                            	<option>Select a question to reset the password</option>
+                            	<option>What's your favourite food?</option>
+                            	<option>What's your favourite teacher's name/</option>
+                            	<option>What's your favourite destination?</option>
+                            </select>
+                            <div>
+                            <input class="form-control" type="text" name="answer" id="answer" placeholder="Answer" required/>
+                          </div>
+                            </div>
+                        </div>
+                        
                         
                         <%-- Password Field--%>
                         <div class="d-flex flex-row align-items-center mb-4">
