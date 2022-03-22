@@ -13,12 +13,6 @@ integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="ano
 integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script type="text/javascript">
-	$(document).ready(function(){
-		var$(".appr")
-		
-	});
-</script>
 <style>
 #navigation{
      color: black;
@@ -56,7 +50,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
       </div>
       <div class="card-body">
         <div class="table-responsive">
-          <table class="table table-striped">
+          <table class="table table-striped" style="width:1250px">
             <tbody><tr>
               <th>Admin Id</th>
               <th>Admin Name</th>
@@ -70,11 +64,14 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
               	<td>${adm.firstName }&nbsp;${adm.lastName }</td>
               
 	             <td class="align-middle">
-	                 <div class="appr" style="width: 100px;">${adm.approval }</div>
+	                 <div class="appr">${adm.approval }</div>
 	             </td>
               	<td>
-                <input type="submit" class="btn btn-primary btn-action" name="approve" value="Approve"/>&nbsp;&nbsp;
-                <input type="submit" class="btn btn-danger btn-action" name="reject"  value="Reject"/>
+              	<c:set var="appr" scope="session" value="${adm.approval }"/>  
+				<c:if test="${appr=='Pending'}">  
+  					 <input type="submit" class="btn btn-primary btn-action" name="approve" value="Approve"/>&nbsp;&nbsp;
+                	 <input type="submit" class="btn btn-danger btn-action" name="reject"  value="Reject"/>
+				</c:if>
               </td> 
             </tr>
             <input type="hidden" name="aid" value="${adm.adminId }"/>

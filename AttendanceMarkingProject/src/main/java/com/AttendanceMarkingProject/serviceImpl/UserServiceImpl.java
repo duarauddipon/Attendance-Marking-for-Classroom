@@ -1,7 +1,5 @@
 package com.AttendanceMarkingProject.serviceImpl;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -54,53 +52,4 @@ public class UserServiceImpl implements UserService {
 		}
 		return null;
 	}
-
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	@Override
-	public List<Session> showAllSession() {
-		String str ="select * from sessiondet;";
-		try {
-			List<Session> slist = jt.query(str, new BeanPropertyRowMapper(Session.class)) ;
-			return slist;
-		}catch(Exception ex) {
-			ex.getMessage();
-		}
-		return null;
-	}
-
-	@SuppressWarnings({ "unchecked", "rawtypes", "deprecation" })
-	@Override
-	public Session showSessionDetails(int sessionId) {
-		String str = "select * from sessiondet where sessionid=?";
-		try {
-			Session dlist = (Session) jt.queryForObject(str, new Object[] {sessionId}, new BeanPropertyRowMapper(Session.class));
-			return dlist;
-		}catch(Exception ex) {
-			ex.getMessage();
-		}
-		return null;
-	}
-
-	@SuppressWarnings({ "deprecation", "unchecked", "rawtypes" })
-	@Override
-	public Session SearchSession(int sessionId) {
-		
-		String sql = "Select * from sessiondet where sessionid=?";
-		Session ss=null;
-		try
-		{
-			ss = (Session)jt.queryForObject(sql, new Object[] {sessionId}, new BeanPropertyRowMapper(Session.class));
-		}
-		catch(Exception ex)
-		{
-			ss = null;
-		}
-		return ss;
-	}
-
-		
-
-	
-
-	
 }
