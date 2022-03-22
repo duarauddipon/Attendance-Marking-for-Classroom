@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Available Session</title>
+<title>Enroll Session</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" 
 integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
@@ -24,6 +24,12 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
         font-weight: bold;
         border-bottom-left-radius: 25px;
         border-bottom-right-radius: 25px;
+    }
+    caption
+    {
+    	caption-side:top;
+    	font-weight:bold;
+    	color:black;
     }
 </style>
 </head>
@@ -46,6 +52,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
         <div class=" col-lg-6 col-xl-6">
             <div class="table-responsive" style="padding: 40px;padding-top: 250px;">
                 <table class="table table-striped">
+                <caption>Choose Session</caption>
                   <tbody><tr>
                     <th>Session Id</th>
                     <th>Session Description</th>
@@ -61,12 +68,47 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
                   </c:forEach>
                 </tbody>
                 </table>
-                <p>Click Session Id to view sessions Details and to enroll</p>
+                <p>Click Session Id to view Session details and to enroll</p>
+                <br>
+                
+                <div name="filterbyid">
+                <form name="formsearch" method="post" action="searchsessionbyid">
+                	<span>Search by&nbsp;&nbsp;</span>
+                	<div style="width:250px;display:inline-block">
+						<select class="form-control" name="selectId" id="selectId">
+							<option Selected>Session Id</option>
+							<c:forEach var="fls" items="${slist}">
+								<option value="${fls.sessionId}">${fls.sessionId}</option>
+							</c:forEach>
+						</select>
+					</div>
+					&nbsp;&nbsp;
+					<input type="submit" value="Search" class="btn btn-light"/>
+				</form>
+				</div>
+				<br>
+				
+				<div name="filterbyskill">
+                <form name="formsearch" method="post" action="searchsessionbyskill">
+                	<span>Search by&nbsp;&nbsp;</span>
+                	<div style="width:250px;display:inline-block">
+						<select class="form-control" name="selectSkill" id="selectSkill">
+							<option Selected value="skilltype">Skill type</option>
+							<c:forEach var="skl" items="${sklist}">
+								<option value="${skl.skillType}">${skl.skillType}</option>
+							</c:forEach>
+						</select>
+					</div>
+					&nbsp;&nbsp;
+					<input type="submit" value="Search" class="btn btn-light"/>
+				</form>
+				</div>
               </div>
         </div>
         <div class=" col-lg-6 col-xl-6">
             <div class="table-responsive" style="padding: 40px;padding-top: 250px;">
                 <table class="table table-striped">
+                <caption>Session Description</caption>
                   <tbody><tr>
                     <th>Session Id</th>
                     <th>Session Description</th>

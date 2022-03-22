@@ -107,7 +107,7 @@
                           
                           <select class="form-control" name="skillSet" id="skillSet">
                       <option Selected>Select Skill</option>
-                      <c:forEach var="fls" items="${salist}">
+                      <c:forEach var="fls" items="${slist}">
                       	<option value="${fls.skillType}">${fls.skillType}</option>
                       </c:forEach>
                       

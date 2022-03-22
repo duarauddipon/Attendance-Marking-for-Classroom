@@ -1,6 +1,5 @@
 package com.AttendanceMarkingProject.serviceImpl;
 
-import com.AttendanceMarkingProject.model.Skill;
 import com.AttendanceMarkingProject.model.Trainer;
 import com.AttendanceMarkingProject.service.TrainerService;
 
@@ -48,33 +47,45 @@ public class TrainerServiceImpl implements TrainerService {
 			if(r>=1)
 				return "Trainer Updated";
 			else
-				return "Error....";
+				return "Error updating!";
 		}
 			catch(Exception ex)
 			{
 				System.out.println(ex.getMessage());
 			}
-			return "Error..";
+			return "Error updating!";
 		}
 
 	@Override
 	public String deleteTrainer(Trainer dtrainer) {
-		// TODO Auto-generated method stub
 		String sql="delete from trainerreg where trainerId=?;";
-		int r=jt.update(sql, new Object[] {dtrainer.getTrainerId()});
-		if(r>=1)
-			return "Deletion successful!";
-		else
-			return "Trainer not found!";
+		try
+		{
+			int r=jt.update(sql, new Object[] {dtrainer.getTrainerId()});
+			if(r>=1)
+				return "Deletion successful!";
+			else
+				return "Trainer not found!";
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+		return "Trainer not found!";
 	}
 
 	@Override
 	public List<Trainer> showTrainer() {
-		// TODO Auto-generated method stub
 		List<Trainer> tlist = new ArrayList<>();
 		String str = "select * from  trainerreg";
-		
-		tlist=jt.query(str, new BeanPropertyRowMapper(Trainer.class));
+		try
+		{
+			tlist=jt.query(str, new BeanPropertyRowMapper(Trainer.class));
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
 		return tlist;
 		
 	}
