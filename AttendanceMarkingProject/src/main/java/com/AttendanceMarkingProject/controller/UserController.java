@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.AttendanceMarkingProject.model.Session;
+import com.AttendanceMarkingProject.model.Skill;
 import com.AttendanceMarkingProject.model.User;
+import com.AttendanceMarkingProject.service.SkillService;
 import com.AttendanceMarkingProject.serviceImpl.UserServiceImpl;
 
 @Controller
@@ -20,6 +22,8 @@ public class UserController {
 	@Autowired
 	UserServiceImpl us;
 	
+	@Autowired
+	SkillService ssi;
 	
 	private static User modelUser=null;
 	
@@ -42,8 +46,13 @@ public class UserController {
 	
 	@GetMapping("showAllSessions")
 	public String showallsessions(Model m) {
+		
 		List<Session> slist = us.showAllSession();
 		m.addAttribute("slist",slist);
+		
+		List<Skill> sklist=ssi.showSkill();
+		m.addAttribute("sklist", sklist);
+		
 		return "showallsessions";
 	}
 	
@@ -52,15 +61,46 @@ public class UserController {
 	{
 		List<Session> slist = us.showAllSession();
 		m.addAttribute("slist",slist);
+		
 		Session res=us.searchSession(sid);
 		m.addAttribute("dlist", res);
+		
+		List<Skill> sklist=ssi.showSkill();
+		m.addAttribute("sklist", sklist);
+		
 		return "showallsessions";
 	}
-	
-	@GetMapping("searchSession")
-	public String searchSession() {
-		return "searchSession";
-	}
+  
+  	@PostMapping("searchsessionbyid")
+    public String searchSessionById(@RequestParam int selectId,Model m)
+    {
+  		
+		List<Session> slist = us.showAllSession();
+		m.addAttribute("slist",slist);
+		
+		Session res=us.searchSession(selectId);
+		m.addAttribute("dlist", res);
+		
+		List<Skill> sklist=ssi.showSkill();
+		m.addAttribute("sklist", sklist);
+	  	
+	    return "showallsessions";
+    }
+  	
+  	@PostMapping("searchsessionbyskill")
+  	 public String searchSessionBySkill(@RequestParam String selectSkill,Model m)
+    {
+  		
+		List<Session> slist = us.showAllSession();
+		m.addAttribute("slist",slist);
+		
+		
+		
+		List<Skill> sklist=ssi.showSkill();
+		m.addAttribute("sklist", sklist);
+	  	
+	    return "showallsessions";
+    }
 		
 	@PostMapping("userregprocess")
 	public String userRegProcess(@RequestParam String firstname,@RequestParam String lastname,
