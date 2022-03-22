@@ -56,13 +56,10 @@ public class UserController {
 		m.addAttribute("slist",slist);
 		return "showallsessions";
 	}
+	
 	@GetMapping("searchSession")
 	public String searchSession() {
 		return "searchSession";
-	}
-	@GetMapping("searchSession")
-	public String searchSession() {
-		return "SearchSession";
 	}
 		
 	@PostMapping("userregprocess")
@@ -87,4 +84,16 @@ public class UserController {
 		m.addAttribute("msg","Wrong id/password");
 		return "./User/Userlogin";
 	}
+	@PostMapping("searchSessionProcess")
+	public String SearchSession(@RequestParam String sessionId, Model m)
+	{		
+		Session ss = us.SearchSession(Integer.parseInt(sessionId));
+		if(ss!=null)
+			m.addAttribute("ss", ss);
+		else
+			m.addAttribute("msg", "Session Not Found");
+		return "searchSession";
+	}
+
+	
 }

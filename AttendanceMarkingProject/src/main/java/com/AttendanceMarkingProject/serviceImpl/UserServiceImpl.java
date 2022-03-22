@@ -81,18 +81,26 @@ public class UserServiceImpl implements UserService {
 		return null;
 	}
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SuppressWarnings({ "deprecation", "unchecked", "rawtypes" })
 	@Override
-	public Session searchSession(int sessionId) {
-		String sql="select * from sessiondet where sessionid=?";
-		try {
-			@SuppressWarnings("deprecation")
-			Session dlist = (Session) jt.queryForObject(sql, new Object[] {sessionId}, new BeanPropertyRowMapper(Session.class));
-			return dlist;
-		}catch(Exception ex) {
-			ex.getMessage();
+	public Session SearchSession(int sessionId) {
+		
+		String sql = "Select * from sessiondet where sessionid=?";
+		Session ss=null;
+		try
+		{
+			ss = (Session)jt.queryForObject(sql, new Object[] {sessionId}, new BeanPropertyRowMapper(Session.class));
 		}
-		return null;	}
+		catch(Exception ex)
+		{
+			ss = null;
+		}
+		return ss;
+	}
+
+		
+
+	
 
 	
 }

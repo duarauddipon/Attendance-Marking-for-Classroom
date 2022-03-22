@@ -10,5 +10,5 @@ public interface UserService {
 	public User validateUser(int empId,String password);
 	public List<Session> showAllSession();
 	public Session showSessionDetails(int sessionId);
-	public Session searchSession(int sessionId);
+	public Session SearchSession(int sessionId);
 }
