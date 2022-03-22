@@ -54,7 +54,7 @@ public class TrainerController {
 	
 }
 	@PostMapping("trainerupdateprocess")
-	public String UpdateTrainerDetails(@RequestParam int trainerId,@RequestParam String trainerName,@RequestParam String contactNumber,
+	public String updateTrainerDetails(@RequestParam int trainerId,@RequestParam String trainerName,@RequestParam String contactNumber,
 			@RequestParam String email,@RequestParam String skillSet,
 			Model m )
 	{
@@ -68,7 +68,7 @@ public class TrainerController {
 	}
 	
 	@PostMapping("trainerdeletionprocess")
-	public String DeleteTrainerDetails(@RequestParam int trainerId,
+	public String deleteTrainerDetails(@RequestParam int trainerId,
 			Model m )
 	{
 		Trainer t = new Trainer();

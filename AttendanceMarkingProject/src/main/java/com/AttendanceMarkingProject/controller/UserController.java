@@ -61,6 +61,14 @@ public class UserController {
 	public String searchSession() {
 		return "searchSession";
 	}
+	
+	@GetMapping("searchsession")
+	public String searchSessionBySkillType(Model m) {
+		List<Session> slist = us.showAllSession();
+		m.addAttribute("salist",slist);
+		return "searchSession";
+	}
+	
 		
 	@PostMapping("userregprocess")
 	public String userRegProcess(@RequestParam String firstname,@RequestParam String lastname,
@@ -95,5 +103,6 @@ public class UserController {
 		return "searchSession";
 	}
 
+	
 	
 }

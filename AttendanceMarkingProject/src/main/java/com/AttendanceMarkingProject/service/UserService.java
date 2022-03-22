@@ -11,4 +11,5 @@ public interface UserService {
 	public List<Session> showAllSession();
 	public Session showSessionDetails(int sessionId);
 	public Session SearchSession(int sessionId);
+	public List<Session> SearchBySkillType(String skillType);
 }

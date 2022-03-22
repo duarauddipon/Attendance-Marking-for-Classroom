@@ -98,6 +98,23 @@ public class UserServiceImpl implements UserService {
 		return ss;
 	}
 
+	@SuppressWarnings({ "deprecation", "unchecked", "rawtypes" })
+	@Override
+	public List<Session> SearchBySkillType(String skillType) {
+		String sql = "Select * from sessiondet where skilltype=?";
+		List<Session> ss=null;
+		try
+		{
+			ss = jt.query(sql, new Object[] {skillType}, new BeanPropertyRowMapper(Session.class));
+		}
+		catch(Exception ex)
+		{
+			ss = null;
+		}
+		return ss;
+		
+	}
+
 		
 
 	
