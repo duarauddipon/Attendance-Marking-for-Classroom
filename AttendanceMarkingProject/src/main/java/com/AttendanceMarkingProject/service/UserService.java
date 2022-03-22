@@ -1,8 +1,5 @@
 package com.AttendanceMarkingProject.service;
 
-import java.util.List;
-
-import com.AttendanceMarkingProject.model.Session;
 import com.AttendanceMarkingProject.model.User;
 
 public interface UserService {
