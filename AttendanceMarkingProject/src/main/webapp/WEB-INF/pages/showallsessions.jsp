@@ -61,14 +61,18 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
                   <form name="frm" id="frm" method="post" action="showsessiondetails">
                   	<tr>
                   	   <input type="hidden" name="sid" value="${sess.sessionId }"/>
-                       <td style="text-decoration: none;cursor: pointer;"><input type="submit" class="btn btn-white" value="${sess.sessionId }"></td>
+                       <td style="text-decoration: none;cursor: pointer;"><input type="submit" class="btn btn-white btn-sm" value="${sess.sessionId }"></td>
                         <td>${sess.sessionDes }</td>
                   	</tr>
                   </form>
                   </c:forEach>
                 </tbody>
                 </table>
-                <p>Click Session Id to view Session details and to enroll</p>
+                <p>Click Session Id to view Session details and to enroll
+                <span style="float:right;display:inline-block">
+                	<a class="btn btn-dark btn-sm" href="showAllSessions" role="button">Clear filters</a>
+                </span>
+                </p>
                 <br>
                 
                 <div name="filterbyid">
@@ -83,7 +87,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 						</select>
 					</div>
 					&nbsp;&nbsp;
-					<input type="submit" value="Search" class="btn btn-light"/>
+					<input type="submit" value="Search" class="btn btn-warning"/>
 				</form>
 				</div>
 				<br>
@@ -100,7 +104,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 						</select>
 					</div>
 					&nbsp;&nbsp;
-					<input type="submit" value="Search" class="btn btn-light"/>
+					<input type="submit" value="Search" class="btn btn-warning"/>
 				</form>
 				</div>
               </div>
@@ -117,14 +121,16 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
                     <th>SessionTime</th>
                     <th>Available Slots</th>
                   </tr>
+                  <c:forEach var="sObj" items="${dlist }">
                   <tr>
-                      <td>${dlist.sessionId}</td>
-                      <td>${dlist.sessionDes}</td>
-                      <td>${dlist.skillSet}</td>
-                      <td>${dlist.sessionDate}</td>
-                      <td>${dlist.sessionTime}</td>
-                      <td>${dlist.availSlots }</td>
+                      <td>${sObj.sessionId}</td>
+                      <td>${sObj.sessionDes}</td>
+                      <td>${sObj.skillSet}</td>
+                      <td>${sObj.sessionDate}</td>
+                      <td>${sObj.sessionTime}</td>
+                      <td>${sObj.availSlots }</td>
                   </tr>
+                  </c:forEach>
                 </tbody>
                 </table>
                 <div style="padding-left: 25px;padding-top: 10px;"><input type="submit" class="btn btn-primary" value="Enroll"></div>
