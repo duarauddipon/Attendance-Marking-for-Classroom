@@ -13,3 +13,6 @@ public interface UserService {
 	public Session SearchSession(int sessionId);
 	public List<Session> SearchBySkillType(String skillType);
 }
+
+
+

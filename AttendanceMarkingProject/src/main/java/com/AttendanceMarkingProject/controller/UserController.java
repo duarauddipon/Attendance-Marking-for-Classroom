@@ -1,6 +1,8 @@
 package com.AttendanceMarkingProject.controller;
 
+import java.util.ArrayList;
 import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,7 +13,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.AttendanceMarkingProject.model.Session;
+import com.AttendanceMarkingProject.model.Skill;
 import com.AttendanceMarkingProject.model.User;
+import com.AttendanceMarkingProject.serviceImpl.SessionServiceImpl;
+import com.AttendanceMarkingProject.serviceImpl.SkillServiceImpl;
 import com.AttendanceMarkingProject.serviceImpl.UserServiceImpl;
 
 @Controller
@@ -20,6 +25,11 @@ public class UserController {
 	@Autowired
 	UserServiceImpl us;
 	
+	@Autowired
+	SkillServiceImpl ssi;
+	
+	@Autowired
+	SessionServiceImpl sei;
 	
 	private static User modelUser=null;
 	
@@ -42,33 +52,62 @@ public class UserController {
 	
 	@GetMapping("showAllSessions")
 	public String showallsessions(Model m) {
-		List<Session> slist = us.showAllSession();
+		
+		List<Session> slist = sei.showSession();
 		m.addAttribute("slist",slist);
+		
+		List<Skill> sklist=ssi.showSkill();
+		m.addAttribute("sklist", sklist);
+		
 		return "showallsessions";
 	}
 	
-	@GetMapping("sessionDetails/{id}")
-	public String sessionDetails(@PathVariable int id,Model m) {
-		Session dlist = us.showSessionDetails(id);
-		m.addAttribute("dlist",dlist);
-
-		List<Session> slist = us.showAllSession();
+  @PostMapping("showsessiondetails")
+	public String showSessionDetails(@RequestParam int sid,Model m)
+	{
+		List<Session> slist = sei.showSession();
 		m.addAttribute("slist",slist);
+		
+		Session res=sei.searchSession(sid);
+		List<Session> reslist=new ArrayList<>();
+		reslist.add(res);
+		m.addAttribute("dlist", reslist);
+		
+		List<Skill> sklist=ssi.showSkill();
+		m.addAttribute("sklist", sklist);
+		
 		return "showallsessions";
 	}
-	
-	@GetMapping("searchSession")
-	public String searchSession() {
-		return "searchSession";
-	}
-	
-	@GetMapping("searchsession")
-	public String searchSessionBySkillType(Model m) {
-		List<Session> slist = us.showAllSession();
-		m.addAttribute("salist",slist);
-		return "searchSession";
-	}
-	
+  
+  	@PostMapping("searchsessionbyid")
+    public String searchSessionById(@RequestParam int selectId,Model m)
+    {
+  		
+		List<Session> slist = sei.showSession();
+		m.addAttribute("slist",slist);
+		
+		Session res=sei.searchSession(selectId);
+		List<Session> reslist=new ArrayList<>();
+		reslist.add(res);
+		m.addAttribute("dlist", reslist);
+		
+		List<Skill> sklist=ssi.showSkill();
+		m.addAttribute("sklist", sklist);
+	  	
+	    return "showallsessions";
+    }
+  	
+  	@PostMapping("searchsessionbyskill")
+  	 public String searchSessionBySkill(@RequestParam String selectSkill,Model m)
+    {
+		List<Session> reslist=sei.searchBySKillType(selectSkill);
+		m.addAttribute("slist", reslist);
+		
+		List<Skill> sklist=ssi.showSkill();
+		m.addAttribute("sklist", sklist);
+	  	
+	    return "showallsessions";
+    }
 		
 	@PostMapping("userregprocess")
 	public String userRegProcess(@RequestParam String firstname,@RequestParam String lastname,
@@ -92,17 +131,4 @@ public class UserController {
 		m.addAttribute("msg","Wrong id/password");
 		return "./User/Userlogin";
 	}
-	@PostMapping("searchSessionProcess")
-	public String SearchSession(@RequestParam String sessionId, Model m)
-	{		
-		Session ss = us.SearchSession(Integer.parseInt(sessionId));
-		if(ss!=null)
-			m.addAttribute("ss", ss);
-		else
-			m.addAttribute("msg", "Session Not Found");
-		return "searchSession";
-	}
-
-	
-	
 }
