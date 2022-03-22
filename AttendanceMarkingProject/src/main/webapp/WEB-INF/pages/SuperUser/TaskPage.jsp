@@ -50,7 +50,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
       </div>
       <div class="card-body">
         <div class="table-responsive">
-          <table class="table table-striped">
+          <table class="table table-striped" style="width:1250px">
             <tbody><tr>
               <th>Admin Id</th>
               <th>Admin Name</th>
@@ -64,7 +64,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
               	<td>${adm.firstName }&nbsp;${adm.lastName }</td>
               
 	             <td class="align-middle">
-	                 <div class="appr" style="width: 100px;">${adm.approval }</div>
+	                 <div class="appr">${adm.approval }</div>
 	             </td>
               	<td>
               	<c:set var="appr" scope="session" value="${adm.approval }"/>  
