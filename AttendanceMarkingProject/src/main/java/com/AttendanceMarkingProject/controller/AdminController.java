@@ -33,6 +33,25 @@ public class AdminController {
 		return "./Admin/Adminlogin";
 	}
 	
+	@GetMapping("adminreg")
+	public String adminRegistration(){
+		return "./Admin/AdminReg";
+	}
+	
+	@GetMapping("resetpassword")
+	public String resetPassword() {
+		return "./Admin/PasswordReset";
+	}
+	
+	@PostMapping("resetsPassword")
+	public String reset(@RequestParam String validation1,@RequestParam String validation2,
+			@RequestParam String validation3,@RequestParam String firstName,@RequestParam String password,@RequestParam String number,Model m) 
+	{
+		String pass = as.passwordrecovery(validation1, validation2, validation3, number, firstName, password);
+		m.addAttribute("msg", pass);
+		return "./Admin/PasswordReset";
+	}
+	
 	@PostMapping("adminloginprocess")
 	public String adminLoginProcess(@RequestParam int adminid,@RequestParam String password,Model m) {
 		Admin admin=as.validateAdmin(adminid, password);
@@ -60,16 +79,15 @@ public class AdminController {
 		return "./Admin/Adminlogin";
 	}
 	
-	@GetMapping("adminreg")
-	public String adminRegistration(){
-		return "./Admin/AdminReg";
-	}
+	
 	
 	@PostMapping("adminregprocess")
 	public String adminRegProcess(@RequestParam String firstname,@RequestParam String lastname,@RequestParam int age,
-			@RequestParam String gender,@RequestParam String number,@RequestParam String password,
+			@RequestParam String gender,@RequestParam String number,@RequestParam String password,@RequestParam String validation1,
+			@RequestParam String validation2,
+			@RequestParam String validation3,
 			Model m) {
-		Admin adm = new Admin(firstname,lastname,age,gender,number,password);
+		Admin adm = new Admin(firstname,lastname,age,gender,number,password,validation1,validation2,validation3);
 		adm.setApproval("Pending");
 		String res = as.registerAdmin(adm);
 		m.addAttribute("msg",res);

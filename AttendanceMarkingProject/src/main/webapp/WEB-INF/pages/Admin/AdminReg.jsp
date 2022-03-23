@@ -39,12 +39,12 @@
 <section class="vh-100">
         <div class="container h-100" style="margin-top: 20px;">
           <div class="row d-flex justify-content-center align-items-center h-100" > 
-            <div class="col-lg-12 col-xl-11" >
+            <div class="col-lg-12 col-xl-14" >
             
               <div class="card text-black" style="border-radius: 25px;box-shadow: inset 2px 2px 4px #d1d9e6,
               inset -2px -2px 4px #f9f9f9;margin-top: 80px;">
               
-              <div class="card-header h1 fw-bold mb-5 mx-1 mx-md-4 mt-7" style=" border-top-left-radius: 25px;border-top-right-radius: 25px;">Admin Registration</div>
+              <div class="card-header h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" style=" border-top-left-radius: 25px;border-top-right-radius: 25px;">Admin Registration</div>
                 <div class="card-body p-md-10" >
                   <div class="row justify-content-center">
                     <div class="col-md-10 col-lg-4 col-xl-5 order-2 order-lg-1">
@@ -59,6 +59,8 @@
                             <input type="text" id="firstname" name="firstname" class="form-control" placeholder="Ex.Jhon" required/>
                           </div>
                           <%--Lastname Field--%>
+                          &nbsp;&nbsp;
+                          <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">Last Name</label>
@@ -75,10 +77,7 @@
                             placeholder="Your Age" pattern="[0-9]+" onKeyPress="if(this.value.length==2) return false;" 
                             oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required/>
                           </div>
-                        </div>
-                        
-                        <%-- Gender Field--%>
-                        <div class="d-flex flex-row align-items-center mb-4">
+                           <%-- Gender Field--%>
                           <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4cd">Gender</label>&nbsp;&nbsp;&nbsp;
@@ -86,6 +85,9 @@
                             <input type="radio" name="gender" value="Female"> Female
                           </div>
                         </div>
+                        
+                       
+                       
                         
                         <%-- Contactnumber Field--%>
                         <div class="d-flex flex-row align-items-center mb-4">
@@ -99,31 +101,38 @@
                           </div>
                         </div>
                         
-                        <!-- Question for to reset password -->
+                        <p class="form-lable"><i class="fas fa-key fa-lg me-3 fa-fw"></i>Fill Out the answers for password recovery</p>
+                        <%--question Field--%>
                         <div class="d-flex flex-row align-items-center mb-4">
-                          <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                         <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
-                            <label class="form-label" for="form3Example4cd">Select a question..</label>
-                            <select class="dropdown-btn form-control">
-                            	<option>Select a question to reset the password</option>
-                            	<option>What's your favourite food?</option>
-                            	<option>What's your favourite teacher's name/</option>
-                            	<option>What's your favourite destination?</option>
-                            </select>
-                            <div>
-                            <input class="form-control" type="text" name="answer" id="answer" placeholder="Answer" required/>
+                            <label class="form-label" for="form3Example4c">What's your Favourite Food?</label>
+                            <input type="text" id="validation1" name="validation1" class="form-control" placeholder="Answer1" required/>
                           </div>
-                            </div>
+                          <%--Question Field--%>
+                          &nbsp;&nbsp;
+               
+                           <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                           <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" for="form3Example4c">What's your Favourite Place?</label>
+                            <input type="text" id="validation2" name="validation2" class="form-control" placeholder="Answer2" required/>
+                          </div>
                         </div>
                         
-                        <%-- Password Field--%>
+                        <%--Question Field--%>
                         <div class="d-flex flex-row align-items-center mb-4">
+                         <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" for="form3Example4c">Who's your Favourite Person?</label>
+                            <input type="text" id="validation3" name="validation3" class="form-control" placeholder="Answer3" required/>
+                          </div>
+                           <%-- Password Field--%>
                           <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4cd">Password</label>
                             <input type="password" id="password" name="password" class="form-control" placeholder="Password" required/>
                           </div>
-                        </div>            
+                          </div>            
                         
                         <%--Register Button--%>          
                         <div class="d-flex justify-co ntent-center mx-4 mb-3 mb-lg-4">
