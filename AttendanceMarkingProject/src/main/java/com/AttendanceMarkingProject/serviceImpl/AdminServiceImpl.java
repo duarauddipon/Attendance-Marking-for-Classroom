@@ -82,4 +82,42 @@ public class AdminServiceImpl implements AdminService {
 			}
 		return "Error Reseting. Please try again";
 	}
+
+	@Override
+	public String approveEnrollment(int sNo) {
+		String str="update enrolldet set approval=? where sno=?;";
+		try
+		{
+			int r=jt.update(str, new Object[] {"Approved",sNo});
+			if(r>=1)
+			{
+				return "Approved";
+			}
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+		return "Error approving";
+	}
+
+	@Override
+	public String rejectEnrollment(int sNo) {
+		String str="update enrolldet set approval=? where sno=?;";
+		try
+		{
+			int r=jt.update(str, new Object[] {"Rejected",sNo});
+			if(r>=1)
+			{
+				return "Rejected";
+			}
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+		return "Error Rejecting";
+	}
+	
+	
 }

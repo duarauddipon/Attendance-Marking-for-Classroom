@@ -58,7 +58,7 @@ public class UserController {
 		List<Skill> sklist=ssi.showSkill();
 		m.addAttribute("sklist", sklist);
 		
-		return "showallsessions";
+		return "ShowAllSessions";
 	}
 	
   @PostMapping("showsessiondetails")
@@ -75,7 +75,7 @@ public class UserController {
 		List<Skill> sklist=ssi.showSkill();
 		m.addAttribute("sklist", sklist);
 		
-		return "showallsessions";
+		return "ShowAllSessions";
 	}
   
   	@PostMapping("searchsessionbyid")
@@ -93,7 +93,7 @@ public class UserController {
 		List<Skill> sklist=ssi.showSkill();
 		m.addAttribute("sklist", sklist);
 	  	
-	    return "showallsessions";
+	    return "ShowAllSessions";
     }
   	
   	@PostMapping("searchsessionbyskill")
@@ -105,7 +105,7 @@ public class UserController {
 		List<Skill> sklist=ssi.showSkill();
 		m.addAttribute("sklist", sklist);
 	  	
-	    return "showallsessions";
+	    return "ShowAllSessions";
     }
 		
 	@PostMapping("userregprocess")
@@ -130,5 +130,20 @@ public class UserController {
 		}
 		m.addAttribute("msg","Wrong id/password");
 		return "./User/Userlogin";
+	}
+	
+	@PostMapping("enrollaction")
+	public String enrollment(Model m,@RequestParam int enrollid)
+	{
+		String res=us.enrollUser(modelUser.getEmpId(), enrollid);
+		m.addAttribute("msg", res);
+		
+		List<Session> slist = sei.showSession();
+		m.addAttribute("slist",slist);
+		
+		List<Skill> sklist=ssi.showSkill();
+		m.addAttribute("sklist", sklist);
+		
+		return "ShowAllSessions";
 	}
 }

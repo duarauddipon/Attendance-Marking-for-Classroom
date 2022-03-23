@@ -60,13 +60,13 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
             <c:forEach var="adm" items="${alist }">
             <form name="frm" method="post" action="doaction">
             <tr>
-         		<td>${adm.adminId }</td>
-              	<td>${adm.firstName }&nbsp;${adm.lastName }</td>
+         		<td style="height:55px" class="align-middle">${adm.adminId }</td>
+              	<td style="height:55px" class="align-middle">${adm.firstName }&nbsp;${adm.lastName }</td>
               
-	             <td class="align-middle">
+	             <td class="align-middle" style="height:55px">
 	                 <div class="appr">${adm.approval }</div>
 	             </td>
-              	<td>
+              	<td style="height:55px">
               	<c:set var="appr" scope="session" value="${adm.approval }"/>  
 				<c:if test="${appr=='Pending'}">  
   					 <input type="submit" class="btn btn-primary btn-action" name="approve" value="Approve"/>&nbsp;&nbsp;

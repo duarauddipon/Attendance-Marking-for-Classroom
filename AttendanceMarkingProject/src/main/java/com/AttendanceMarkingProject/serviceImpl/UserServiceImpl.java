@@ -52,4 +52,41 @@ public class UserServiceImpl implements UserService {
 		}
 		return null;
 	}
+
+	@Override
+	public String enrollUser(int empId, int sessionId) {
+		
+		String str1="select sno from enrolldet where empid=? and sessionid=?;";
+		try
+		{
+			int r=jt.queryForObject(str1, new Object[] {empId,sessionId},Integer.class);
+			if(r>=1)
+			{
+				return "You have already enrolled!";
+			}
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+		
+		String str2="insert into enrolldet(empid,sessionid,attendance,approval) values(?,?,?,?);";
+		try
+		{
+			int r=jt.update(str2, new Object[] {empId,sessionId,"null","Pending"});
+			if(r>=1)
+			{
+				return "You are successfully enrolled!";
+			}
+			else
+			{
+				return "Error enrolling";
+			}
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+		return "Error enrolling";
+	}
 }

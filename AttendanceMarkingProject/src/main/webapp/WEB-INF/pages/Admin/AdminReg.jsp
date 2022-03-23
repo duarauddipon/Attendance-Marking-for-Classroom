@@ -7,6 +7,7 @@
 <title>Admin Registration</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
      rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+     <script src="https://kit.fontawesome.com/9ca98498b5.js" crossorigin="anonymous"></script>
 <style>
 #navigation{
      color: black;
@@ -60,8 +61,6 @@
                           </div>
                           <%--Lastname Field--%>
                           &nbsp;&nbsp;
-                          <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                          <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">Last Name</label>
                             <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Ex.Miller" required/>
@@ -73,14 +72,15 @@
                           <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4cd">Age</label>
-                            <input type="text" id="age" name="age" class="form-control" 
+                            <input type="text" id="age" name="age" class="form-control" size="5"
                             placeholder="Your Age" pattern="[0-9]+" onKeyPress="if(this.value.length==2) return false;" 
                             oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required/>
                           </div>
+                          &nbsp;&nbsp;&nbsp;
                            <%-- Gender Field--%>
-                          <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4cd">Gender</label>&nbsp;&nbsp;&nbsp;
+                            <br>
                             <input type="radio" name="gender" value="Male"> Male
                             <input type="radio" name="gender" value="Female"> Female
                           </div>
@@ -101,7 +101,7 @@
                           </div>
                         </div>
                         
-                        <p class="form-lable"><i class="fas fa-key fa-lg me-3 fa-fw"></i>Fill Out the answers for password recovery</p>
+                        <p class="form-lable" style="font-style:italic">Fill out the answers for password recovery</p>
                         <%--question Field--%>
                         <div class="d-flex flex-row align-items-center mb-4">
                          <i class="fas fa-key fa-lg me-3 fa-fw"></i>
@@ -111,8 +111,6 @@
                           </div>
                           <%--Question Field--%>
                           &nbsp;&nbsp;
-               
-                           <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                            <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">What's your Favourite Place?</label>
                             <input type="text" id="validation2" name="validation2" class="form-control" placeholder="Answer2" required/>
@@ -126,13 +124,15 @@
                             <label class="form-label" for="form3Example4c">Who's your Favourite Person?</label>
                             <input type="text" id="validation3" name="validation3" class="form-control" placeholder="Answer3" required/>
                           </div>
+                         </div>
+                         <div class="d-flex flex-row align-items-center mb-4">
                            <%-- Password Field--%>
                           <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4cd">Password</label>
                             <input type="password" id="password" name="password" class="form-control" placeholder="Password" required/>
                           </div>
-                          </div>            
+                         </div>            
                         
                         <%--Register Button--%>          
                         <div class="d-flex justify-co ntent-center mx-4 mb-3 mb-lg-4">
