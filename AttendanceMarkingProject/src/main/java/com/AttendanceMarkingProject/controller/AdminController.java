@@ -1,20 +1,30 @@
 package com.AttendanceMarkingProject.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.AttendanceMarkingProject.model.Admin;
+import com.AttendanceMarkingProject.model.Enrollment;
+import com.AttendanceMarkingProject.model.User;
 import com.AttendanceMarkingProject.serviceImpl.AdminServiceImpl;
+import com.AttendanceMarkingProject.serviceImpl.UserServiceImpl;
 
 @Controller
 public class AdminController {
 	
 	@Autowired
 	AdminServiceImpl as;
+	
+	@Autowired
+	UserServiceImpl us;
 	
 	private static Admin modelAdmin=null;
 	
@@ -79,8 +89,6 @@ public class AdminController {
 		return "./Admin/Adminlogin";
 	}
 	
-	
-	
 	@PostMapping("adminregprocess")
 	public String adminRegProcess(@RequestParam String firstname,@RequestParam String lastname,@RequestParam int age,
 			@RequestParam String gender,@RequestParam String number,@RequestParam String password,@RequestParam String validation1,
@@ -93,5 +101,32 @@ public class AdminController {
 		m.addAttribute("msg",res);
 		return "./Admin/AdminReg";
 	}
+	
+	@GetMapping("adminnotification")
+	public String showNotifications(Model m)
+	{
+		List<Enrollment> reslist=as.showEnrollment();
+		m.addAttribute("elist", reslist);
+		return "./Admin/AdminNotification";
+	}
 
+	@RequestMapping(value="doenroll",params="approve",method=RequestMethod.POST)
+	public String doApprove(@RequestParam(name="eid") int empId,@RequestParam(name="sid") int sId,Model m)
+	{
+		as.approveEnrollment(empId,sId);
+		List<Enrollment> reslist=as.showEnrollment();
+		m.addAttribute("elist", reslist);
+		
+		return "./Admin/AdminNotification";
+	}
+	
+	@RequestMapping(value="doenroll",params="reject",method=RequestMethod.POST)
+	public String doReject(@RequestParam(name="eid") int empId,@RequestParam(name="sid") int sId,Model m)
+	{
+		as.rejectEnrollment(empId,sId);
+		List<Enrollment> reslist=as.showEnrollment();
+		m.addAttribute("elist", reslist);
+		
+		return "./Admin/AdminNotification";
+	}
 }
