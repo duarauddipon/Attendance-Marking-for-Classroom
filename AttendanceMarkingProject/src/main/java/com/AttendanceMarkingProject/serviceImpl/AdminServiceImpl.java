@@ -18,11 +18,11 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public String registerAdmin(Admin admin) {
-		String sql = "Insert into adminreg(firstname,lastname,age,gender,number,password,approval)values(?,?,?,?,?,?,?)";
+		String sql = "Insert into adminreg(firstname,lastname,age,gender,number,password,approval,validation1,validation2,validation3)values(?,?,?,?,?,?,?,?,?,?)";
 		try
 		{
 			int a = jt.update(sql,new Object[] {admin.getFirstName(),admin.getLastName(),admin.getAge(),admin.getGender(),
-					admin.getNumber(),admin.getPassword(),admin.getApproval()});
+					admin.getNumber(),admin.getPassword(),admin.getApproval(),admin.getValidation1(),admin.getValidation2(),admin.getValidation3()});
 			if(a>=1)
 			{
 				return "Admin registered successfully";
@@ -71,15 +71,15 @@ public class AdminServiceImpl implements AdminService {
 			String firstName, String password) {
 			String str = "update adminreg set password = ? where validation1= ? and validation2 =? and validation3 = ? and firstname = ? and number = ?";
 			try {
-				int pass = jt.update(str,password);
+				int pass = jt.update(str,new Object[] {password,validation1,validation2,validation3,firstName,number});
 				if(pass>=1) {
 					return "Password Reseted Successfully";
 				}else {
-					return "Error in Resetting";
+					return "Error Reseting. Please try again";
 				}
 			}catch(Exception ex) {
 				ex.getMessage();
 			}
-		return "Error in Resetting";
+		return "Error Reseting. Please try again";
 	}
 }

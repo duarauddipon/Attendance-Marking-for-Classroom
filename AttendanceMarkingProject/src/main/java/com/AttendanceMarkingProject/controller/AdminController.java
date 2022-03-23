@@ -45,16 +45,11 @@ public class AdminController {
 	
 	@PostMapping("resetsPassword")
 	public String reset(@RequestParam String validation1,@RequestParam String validation2,
-			@RequestParam String validation3,@RequestParam String firstName,@RequestParam String password,Model m) {
-		String pass = as.passwordrecovery(validation1, validation2, validation3, validation3, firstName, password);
-		if(pass!=null) {
-			m.addAttribute("msg","Password Resetted Successfully");
-			return "./Admin/PasswordReset";
-		}
-		else {
-			m.addAttribute("msg","Incorrect Data");
-			return "./Admin/PasswordReset";
-		}
+			@RequestParam String validation3,@RequestParam String firstName,@RequestParam String password,@RequestParam String number,Model m) 
+	{
+		String pass = as.passwordrecovery(validation1, validation2, validation3, number, firstName, password);
+		m.addAttribute("msg", pass);
+		return "./Admin/PasswordReset";
 	}
 	
 	@PostMapping("adminloginprocess")

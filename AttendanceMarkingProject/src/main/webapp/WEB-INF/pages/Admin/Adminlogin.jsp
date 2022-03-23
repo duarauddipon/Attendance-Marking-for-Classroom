@@ -77,7 +77,7 @@
                            <input type="submit"  value="Login" class="btn btn-primary" onclick="window.location.reload()"/>
                         </div>
                         <div class="d-flex flex-row align-items-center mx-4 mb-3 mb-lg-4">
-                           <p>Forgot Password ? <a href="#" style="text-decoration: none;cursor: pointer;">Reset here!</a></p>
+                           <p>Forgot Password ? <a href="resetpassword" style="text-decoration: none;cursor: pointer;">Reset here!</a></p>
                         </div>
                         
        						<h3 style="font-family: sans-serif;color: black;font-size: 20px" class="" >${msg}</h3>
