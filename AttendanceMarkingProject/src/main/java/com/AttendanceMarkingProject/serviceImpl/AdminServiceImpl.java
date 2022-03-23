@@ -66,4 +66,20 @@ public class AdminServiceImpl implements AdminService {
 		return null;
 	}
 
+	@Override
+	public String passwordrecovery(String validation1, String validation2, String validation3, String number,
+			String firstName, String password) {
+			String str = "update adminreg set password = ? where validation1= ? and validation2 =? and validation3 = ? and firstname = ? and number = ?";
+			try {
+				int pass = jt.update(str,password);
+				if(pass>=1) {
+					return "Password Reseted Successfully";
+				}else {
+					return "Error in Resetting";
+				}
+			}catch(Exception ex) {
+				ex.getMessage();
+			}
+		return "Error in Resetting";
+	}
 }

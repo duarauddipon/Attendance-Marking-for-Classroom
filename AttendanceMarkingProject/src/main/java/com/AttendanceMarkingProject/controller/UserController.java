@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -104,9 +103,10 @@ public class UserController {
 		
 	@PostMapping("userregprocess")
 	public String userRegProcess(@RequestParam String firstname,@RequestParam String lastname,
-			@RequestParam String email,@RequestParam String password,Model m)
+			@RequestParam String email,@RequestParam String password,@RequestParam String validation1,@RequestParam String validation2,
+			@RequestParam String validation3,Model m)
 	{
-		User usr = new User(firstname,lastname,email,password);
+		User usr = new User(firstname,lastname,email,password,validation1,validation2,validation3);
 		String res=us.registeruser(usr);
 		m.addAttribute("msg", res);
 		return "./User/Userreg";

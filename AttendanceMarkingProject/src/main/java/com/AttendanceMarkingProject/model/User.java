@@ -6,6 +6,10 @@ public class User {
 	private int empId;
 	private String email;
 	private String password;
+	private String validation1;
+	private String validation2;
+	private String validation3;
+	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -36,22 +40,43 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public String getValidation1() {
+		return validation1;
+	}
+	public void setValidation1(String validation1) {
+		this.validation1 = validation1;
+	}
+	public String getValidation2() {
+		return validation2;
+	}
+	public void setValidation2(String validation2) {
+		this.validation2 = validation2;
+	}
+	public String getValidation3() {
+		return validation3;
+	}
+	public void setValidation3(String validation3) {
+		this.validation3 = validation3;
+	}
 	public User()
 	{
 		super();
 	}
-	public User(String firstName, String lastName, String email, String password) {
+	public User(String firstName, String lastName, String email, String password,String validation1,String validation2,String validation3) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.password = password;
+		this.validation1 = validation1;
+		this.validation2 = validation2;
+		this.validation3 = validation3;
 	}
 	@Override
 	public String toString() {
 		return "User [firstName=" + firstName + ", lastName=" + lastName + ", empId=" + empId + ", email=" + email
-				+ ", password=" + password + "]";
+				+ ", password=" + password + ", validation1=" + validation1 + ", validation2=" + validation2
+				+ ", validation3=" + validation3 + "]";
 	}
-	
 
 }

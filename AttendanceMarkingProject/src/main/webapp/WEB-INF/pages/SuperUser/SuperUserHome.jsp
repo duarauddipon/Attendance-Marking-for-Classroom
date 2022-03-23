@@ -38,6 +38,7 @@
        <div class="collapse navbar-collapse" id="navigation-bar">
            <ul class="navbar-nav" style="margin-left: auto;">
            		<li class="nav-item"><a class="nav-link" href="taskpage" id="navigation"><i class="fa-solid fa-list-check"></i>&nbsp;&nbsp;Tasks</a></li>
+           		<li class="nav-item" ><a class="nav-link" href="login" id="navigation" onclick="window.location.reload()" style="padding-left: 30px"><i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;&nbsp;LogOut</a></li>
            </ul>
        </div>
    </nav>
