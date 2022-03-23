@@ -110,6 +110,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
               </div>
         </div>
         <div class=" col-lg-6 col-xl-6">
+            <form name="enrollform" method="post" action="enrollaction">
             <div class="table-responsive" style="padding: 40px;padding-top: 250px;">
                 <table class="table table-striped">
                 <caption>Session Description</caption>
@@ -130,12 +131,15 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
                       <td>${sObj.sessionTime}</td>
                       <td>${sObj.availSlots }</td>
                   </tr>
+                  <input type="hidden" name="enrollid" value="${sObj.sessionId }"/>
                   </c:forEach>
                 </tbody>
                 </table>
-                <div style="padding-left: 25px;padding-top: 10px;"><input type="submit" class="btn btn-primary" value="Enroll"></div>
+             <div style="padding-left: 25px;padding-top: 10px;"><input type="submit" class="btn btn-primary" value="Enroll"></div>
         </div>
+    </form>
+    <h6 style="font-style:italic;color:red" class="">${msg}</h6>
     </div> 
-    </div>
+</div>
 </body>
 </html>
