@@ -68,9 +68,19 @@
                           </div>
                         </div>                 
       					
-      					<%--Email Id  Field--%>
+      					
                         <div class="d-flex flex-row align-items-center mb-4">
+                        <!-- Contact number -->
                         <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" for="form3Example4cd">Contact Number</label>
+                            <input type="text" id="number" name="number" class="form-control" 
+                            placeholder="EG.999-999-9999" pattern="[7-9]{1}[0-9]{9}" title="Please enter valid phone number"
+                            onKeyPress="if(this.value.length==10) return false;" 
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  required/>
+                          </div>
+                          <%--Email Id  Field--%>
+                        &nbsp;&nbsp;
                           <div class="form-outline flex-fill mb-0">
                            <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                             <label class="form-label" for="form3Example4cd">Email Id</label>

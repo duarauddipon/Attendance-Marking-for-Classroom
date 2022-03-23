@@ -18,10 +18,10 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public String registerAdmin(Admin admin) {
-		String sql = "Insert into adminreg(firstname,lastname,age,gender,number,password,approval,validation1,validation2,validation3)values(?,?,?,?,?,?,?,?,?,?)";
+		String sql = "Insert into adminreg(firstname,lastname,age,gender,email,number,password,approval,validation1,validation2,validation3)values(?,?,?,?,?,?,?,?,?,?,?)";
 		try
 		{
-			int a = jt.update(sql,new Object[] {admin.getFirstName(),admin.getLastName(),admin.getAge(),admin.getGender(),
+			int a = jt.update(sql,new Object[] {admin.getFirstName(),admin.getLastName(),admin.getAge(),admin.getGender(),admin.getEmail(),
 					admin.getNumber(),admin.getPassword(),admin.getApproval(),admin.getValidation1(),admin.getValidation2(),admin.getValidation3()});
 			if(a>=1)
 			{
@@ -68,10 +68,10 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public String passwordrecovery(String validation1, String validation2, String validation3, String number,
-			String firstName, String password) {
-			String str = "update adminreg set password = ? where validation1= ? and validation2 =? and validation3 = ? and firstname = ? and number = ?";
+			String email, String password) {
+			String str = "update adminreg set password = ? where validation1= ? and validation2 =? and validation3 = ? and email = ? and number = ?";
 			try {
-				int pass = jt.update(str,new Object[] {password,validation1,validation2,validation3,firstName,number});
+				int pass = jt.update(str,new Object[] {password,validation1,validation2,validation3,email,number});
 				if(pass>=1) {
 					return "Password Reseted Successfully";
 				}else {

@@ -54,7 +54,7 @@
       
       					<%--Firstname Field--%>
                         <div class="d-flex flex-row align-items-center mb-4">
-                          <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                          
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">First Name</label>
                             <input type="text" id="firstname" name="firstname" class="form-control" placeholder="Ex.Jhon" required/>
@@ -69,7 +69,7 @@
       					
       					<%--Age  Field--%>
                         <div class="d-flex flex-row align-items-center mb-4">
-                          <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                          
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4cd">Age</label>
                             <input type="text" id="age" name="age" class="form-control" size="5"
@@ -85,13 +85,9 @@
                             <input type="radio" name="gender" value="Female"> Female
                           </div>
                         </div>
-                        
-                       
-                       
-                        
+
                         <%-- Contactnumber Field--%>
                         <div class="d-flex flex-row align-items-center mb-4">
-                          <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4cd">Contact Number</label>
                             <input type="text" id="number" name="number" class="form-control" 
@@ -99,12 +95,19 @@
                             onKeyPress="if(this.value.length==10) return false;" 
                             oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  required/>
                           </div>
+                          &nbsp;&nbsp;
+                          <!-- Email Id -->
+                           <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" for="form3Example4cd">Email Id</label>
+                            <input type="email" id="email" name="email" class="form-control" 
+                             placeholder="Ex.miller@gmail.com" required/>
+                          </div>
                         </div>
                         
                         <p class="form-lable" style="font-style:italic">Fill out the answers for password recovery</p>
                         <%--question Field--%>
                         <div class="d-flex flex-row align-items-center mb-4">
-                         <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                         
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">What's your Favourite Food?</label>
                             <input type="text" id="validation1" name="validation1" class="form-control" placeholder="Answer1" required/>
@@ -119,15 +122,15 @@
                         
                         <%--Question Field--%>
                         <div class="d-flex flex-row align-items-center mb-4">
-                         <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                         
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">Who's your Favourite Person?</label>
                             <input type="text" id="validation3" name="validation3" class="form-control" placeholder="Answer3" required/>
                           </div>
                          </div>
+                         <%-- Password Field--%>
                          <div class="d-flex flex-row align-items-center mb-4">
-                           <%-- Password Field--%>
-                          <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                          
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4cd">Password</label>
                             <input type="password" id="password" name="password" class="form-control" placeholder="Password" required/>

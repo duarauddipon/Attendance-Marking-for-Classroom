@@ -45,9 +45,9 @@ public class AdminController {
 	
 	@PostMapping("resetsPassword")
 	public String reset(@RequestParam String validation1,@RequestParam String validation2,
-			@RequestParam String validation3,@RequestParam String firstName,@RequestParam String password,@RequestParam String number,Model m) 
+			@RequestParam String validation3,@RequestParam String email,@RequestParam String password,@RequestParam String number,Model m) 
 	{
-		String pass = as.passwordrecovery(validation1, validation2, validation3, number, firstName, password);
+		String pass = as.passwordrecovery(validation1, validation2, validation3, number, email, password);
 		m.addAttribute("msg", pass);
 		return "./Admin/PasswordReset";
 	}
@@ -80,14 +80,13 @@ public class AdminController {
 	}
 	
 	
-	
 	@PostMapping("adminregprocess")
 	public String adminRegProcess(@RequestParam String firstname,@RequestParam String lastname,@RequestParam int age,
-			@RequestParam String gender,@RequestParam String number,@RequestParam String password,@RequestParam String validation1,
+			@RequestParam String gender,@RequestParam String email,@RequestParam String number,@RequestParam String password,@RequestParam String validation1,
 			@RequestParam String validation2,
 			@RequestParam String validation3,
 			Model m) {
-		Admin adm = new Admin(firstname,lastname,age,gender,number,password,validation1,validation2,validation3);
+		Admin adm = new Admin(firstname,lastname,age,gender,email,number,password,validation1,validation2,validation3);
 		adm.setApproval("Pending");
 		String res = as.registerAdmin(adm);
 		m.addAttribute("msg",res);
