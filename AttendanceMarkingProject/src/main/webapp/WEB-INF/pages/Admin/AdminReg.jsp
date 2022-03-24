@@ -148,7 +148,7 @@
                         
                         <%--Login Button--%>
                         <div>
-							  Alrady have an account? <a href="adminlogin" class="btn btn-primary"> Login!</a>
+							  Already have an account? <a href="adminlogin" class="btn btn-primary"> Login!</a>
                         </div>
                         <br>
        						<h4 style="font-family: sans-serif;color: red;font-style:italic" >${msg}</h4>
