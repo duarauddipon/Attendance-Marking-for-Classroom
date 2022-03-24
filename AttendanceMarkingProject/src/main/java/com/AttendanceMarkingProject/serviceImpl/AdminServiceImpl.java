@@ -27,7 +27,9 @@ public class AdminServiceImpl implements AdminService {
 					admin.getNumber(),admin.getPassword(),admin.getApproval(),admin.getValidation1(),admin.getValidation2(),admin.getValidation3()});
 			if(a>=1)
 			{
-				return "Admin registered successfully";
+				String str1="select adminid from adminreg where email=?;";
+				int adminid=jt.queryForObject(str1, new Object[] {admin.getEmail()},Integer.class);
+				return "Registered successfully. Admin Id is "+adminid;
 			}
 			else
 				return "Error registering!";

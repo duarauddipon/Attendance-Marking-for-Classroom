@@ -23,7 +23,9 @@ public class UserServiceImpl implements UserService {
 					user.getPassword(),user.getValidation1(),user.getValidation2(),user.getValidation3()});
 			if(res>=1)
 			{
-				return "User added successfully";
+				String str1="select empid from userreg where email=?;";
+				int empid=jt.queryForObject(str1, new Object[] {user.getEmail()},Integer.class);
+				return "Registered successfully. Admin Id is "+empid;
 			}
 			else
 			{
