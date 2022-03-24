@@ -40,6 +40,7 @@ public class UserController {
 	@GetMapping("Userlogin")
 	public String userLogin()
 	{
+		setModelUser(null);
 		return "./User/Userlogin";
 	}
 	

@@ -40,6 +40,7 @@ public class AdminController {
 	
 	@GetMapping("adminlogin")
 	public String adminLogin() {
+		setModelAdmin(null);
 		return "./Admin/Adminlogin";
 	}
 	
