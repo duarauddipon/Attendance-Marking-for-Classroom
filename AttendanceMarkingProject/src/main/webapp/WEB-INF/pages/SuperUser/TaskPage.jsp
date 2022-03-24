@@ -12,6 +12,7 @@ integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="ano
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
 integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
 #navigation{
      color: black;
@@ -49,7 +50,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
       </div>
       <div class="card-body">
         <div class="table-responsive">
-          <table class="table table-striped">
+          <table class="table table-striped" style="width:1250px">
             <tbody><tr>
               <th>Admin Id</th>
               <th>Admin Name</th>
@@ -59,15 +60,18 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
             <c:forEach var="adm" items="${alist }">
             <form name="frm" method="post" action="doaction">
             <tr>
-         		<td>${adm.adminId }</td>
-              	<td>${adm.firstName }&nbsp;${adm.lastName }</td>
+         		<td style="height:55px" class="align-middle">${adm.adminId }</td>
+              	<td style="height:55px" class="align-middle">${adm.firstName }&nbsp;${adm.lastName }</td>
               
-	             <td class="align-middle">
-	                 <div class="text" style="width: 100px;">Pending</div>
+	             <td class="align-middle" style="height:55px">
+	                 <div class="appr">${adm.approval }</div>
 	             </td>
-              	<td>
-                <input type="submit" class="btn btn-primary btn-action" name="approve" value="Approve"/>&nbsp;&nbsp;
-                <input type="submit" class="btn btn-danger btn-action" name="reject"  value="Reject"/>
+              	<td style="height:55px">
+              	<c:set var="appr" scope="session" value="${adm.approval }"/>  
+				<c:if test="${appr=='Pending'}">  
+  					 <input type="submit" class="btn btn-primary btn-action" name="approve" value="Approve"/>&nbsp;&nbsp;
+                	 <input type="submit" class="btn btn-danger btn-action" name="reject"  value="Reject"/>
+				</c:if>
               </td> 
             </tr>
             <input type="hidden" name="aid" value="${adm.adminId }"/>

@@ -5,10 +5,15 @@ public class Admin {
 	private String lastName;
 	private int age;
 	private String gender;
+	private String email;
 	private String number;
 	private int adminId;
 	private String password;
-	private byte approval;
+	private String approval;
+	private String validation1;
+	private String validation2;
+	private String validation3;
+	
 
 	public String getFirstName() {
 		return firstName;
@@ -34,6 +39,12 @@ public class Admin {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public String getNumber() {
 		return number;
 	}
@@ -52,21 +63,43 @@ public class Admin {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public String getValidation1() {
+		return validation1;
+	}
+	public void setValidation1(String validation1) {
+		this.validation1 = validation1;
+	}
+	public String getValidation2() {
+		return validation2;
+	}
+	public void setValidation2(String validation2) {
+		this.validation2 = validation2;
+	}
+	public String getValidation3() {
+		return validation3;
+	}
+	public void setValidation3(String validation3) {
+		this.validation3 = validation3;
+	}
 	
-	public byte getApproval() {
+	public String getApproval() {
 		return approval;
 	}
-	public void setApproval(byte approval) {
+	public void setApproval(String approval) {
 		this.approval = approval;
 	}
-	public Admin(String firstName, String lastName, int age, String gender, String number, String password) {
+	public Admin(String firstName, String lastName, int age, String gender,String email, String number, String password,String validation1,String validation2,String validation3) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
 		this.gender = gender;
+		this.email = email;
 		this.number = number;
 		this.password = password;
+		this.validation1 = validation1;
+		this.validation2 = validation2;
+		this.validation3 = validation3;
 	}
 	
 	public Admin() {
@@ -75,11 +108,10 @@ public class Admin {
 	
 	@Override
 	public String toString() {
-		return "Admin [firstName=" + firstName + ", lastName=" + lastName + ", age=" + age + ", gender=" + gender
-				+ ", number=" + number + ", adminId=" + adminId + ", password=" + password + "]";
+		return "Admin [firstName=" + firstName + ", lastName=" + lastName + ", age=" + age + ", gender=" + gender+ ", email=" + email
+				+ ", number=" + number + ", adminId=" + adminId + ", password=" + password + ", approval=" + approval
+				+ ", validation1=" + validation1 + ", validation2=" + validation2 + ", validation3=" + validation3
+				+ "]";
 	}
-	
-	
-	
 
 }

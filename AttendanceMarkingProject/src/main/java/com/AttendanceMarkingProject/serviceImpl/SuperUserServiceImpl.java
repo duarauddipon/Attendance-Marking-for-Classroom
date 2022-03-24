@@ -18,7 +18,7 @@ public class SuperUserServiceImpl implements SuperUserService {
 		String str="update adminreg set approval=? where adminid=?;";
 		try
 		{
-			int res=jt.update(str, new Object[] {(byte)1,adminId});
+			int res=jt.update(str, new Object[] {"Approved",adminId});
 			if(res>=1)
 			{
 				return "Admin approved";
@@ -33,10 +33,10 @@ public class SuperUserServiceImpl implements SuperUserService {
 
 	@Override
 	public String rejectAdmin(int adminId) {
-		String str="delete from adminreg where adminid=?;";
+		String str="update adminreg set approval=? where adminid=?;";
 		try
 		{
-			int res=jt.update(str, new Object[] {adminId});
+			int res=jt.update(str, new Object[] {"Rejected",adminId});
 			if(res>=1)
 			{
 				return "Admin rejected";

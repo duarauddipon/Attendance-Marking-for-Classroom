@@ -62,8 +62,8 @@
       <br>
       <br>
                           <select class="form-control" name="trainerId" id="trainerId">
-                      <option Selected>Trainer Id</option>
-                      <c:forEach var="fls" items="${salist}">
+                      <option selected value="0">Select Trainer Id...</option>
+                      <c:forEach var="fls" items="${tlist}">
                       	<option value="${fls.trainerId}">${fls.trainerId}</option>
                       </c:forEach>
                       

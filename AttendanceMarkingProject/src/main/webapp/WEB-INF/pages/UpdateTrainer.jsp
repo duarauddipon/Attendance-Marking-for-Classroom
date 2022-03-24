@@ -64,7 +64,12 @@
                           <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">Trainer Id</label>
-                            <input type="number" id="trainerId" name="trainerId" class="form-control" placeholder="Trainer Id" required/>
+                             <select class="form-control" name="trainerId" id="trainerId">
+                      			<option selected value="0">Select Trainer Id...</option>
+                      			<c:forEach var="fls" items="${tlist}">
+                      			<option value="${fls.trainerId}">${fls.trainerId}</option>
+                      			</c:forEach>
+                      		</select>
                           </div>
                         </div>                  
       
@@ -108,7 +113,7 @@
                           
                           <select class="form-control" name="skillSet" id="skillSet">
                       <option Selected>Select Skill</option>
-                      <c:forEach var="fls" items="${salist}">
+                      <c:forEach var="fls" items="${slist}">
                       	<option value="${fls.skillType}">${fls.skillType}</option>
                       </c:forEach>
                       
