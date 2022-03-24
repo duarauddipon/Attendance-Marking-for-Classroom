@@ -1,5 +1,6 @@
 package com.AttendanceMarkingProject.serviceImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 import com.AttendanceMarkingProject.model.Admin;
+import com.AttendanceMarkingProject.model.Enrollment;
 import com.AttendanceMarkingProject.service.AdminService;
 
 @Component
@@ -55,7 +57,7 @@ public class AdminServiceImpl implements AdminService {
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
-	public List<Admin> showregadmins() {
+	public List<Admin> showRegAdmins() {
 		String sql = "select * from adminreg;";
 		try {
 			List<Admin> alist = jt.query(sql, new BeanPropertyRowMapper(Admin.class));
@@ -84,11 +86,11 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public String approveEnrollment(int sNo) {
-		String str="update enrolldet set approval=? where sno=?;";
+	public String approveEnrollment(int empId,int sId) {
+		String str="update enrolldet set approval=? where empid=? and sessionid=?;";
 		try
 		{
-			int r=jt.update(str, new Object[] {"Approved",sNo});
+			int r=jt.update(str, new Object[] {"Approved",empId,sId});
 			if(r>=1)
 			{
 				return "Approved";
@@ -102,11 +104,11 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public String rejectEnrollment(int sNo) {
-		String str="update enrolldet set approval=? where sno=?;";
+	public String rejectEnrollment(int empId,int sId) {
+		String str="update enrolldet set approval=? where empid=? and sessionid=?;";
 		try
 		{
-			int r=jt.update(str, new Object[] {"Rejected",sNo});
+			int r=jt.update(str, new Object[] {"Rejected",empId,sId});
 			if(r>=1)
 			{
 				return "Rejected";
@@ -117,6 +119,23 @@ public class AdminServiceImpl implements AdminService {
 			System.out.println(ex.getMessage());
 		}
 		return "Error Rejecting";
+	}
+
+	@Override
+	public List<Enrollment> showEnrollment() {
+		List<Enrollment> reslist = new ArrayList<>();
+		String str="select e.empid,u.firstname,u.lastname,e.sessionid,s.sessiondes,e.attendance,e.approval from userreg as u "
+				+ "join enrolldet as e on u.empid=e.empid join sessiondet as s on s.sessionid=e.sessionid;";
+		try
+		{
+			reslist= jt.query(str,new BeanPropertyRowMapper(Enrollment.class));
+			return reslist;
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+		return null;
 	}
 	
 	

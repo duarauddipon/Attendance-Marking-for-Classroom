@@ -46,7 +46,7 @@ public class SuperUserController{
 	
 	@GetMapping("taskpage")
 	public String task(Model m) {
-		List<Admin> alist = as.showregadmins();
+		List<Admin> alist = as.showRegAdmins();
 		m.addAttribute("alist",alist);
 		return "./SuperUser/TaskPage";
 	}
@@ -55,7 +55,7 @@ public class SuperUserController{
 	public String doApprove(@RequestParam(name="aid") String adminId,Model m)
 	{
 		sus.approveAdmin(Integer.parseInt(adminId));
-		List<Admin> alist = as.showregadmins();
+		List<Admin> alist = as.showRegAdmins();
 		m.addAttribute("alist",alist);
 		return "./SuperUser/TaskPage";
 	}
@@ -64,7 +64,7 @@ public class SuperUserController{
 	public String doReject(@RequestParam(name="aid") String adminId,Model m)
 	{
 		sus.rejectAdmin(Integer.parseInt(adminId));
-		List<Admin> alist = as.showregadmins();
+		List<Admin> alist = as.showRegAdmins();
 		m.addAttribute("alist",alist);
 		return "./SuperUser/TaskPage";
 	}
