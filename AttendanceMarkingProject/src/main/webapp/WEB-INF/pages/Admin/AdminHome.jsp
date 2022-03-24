@@ -4,13 +4,15 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-
-         <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-     <script src="https://kit.fontawesome.com/9ca98498b5.js" crossorigin="anonymous"></script>
 <title>Admin Home</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+     rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,700" rel="stylesheet">
+<!-- Font Script -->
+<script src="https://kit.fontawesome.com/9ca98498b5.js" crossorigin="anonymous"></script>
 <style>
       #navigation{
         color: black;
@@ -30,6 +32,7 @@
     	height: auto;
     }
 </style>
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg fixed-top">
@@ -44,7 +47,7 @@
                 <li class="nav-item" ><a class="nav-link" href="skilladd" id="navigation"><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Add Skill</a></li>
                 <li class="nav-item" ><a class="nav-link" href="updatetrainer" id="navigation"><i class="fa-solid fa-pen-to-square"></i>&nbsp;&nbsp;Update Trainer</a></li>
                 <li class="nav-item" ><a class="nav-link" href="deletetrainer" id="navigation"><i class="fa-solid fa-trash"></i>&nbsp;&nbsp;Delete Trainer</a></li>
-                <li class="nav-item" ><a class="nav-link" href="login" id="navigation" onclick="window.location.reload()" style="padding-left: 30px"><i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;&nbsp;LogOut</a></li> 
+                <li class="nav-item" ><a class="nav-link" href="login" id="navigation" onclick="window.location.reload()"><i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;&nbsp;LogOut</a></li> 
             </ul>
         </div>
     </nav>

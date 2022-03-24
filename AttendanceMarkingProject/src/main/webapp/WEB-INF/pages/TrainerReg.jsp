@@ -8,7 +8,12 @@
 <title>Trainer Registration</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
      rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-     <script src="https://kit.fontawesome.com/9ca98498b5.js" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,700" rel="stylesheet">
+<!-- Font Script -->
+<script src="https://kit.fontawesome.com/9ca98498b5.js" crossorigin="anonymous"></script>
  <style>
       #navigation{
         color: black;
@@ -33,13 +38,13 @@
         <img src="https://i.pinimg.com/564x/61/6f/90/616f900fb165b3a61464d56a87f4d824.jpg" height="100" width="200" class="img-fluid" style="border-radius: 25px;"></a>
         <div class="collapse navbar-collapse" id="navigation-bar">
             <ul class="navbar-nav" style="margin-left: auto;">
-            	<li class="nav-item" ><a class="nav-link" href="adminhome" id="navigation"><i class="fa-regular fa-house-blank"></i>&nbsp;&nbsp;Admin Home</a></li>
-          	<li class="nav-item" ><a class="nav-link" href="trainerreg" id="navigation"><i class="fa-solid fa-user-plus"></i>&nbsp;&nbsp;Add Trainer</a></li>
-            <li class="nav-item" ><a class="nav-link" href="sessionadd" id="navigation"><i class="fa-solid fa-file-circle-plus"></i>&nbsp;&nbsp;Add Session</a></li>
-            <li class="nav-item" ><a class="nav-link" href="skilladd" id="navigation"><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Add Skill</a></li>
-            <li class="nav-item" ><a class="nav-link" href="updatetrainer" id="navigation"><i class="fa-solid fa-pen-to-square"></i>&nbsp;&nbsp;Update Trainer</a></li>
-            <li class="nav-item" ><a class="nav-link" href="deletetrainer" id="navigation"><i class="fa-solid fa-trash"></i>&nbsp;&nbsp;Delete Trainer</a></li>
-            <li class="nav-item" ><a class="nav-link" href="login" id="navigation" onclick="window.location.reload()" style="padding-left: 30px"><i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;&nbsp;LogOut</a></li> 
+            	<li class="nav-item" ><a class="nav-link" href="adminhome" id="navigation"><i class="fa-solid fa-house-user"></i>&nbsp;&nbsp;Admin Home</a></li>
+	          	<li class="nav-item" ><a class="nav-link" href="trainerreg" id="navigation"><i class="fa-solid fa-user-plus"></i>&nbsp;&nbsp;Add Trainer</a></li>
+	            <li class="nav-item" ><a class="nav-link" href="sessionadd" id="navigation"><i class="fa-solid fa-file-circle-plus"></i>&nbsp;&nbsp;Add Session</a></li>
+	            <li class="nav-item" ><a class="nav-link" href="skilladd" id="navigation"><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Add Skill</a></li>
+	            <li class="nav-item" ><a class="nav-link" href="updatetrainer" id="navigation"><i class="fa-solid fa-pen-to-square"></i>&nbsp;&nbsp;Update Trainer</a></li>
+	            <li class="nav-item" ><a class="nav-link" href="deletetrainer" id="navigation"><i class="fa-solid fa-trash"></i>&nbsp;&nbsp;Delete Trainer</a></li>
+	            <li class="nav-item" ><a class="nav-link" href="login" id="navigation" onclick="window.location.reload()"><i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;&nbsp;LogOut</a></li> 
             </ul>
         </div>
     </nav>
@@ -61,7 +66,6 @@
       
       					<!--Trainer id Field-->
                         <div class="d-flex flex-row align-items-center mb-4">	
-                          <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">Trainer Id</label>
                             <input type="number" id="trainerId" name="trainerId" class="form-control" placeholder="Trainer Id" required/>
@@ -70,7 +74,6 @@
       
       					<!--TrainerName Field-->
                         <div class="d-flex flex-row align-items-center mb-4">
-                          <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">Trainer Name</label>
                             <input type="text" id="trainerName" name="trainerName" class="form-control" placeholder="Ex.Miller Jhon" required/>
@@ -79,7 +82,6 @@
       					
       					<!--Contact Number  Field-->
                         <div class="d-flex flex-row align-items-center mb-4">
-                          <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4cd">Contact Number</label>
                             <input type="text" id="contactNumber" name="contactNumber" class="form-control" 
@@ -91,7 +93,6 @@
                         
                         <!-- Email Id Field-->
                         <div class="d-flex flex-row align-items-center mb-4">
-                          <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4cd">Email Id</label>&nbsp;&nbsp;&nbsp;
                             <input type="email" name="email" id="email" class="form-control" placeholder="EX.jhon@gmail.com">
@@ -100,7 +101,6 @@
                         
                         <!-- SkillSet Field-->
                         <div class="d-flex flex-row align-items-center mb-4">
-                          <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4cd">Skill Set</label>
                          <!-- <input type="text" id="form3Example4cd" id="skillSet" name="skillSet" placeholder="SkillSet" class="form-control" />
@@ -136,6 +136,8 @@
           </div>
         </div>
       </section>
+      	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" 
+	integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 </body>
 </html>
 

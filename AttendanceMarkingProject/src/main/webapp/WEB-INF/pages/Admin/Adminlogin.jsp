@@ -7,10 +7,12 @@
 <title>Admin Login</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
      rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-	<script src="https://kit.fontawesome.com/9ca98498b5.js" crossorigin="anonymous"></script>
-	<script type="text/javascript">\
-		
-	</script>
+	
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    	<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,700" rel="stylesheet">
+    
+    	<script src="https://kit.fontawesome.com/9ca98498b5.js" crossorigin="anonymous"></script>
 <style>
 #navigation{
      color: black;
@@ -41,7 +43,7 @@
        </div>
    </nav>
 	 <section class="vh-100">
-        <div class="container h-100">
+        <div class="container h-100" style="padding-top: 70px">
           <div class="row d-flex justify-content-center align-items-center h-100" > 
             <div class="col-lg-12 col-xl-11" >
             
@@ -57,7 +59,7 @@
       					
       					<!-- Admin Id -->
                         <div class="d-flex flex-row align-items-center mb-4">
-                        <i></i>
+                        	<i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">Admin Id</label>
                             <input type="number" id="adminid" name="adminid" class="form-control" placeholder="Admin Id" required/>
@@ -66,6 +68,7 @@
                             
                          <!-- Password -->
                         <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">Password</label>
                             <input type="password" id="password" name="password" class="form-control" placeholder="Password" required/>
@@ -103,5 +106,7 @@
           </div>
         </div>
       </section>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" 
+          integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script> 
 </body>
 </html>
