@@ -61,6 +61,11 @@ public class UserController {
 		return "ShowAllSessions";
 	}
 	
+	@GetMapping("userPasswordRecovery")
+	public String passwordReset() {
+		return "./User/PasswordReset";
+	}
+	
   @PostMapping("showsessiondetails")
 	public String showSessionDetails(@RequestParam int sid,Model m)
 	{
@@ -110,10 +115,10 @@ public class UserController {
 		
 	@PostMapping("userregprocess")
 	public String userRegProcess(@RequestParam String firstname,@RequestParam String lastname,
-			@RequestParam String email,@RequestParam String password,@RequestParam String validation1,@RequestParam String validation2,
+			@RequestParam String email,@RequestParam String number,@RequestParam String password,@RequestParam String validation1,@RequestParam String validation2,
 			@RequestParam String validation3,Model m)
 	{
-		User usr = new User(firstname,lastname,email,password,validation1,validation2,validation3);
+		User usr = new User(firstname,lastname,email,number,password,validation1,validation2,validation3);
 		String res=us.registeruser(usr);
 		m.addAttribute("msg", res);
 		return "./User/Userreg";

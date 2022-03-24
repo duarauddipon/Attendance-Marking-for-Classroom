@@ -5,7 +5,6 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
-import com.AttendanceMarkingProject.model.Session;
 import com.AttendanceMarkingProject.model.User;
 import com.AttendanceMarkingProject.service.UserService;
 
@@ -17,10 +16,11 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public String registeruser(User user) {
-		String str="insert into userreg(firstname,lastname,empid,email,password) values(?,?,?,?,?);";
+		String str="insert into userreg(firstname,lastname,empid,email,number,password,vaildation1,validation2,validation3) values(?,?,?,?,?,?,?,?,?);";
 		try
 		{
-			int res=jt.update(str, new Object[] {user.getFirstName(),user.getLastName(),user.getEmpId(),user.getEmail(),user.getPassword()});
+			int res=jt.update(str, new Object[] {user.getFirstName(),user.getLastName(),user.getEmpId(),user.getEmail(),user.getNumber(),
+					user.getPassword(),user.getValidation1(),user.getValidation2(),user.getValidation3()});
 			if(res>=1)
 			{
 				return "User added successfully";
@@ -53,6 +53,7 @@ public class UserServiceImpl implements UserService {
 		return null;
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public String enrollUser(int empId, int sessionId) {
 		
@@ -88,5 +89,22 @@ public class UserServiceImpl implements UserService {
 			System.out.println(ex.getMessage());
 		}
 		return "Error enrolling";
+	}
+
+	@Override
+	public String passwordrecovery(String validation1, String validation2, String validation3, String number,
+			String email, String password) {
+		String str = "update userreg set password = ? where validation1= ? and validation2 =? and validation3 = ? and email = ? and number = ?";
+		try {
+			int pass = jt.update(str,new Object[] {password,validation1,validation2,validation3,email,number});
+			if(pass>=1) {
+				return "Password Reseted Successfully";
+			}else {
+				return "Error Reseting. Please try again";
+			}
+		}catch(Exception ex) {
+			ex.getMessage();
+		}
+	return "Error Reseting. Please try again";
 	}
 }

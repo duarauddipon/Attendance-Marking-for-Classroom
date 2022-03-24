@@ -22,7 +22,7 @@
             border-bottom-right-radius: 25px;
         }
         body{
-			background-image: url("https://img.freepik.com/free-vector/concept-new-team-member_132971-312.jpg?size=626&ext=jpg");
+			background-image: url("");
 			background-repeat: no-repeat;        
 			padding: 200px;
         }
@@ -43,7 +43,7 @@
        </div>
    </nav>
    <section class="vh=100">
-   <div class="container" style="color: black;padding-top: 200px;font-weight: bold">
+   <div class="container" style="color: black;padding-top: 200px;font-weight: bold;text-align: center;font-size: 20px">
    		Welcome Home Admin!
    </div>
    </section>
