@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.AttendanceMarkingProject.model.Answers;
 import com.AttendanceMarkingProject.model.Questions;
 import com.AttendanceMarkingProject.model.Session;
+import com.AttendanceMarkingProject.model.Skill;
+import com.AttendanceMarkingProject.model.Trainer;
 import com.AttendanceMarkingProject.service.FeedService;
 import com.AttendanceMarkingProject.service.SessionService;
 import com.AttendanceMarkingProject.service.SkillService;
@@ -70,4 +72,42 @@ public class FeedBackController {
 		return "Feedback";
 	}
 	
+	@GetMapping("feedbackform")
+	public String showAns(Model m) {
+		List<Answers> lklist = sf.showAnswer();
+		m.addAttribute("rlist", lklist);
+		return "ShowFeedback";
+	}
+	
+	@GetMapping("updateques")
+	public String updateQues(Model m) {
+		List<Session> hglist = sf.showSessionDet();
+		m.addAttribute("plist", hglist);
+		return "UpdateQuestion";
+	}
+	
+	@PostMapping("updq")
+	public String question(@RequestParam String queSa,
+			@RequestParam String queSb,
+			@RequestParam String queSc,
+			@RequestParam String queSd,
+			@RequestParam String session,
+			
+			Model m)
+	{
+	Questions q = new Questions();
+	q.setQueSa(queSa);
+	q.setQueSb(queSb);
+	q.setQueSc(queSc);
+	q.setQueSd(queSd);
+	q.setSessionId(Integer.parseInt(session));
+	
+	String res = sf.updateQuestion(q);
+	m.addAttribute("msg",res);
+	
+	
+	return "UpdateTrainer";
+
+}
+
 }

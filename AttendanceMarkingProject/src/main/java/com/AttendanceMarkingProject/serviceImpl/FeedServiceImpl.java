@@ -68,6 +68,34 @@ public class FeedServiceImpl implements FeedService {
 		return qlist;
 		
 	}
+
+	@Override
+	public List<Answers> showAnswer() {
+		// TODO Auto-generated method stub
+		List<Answers> alist = new ArrayList<>();
+		String str = "select * from feedans";
+		alist = jt.query(str, new BeanPropertyRowMapper(Answers.class));
+		return alist;
+	}
+
+	@Override
+	public String updateQuestion(Questions quest) {
+		// TODO Auto-generated method stub
+		String sql = "update feedques set quesb=?,quesb=?,=?,quesc=?,quesd=?  where sessionid=? ;";
+		try {
+			int r = jt.update(sql, new Object[] {quest.getQueSa(),quest.getQueSb(),quest.getQueSc(),quest.getQueSd(),quest.getSessionId()});
+			if(r>=1)
+				return "Questions Updated";
+			else
+				return "Error updating!";
+		}
+			catch(Exception ex)
+			{
+				System.out.println(ex.getMessage());
+			}
+			return "Error updating!";
+		
+	}
 	
 	
 
