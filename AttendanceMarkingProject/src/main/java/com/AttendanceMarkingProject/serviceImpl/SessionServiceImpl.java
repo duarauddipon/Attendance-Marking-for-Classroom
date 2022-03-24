@@ -69,8 +69,6 @@ String str = "select * from sessiondet";
 		return nlist;
 		
 		
-		
-		
 	}
 
 	@Override
