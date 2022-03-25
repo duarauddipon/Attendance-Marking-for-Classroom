@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +10,15 @@
      rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function()
+			{
+		$("#npanel").hide();
+				$("#nbtn").click(function(){
+					$("#npanel").fadeIn(1000);
+				});
+			});
+</script>
 
 <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,700" rel="stylesheet">
 <!-- Font Script -->
@@ -30,6 +40,12 @@
     	width: 100%;
     	max-width: 400px;
     	height: auto;
+    }
+    #npanel
+    {
+    	border: 2px solid #b3d9ff;
+  		padding: 8px;
+  		border-radius: 50px 20px;
     }
 </style>
 
@@ -60,17 +76,30 @@
                 <div class="card-body p-md-5" >
                   <div class="row justify-content-center">
                     <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                      <form class="mx-1 mx-md-4" name="form1" method="post" action="adminloginprocess">
-      					<!-- Inbox  -->
                         <div class="d-flex flex-row align-items-center mb-4">
                         	<i class="fas fa-mail fa-lg me-3 fa-fw"></i>
-                          	<button type="button" class="btn btn-primary position-relative">Inbox
-							<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">1
+                          	<button type="button" class="btn btn-primary btn-lg position-relative" id="nbtn">Notifications
+							<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">${notif }
 							<span class="visually-hidden">unread messages</span>
 							</span>
 							</button>
-                        </div>             
-                      </form>
+                        </div>  
+                        <br><br>
+                        <div id="npanel">
+											<table class="table table-dark">
+												<tbody>
+												<c:forEach var="usr" items="${notifs }">
+													<tr>
+														<td>${usr }</td>
+													</tr>
+												</c:forEach>
+												</tbody>
+											</table>
+						<br>
+						<div style="margin-left:auto;margin-right:6px">
+						<a class="btn btn-outline-info btm-sm" href="mysessions" role="button">My Sessions</a>
+						</div>
+						</div>    
                     </div>
                     <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
                       <img src="./images/admin.png" style="border-radius: 25px;" class="img-fluid" alt="Sample image">
