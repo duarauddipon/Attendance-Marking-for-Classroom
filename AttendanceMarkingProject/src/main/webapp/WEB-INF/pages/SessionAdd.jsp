@@ -8,10 +8,15 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Session!!</title>
-<link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
      rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,700" rel="stylesheet">
+<!-- Font Script -->
+<script src="https://kit.fontawesome.com/9ca98498b5.js" crossorigin="anonymous"></script>
+
      <style>
          body{
              background-color: #ecf0f3;
@@ -19,8 +24,8 @@
              font-family: Arial, Helvetica, sans-serif;
          }
          #navigation{
-        color: black;
-        text-align: center;
+	        color: black;
+	        text-align: center;
 	        border-radius: 25px;
 	    }
 	    .navbar{
@@ -42,14 +47,14 @@
         <img src="https://i.pinimg.com/564x/61/6f/90/616f900fb165b3a61464d56a87f4d824.jpg" height="100" width="200" class="img-fluid" style="border-radius: 25px;"></a>
         <div class="collapse navbar-collapse" id="navigation-bar">
             <ul class="navbar-nav" style="margin-left: auto;">
-            	<li class="nav-item"><a class="nav-link" href="adminhome" id="navigation">Admin Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="trainerreg" id="navigation">Add Trainer</a></li>
-                <li class="nav-item"><a class="nav-link" href="sessionadd" id="navigation">Add Session</a></li>
-                <li class="nav-item"><a class="nav-link" href="skilladd" id="navigation">Add Skill</a></li>
-                <li class="nav-item"><a class="nav-link" href="updatetrainer" id="navigation">Update Trainer</a></li>
-                <li class="nav-item"><a class="nav-link" href="deletetrainer" id="navigation">Delete Trainer</a></li>
-                <li class="nav-item"><a class="nav-link" href="login" id="navigation" onclick="window.location.reload()">LogOut</a></li>
-
+            	<li class="nav-item" ><a class="nav-link" href="adminhome" id="navigation"><i class="fa-solid fa-house-user"></i>&nbsp;&nbsp;Admin Home</a></li>
+	          	<li class="nav-item" ><a class="nav-link" href="trainerreg" id="navigation"><i class="fa-solid fa-user-plus"></i>&nbsp;&nbsp;Add Trainer</a></li>
+	            <li class="nav-item" ><a class="nav-link" href="sessionadd" id="navigation"><i class="fa-solid fa-file-circle-plus"></i>&nbsp;&nbsp;Add Session</a></li>
+	            <li class="nav-item" ><a class="nav-link" href="updateses" id="navigation"><i class="fa-solid fa-pen-to-square"></i>&nbsp;&nbsp;Update Session</a></li>
+	            <li class="nav-item" ><a class="nav-link" href="skilladd" id="navigation"><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Add Skill</a></li>
+	            <li class="nav-item" ><a class="nav-link" href="updatetrainer" id="navigation"><i class="fa-solid fa-pen-to-square"></i>&nbsp;&nbsp;Update Trainer</a></li>
+	            <li class="nav-item" ><a class="nav-link" href="deletetrainer" id="navigation"><i class="fa-solid fa-trash"></i>&nbsp;&nbsp;Delete Trainer</a></li>
+	            <li class="nav-item" ><a class="nav-link" href="login" id="navigation" onclick="window.location.reload()"><i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;&nbsp;LogOut</a></li>
             </ul>
         </div>
     </nav>
@@ -73,7 +78,6 @@
       					
       					<!-- Session Id -->
                         <div class="d-flex flex-row align-items-center mb-4">
-                          <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">Session ID</label>
                             <input type="text" id="form3Example4c" id="sessionId" name="sessionId" placeholder="Session ID" class="form-control" />
@@ -82,7 +86,6 @@
       
       					<!-- Add Description -->
                         <div class="d-flex flex-row align-items-center mb-4">
-                          <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">Add Description</label>
                             <input type="text" id="form3Example4c" id="sessionDes" name="sessionDes" placeholder="Description" class="form-control" />
@@ -90,7 +93,6 @@
                         </div>
       
                         <div class="d-flex flex-row align-items-center mb-4">
-                          <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4cd">Skill Set</label>
                          <!-- <input type="text" id="form3Example4cd" id="skillSet" name="skillSet" placeholder="SkillSet" class="form-control" />
@@ -106,15 +108,13 @@
                         </div>
 
                         <div class="d-flex flex-row align-items-center mb-4">
-                        	<!-- Session Date -->
-                            <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                             <div class="form-outline flex-fill mb-0">
                               <label class="form-label" for="form3Example4cd">Session Date</label>
                               <input type="date" id="form3Example4cd" id="sessionDate" name="sessionDate" placeholder="Session Date" class="form-control" />
                             </div>
                             
                             <!-- Session Time -->
-                            <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                            &nbsp; &nbsp;
                             <div class="form-outline flex-fill mb-0">
                               <label class="form-label" for="form3Example4cd">Session Time</label>
                               <input type="time" id="form3Example4cd" id="sessionTime" name="sessionTime" placeholder="Session Time"  class="form-control" />
@@ -123,7 +123,6 @@
 
 						<!-- Avail Slots -->
                           <div class="d-flex flex-row align-items-center mb-4">
-                            <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                             <div class="form-outline flex-fill mb-0">
                               <label class="form-label" for="form3Example4cd">Available Slots</label>
                               <input type="text" id="form3Example4cd" id="availSlots" name="availSlots" placeholder="Slots" class="form-control" />
@@ -151,5 +150,7 @@
           </div>
         </div>
       </section>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" 
+	integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 </body>
 </html>
