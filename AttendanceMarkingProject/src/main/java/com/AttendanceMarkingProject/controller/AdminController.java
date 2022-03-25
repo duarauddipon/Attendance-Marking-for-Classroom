@@ -1,6 +1,7 @@
 package com.AttendanceMarkingProject.controller;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,7 +35,11 @@ public class AdminController {
 	}
 	
 	@GetMapping("adminhome")
-	public String adminhome(){
+	public String adminhome(Model m){
+		List<Enrollment> l1= as.showEnrollment();
+		List<String> l2 = l1.stream().map(obj->obj.getApproval()).collect(Collectors.toList());
+		int c=(int) l2.stream().filter(str->str.equals("Pending")).count();
+		m.addAttribute("notif",Integer.toString(c));
 		return "./Admin/AdminHome";
 	}
 	
@@ -83,6 +88,14 @@ public class AdminController {
 			}
 			else
 			{
+				List<Enrollment> l1= as.showEnrollment();
+				List<String> l2 = l1.stream().map(obj->obj.getApproval()).collect(Collectors.toList());
+				int c=(int) l2.stream().filter(str->str.equals("Pending")).count();
+				if(c!=0)
+				{
+					m.addAttribute("notif",Integer.toString(c));
+					return "./Admin/AdminHome";
+				}
 				return "./Admin/AdminHome";
 			}
 		}
