@@ -19,6 +19,7 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	JdbcTemplate jt;
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public String registeruser(User user) {
 		String str="insert into userreg(firstname,lastname,empid,email,number,password,validation1,validation2,validation3) values(?,?,?,?,?,?,?,?,?);";

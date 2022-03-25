@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.AttendanceMarkingProject.model.Admin;
 import com.AttendanceMarkingProject.model.Enrollment;
-import com.AttendanceMarkingProject.model.User;
 import com.AttendanceMarkingProject.serviceImpl.AdminServiceImpl;
 import com.AttendanceMarkingProject.serviceImpl.UserServiceImpl;
 

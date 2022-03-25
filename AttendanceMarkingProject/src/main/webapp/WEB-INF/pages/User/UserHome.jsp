@@ -86,18 +86,18 @@
                         </div>  
                         <br><br>
                         <div id="npanel">
-											<table class="table table-dark">
-												<tbody>
-												<c:forEach var="usr" items="${notifs }">
-													<tr>
-														<td>${usr }</td>
-													</tr>
-												</c:forEach>
-												</tbody>
-											</table>
+                        	<table class="table table-dark" style="border-top-left-radius: 25px;">
+								<tbody>
+								<c:forEach var="usr" items="${notifs }">
+									<tr>
+										<td style="border-radius: 25px;text-align: center;border-color: white;padding-left: 20px;">${usr }<br></td>
+									</tr>
+								</c:forEach>
+								</tbody>
+							</table>
 						<br>
 						<div style="margin-left:auto;margin-right:6px">
-						<a class="btn btn-outline-info btm-sm" href="mysessions" role="button">My Sessions</a>
+						<a class="btn btn-outline-info btm-sm" href="mysessions" style="text-decoration: none" role="button">My Sessions</a>
 						</div>
 						</div>    
                     </div>
