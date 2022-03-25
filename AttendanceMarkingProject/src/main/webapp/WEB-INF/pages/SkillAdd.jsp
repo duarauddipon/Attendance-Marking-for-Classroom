@@ -48,6 +48,7 @@
 	           <li class="nav-item" ><a class="nav-link" href="adminhome" id="navigation"><i class="fa-solid fa-house-user"></i>&nbsp;&nbsp;Admin Home</a></li>
 	         	<li class="nav-item" ><a class="nav-link" href="trainerreg" id="navigation"><i class="fa-solid fa-user-plus"></i>&nbsp;&nbsp;Add Trainer</a></li>
 	           <li class="nav-item" ><a class="nav-link" href="sessionadd" id="navigation"><i class="fa-solid fa-file-circle-plus"></i>&nbsp;&nbsp;Add Session</a></li>
+	           <li class="nav-item" ><a class="nav-link" href="updateses" id="navigation"><i class="fa-solid fa-pen-to-square"></i>&nbsp;&nbsp;Update Session</a></li>
 	           <li class="nav-item" ><a class="nav-link" href="skilladd" id="navigation"><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Add Skill</a></li>
 	           <li class="nav-item" ><a class="nav-link" href="updatetrainer" id="navigation"><i class="fa-solid fa-pen-to-square"></i>&nbsp;&nbsp;Update Trainer</a></li>
 	           <li class="nav-item" ><a class="nav-link" href="deletetrainer" id="navigation"><i class="fa-solid fa-trash"></i>&nbsp;&nbsp;Delete Trainer</a></li>

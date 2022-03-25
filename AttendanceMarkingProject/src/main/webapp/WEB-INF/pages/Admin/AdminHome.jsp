@@ -70,10 +70,10 @@
                         <div class="d-flex flex-row align-items-center mb-4">
                         	<i class="fas fa-mail fa-lg me-3 fa-fw"></i>
                           	<a role="button" href="adminnotification" class="btn btn-primary position-relative">
-							Notifications 
-							<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">${notif }<span class="visually-hidden">unread messages</span>
-							</span>
-							</a>
+							                Notifications 
+							                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">${notif }<span class="visually-hidden">unread messages</span>
+							                </span>
+							              </a>	
                         </div>             
                       </form>
                     </div>
