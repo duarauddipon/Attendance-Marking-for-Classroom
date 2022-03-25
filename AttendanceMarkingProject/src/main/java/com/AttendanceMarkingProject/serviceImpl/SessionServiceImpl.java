@@ -60,7 +60,11 @@ public class SessionServiceImpl implements SessionService {
 		String str = "select * from sessiondet";
 		
 		nlist=jt.query(str, new BeanPropertyRowMapper(Session.class));
-		return nlist;	
+
+		return nlist;
+		
+
+
 	}
 
 	@Override

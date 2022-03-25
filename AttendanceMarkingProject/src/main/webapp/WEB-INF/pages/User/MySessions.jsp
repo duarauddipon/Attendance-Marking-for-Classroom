@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Notifications</title>
+<title>My Sessions</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
      rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
      <script src="https://kit.fontawesome.com/9ca98498b5.js" crossorigin="anonymous"></script>
@@ -33,13 +33,6 @@
         <img src="https://i.pinimg.com/564x/61/6f/90/616f900fb165b3a61464d56a87f4d824.jpg" height="100" width="200" class="img-fluid" style="border-radius: 25px;"></a>
         <div class="collapse navbar-collapse" id="navigation-bar">
            <ul class="navbar-nav" style="margin-left: auto;">
-            <li class="nav-item" ><a class="nav-link" href="adminhome" id="navigation"><i class="fa-regular fa-house-blank"></i>&nbsp;&nbsp;Admin Home</a></li>
-          	<li class="nav-item" ><a class="nav-link" href="trainerreg" id="navigation"><i class="fa-solid fa-user-plus"></i>&nbsp;&nbsp;Add Trainer</a></li>
-            <li class="nav-item" ><a class="nav-link" href="sessionadd" id="navigation"><i class="fa-solid fa-file-circle-plus"></i>&nbsp;&nbsp;Add Session</a></li>
-            <li class="nav-item" ><a class="nav-link" href="updateses" id="navigation"><i class="fa-solid fa-pen-to-square"></i>&nbsp;&nbsp;Update Session</a></li>
-            <li class="nav-item" ><a class="nav-link" href="skilladd" id="navigation"><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Add Skill</a></li>
-            <li class="nav-item" ><a class="nav-link" href="updatetrainer" id="navigation"><i class="fa-solid fa-pen-to-square"></i>&nbsp;&nbsp;Update Trainer</a></li>
-            <li class="nav-item" ><a class="nav-link" href="deletetrainer" id="navigation"><i class="fa-solid fa-trash"></i>&nbsp;&nbsp;Delete Trainer</a></li>
             <li class="nav-item" ><a class="nav-link" href="login" id="navigation" onclick="window.location.reload()" style="padding-left: 30px"><i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;&nbsp;LogOut</a></li> 
            </ul>
         </div>
@@ -52,40 +45,34 @@
               <div class="card text-black" style="border-radius: 25px;box-shadow: inset 2px 2px 4px #d1d9e6,
               inset -2px -2px 4px #f9f9f9;">
               
-              <div class="card-header h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" style=" border-top-left-radius: 25px;border-top-right-radius: 25px;">Enrollments</div>
+              <div class="card-header h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" style=" border-top-left-radius: 25px;border-top-right-radius: 25px;">Sessions</div>
               
                 <div class="card-body p-md-7" >
                 	<div class="table-responsive">
           <table class="table table-striped" style="width:1150px">
             <tbody><tr class="table-dark">
-              <th>User Name</th>
               <th>Session Name</th>
-              <th>Status</th>
+              <th>Attendance</th>
               <th>Action</th>
             </tr>
             <c:forEach var="usr" items="${elist }">
-            <form name="frm" method="post" action="doenroll">
+            <form name="frm" method="post" action="joinsession">
             <tr>
-              	<td style="height:55px" class="align-middle">${usr.firstName }&nbsp;${usr.lastName }</td>
               	
               	<td style="height:55px" class="align-middle">${usr.sessionDes}</td>
               
 	             <td class="align-middle" style="height:55px">
-	                 <div class="appr">${usr.approval }</div>
+	                 <div class="appr">${usr.attendance }</div>
 	             </td>
               	<td style="height:55px">
-              	<c:set var="appr" scope="session" value="${usr.approval }"/>  
-				<c:if test="${appr=='Pending'}">  
-  					 <input type="submit" class="btn btn-primary btn-action" name="approve" value="Approve"/>&nbsp;&nbsp;
-                	 <input type="submit" class="btn btn-danger btn-action" name="reject"  value="Reject"/>
-				</c:if>
-              </td> 
+  					 <input type="submit" class="btn btn-danger btn-action" name="join" value="Join"/>
+                </td> 
             </tr>
-            <input type="hidden" name="eid" value="${usr.empId }"/>
             <input type="hidden" name="sid" value="${usr.sessionId }"/>
             </form>
             </c:forEach>
           </tbody></table>
+          <div style="font-family: sans-serif;color: red;font-style:italic">${msg }</div>
         </div>
                 </div>
               </div>

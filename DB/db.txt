@@ -74,3 +74,5 @@ CREATE TABLE `gencproject`.`enrolldet` (
     REFERENCES `gencproject`.`sessiondet` (`sessionid`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
+
+

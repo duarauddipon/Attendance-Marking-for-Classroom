@@ -1,6 +1,7 @@
 package com.AttendanceMarkingProject.controller;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,12 +35,17 @@ public class AdminController {
 	}
 	
 	@GetMapping("adminhome")
-	public String adminhome(){
+	public String adminhome(Model m){
+		List<Enrollment> l1= as.showEnrollment();
+		List<String> l2 = l1.stream().map(obj->obj.getApproval()).collect(Collectors.toList());
+		int c=(int) l2.stream().filter(str->str.equals("Pending")).count();
+		m.addAttribute("notif",Integer.toString(c));
 		return "./Admin/AdminHome";
 	}
 	
 	@GetMapping("adminlogin")
 	public String adminLogin() {
+		setModelAdmin(null);
 		return "./Admin/Adminlogin";
 	}
 	
@@ -82,6 +88,14 @@ public class AdminController {
 			}
 			else
 			{
+				List<Enrollment> l1= as.showEnrollment();
+				List<String> l2 = l1.stream().map(obj->obj.getApproval()).collect(Collectors.toList());
+				int c=(int) l2.stream().filter(str->str.equals("Pending")).count();
+				if(c!=0)
+				{
+					m.addAttribute("notif",Integer.toString(c));
+					return "./Admin/AdminHome";
+				}
 				return "./Admin/AdminHome";
 			}
 		}
@@ -109,7 +123,7 @@ public class AdminController {
 		m.addAttribute("elist", reslist);
 		return "./Admin/AdminNotification";
 	}
-
+	
 	@RequestMapping(value="doenroll",params="approve",method=RequestMethod.POST)
 	public String doApprove(@RequestParam(name="eid") int empId,@RequestParam(name="sid") int sId,Model m)
 	{
