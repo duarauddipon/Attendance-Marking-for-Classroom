@@ -74,4 +74,40 @@ public class SessionController {
 		return "SearchPage";
 	}
 	
+	@GetMapping("updateses")
+	public String updateSession(Model m) {
+		List<Skill> slist = ss.showSkill();
+		m.addAttribute("salist",slist);
+		return "SessionUpdate";
+	}
+	
+	@PostMapping("updss")
+	public String updateSession(@RequestParam String sessionId,
+			
+			@RequestParam String sessionDes,
+			@RequestParam String skillSet,
+			@RequestParam String sessionDate,
+			@RequestParam String sessionTime,
+			@RequestParam String availSlots,
+			Model m)
+	{
+		
+		Session az = new Session();
+		az.setSessionId(Integer.parseInt(sessionId));
+		az.setSessionDes(sessionDes);
+		az.setSkillSet(skillSet);
+		
+		az.setSessionDate(sessionDate);
+		az.setSessionTime(sessionTime);
+		az.setAvailSlots(Integer.parseInt(availSlots));
+		
+		
+		String res = sr.updateSession(az);
+		if(res.equals("Success"))
+			m.addAttribute("msg", "Session not Updated...");
+		else
+			m.addAttribute("msg", "Session Updated...");
+		return "SessionUpdate";		
+	}
+	
 }

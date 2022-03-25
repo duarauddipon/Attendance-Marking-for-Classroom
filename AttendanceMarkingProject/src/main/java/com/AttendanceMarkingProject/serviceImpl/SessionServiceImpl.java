@@ -20,7 +20,6 @@ public class SessionServiceImpl implements SessionService {
 	
 	@Override
 	public String addSession(Session session) {
-		// TODO Auto-generated method stub
 		String sql = "Insert into sessiondet(sessionid,sessiondes,skillset,sessiondate,sessiontime,availslots) values(?,?,?,?,?,?);";
 		try
 		{
@@ -38,13 +37,9 @@ public class SessionServiceImpl implements SessionService {
 	}
 
 	@Override
-	public Session searchSession(String sessionId) {
-		// TODO Auto-generated method stub
+	public Session searchSession(int sessionId) {
 		
 		String str = "Select * from sessiondet where sessionid=?;";
-		
-		
-		
 		try {
 			Session session=(Session) jt.queryForObject(str, new Object[] {sessionId}, new BeanPropertyRowMapper(Session.class));
 			return session;
@@ -61,16 +56,49 @@ public class SessionServiceImpl implements SessionService {
 	 */
 	@Override
 	public List<Session> showSession() {
-		// TODO Auto-generated method stub
 		List<Session> nlist =  new ArrayList<>();
-String str = "select * from sessiondet";
+		String str = "select * from sessiondet";
 		
 		nlist=jt.query(str, new BeanPropertyRowMapper(Session.class));
+
 		return nlist;
 		
+
+
+	}
+
+	@Override
+	public String updateSession(Session session) {
+
+		String sql = "update sessiondet set sessiondes=?,skillset=?,sessiondate=?,sessiontime=?,availslots=?  where sessionid=? ;";
+		try {
+			int r = jt.update(sql, new Object[] {session.getSessionDes(),session.getSkillSet(),session.getSessionDate(),session.getSessionTime(),session.getAvailSlots(),session.getSessionId()});
+			if(r>=1)
+				return "Session Updated";
+			else
+				return "Error....";
+			}
+		catch(Exception ex)
+			{
+				System.out.println(ex.getMessage());
+			}
+		return "Error..";
 		
-		
-		
+	}
+
+	@Override
+	public List<Session> searchBySKillType(String skillType) {
+		String sql = "Select * from sessiondet where skillset=?";
+		List<Session> ss= new ArrayList<>();
+		try
+		{
+			ss = jt.query(sql, new Object[] {skillType}, new BeanPropertyRowMapper(Session.class));
+		}
+		catch(Exception ex)
+		{
+			ss = null;
+		}
+		return ss;
 	}
 
 }
