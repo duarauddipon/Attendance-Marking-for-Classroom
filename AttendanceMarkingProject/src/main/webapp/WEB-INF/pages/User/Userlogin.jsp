@@ -81,7 +81,7 @@
                            <input type="submit"  value="Login" class="btn btn-primary" />
                         </div>
                          <div class="d-flex justify-co ntent-center mx-4 mb-3 mb-lg-4">
-                           <p>Forgot Password ? <a href="#" style="text-decoration:none;cursor: pointer;">Reset here!</a></p>
+                           <p>Forgot Password ? <a href="userresetpassword" style="text-decoration:none;cursor: pointer;">Reset here!</a></p>
                         </div>
        						<h3 style="color:black;font-size: 20px">${msg}</h3>
                       </form>

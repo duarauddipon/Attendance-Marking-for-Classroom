@@ -101,7 +101,8 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public String passwordrecovery(String validation1, String validation2, String validation3, String number,
 			String email, String password) {
-		String str = "update userreg set password = ? where validation1= ? and validation2 =? and validation3 = ? and email = ? and number = ?";
+		
+		String str = "update userreg set password = ? where validation1= ? and validation2 =? and validation3 = ? and email = ? and number = ?;";
 		try {
 			int pass = jt.update(str,new Object[] {password,validation1,validation2,validation3,email,number});
 			if(pass>=1) {
@@ -121,7 +122,7 @@ public class UserServiceImpl implements UserService {
 				+"join enrolldet as e on u.empid=e.empid join sessiondet as s on s.sessionid=e.sessionid where s.sessiondate>? and e.empid=? and e.approval=?;";
 		try
 		{
-			List<Enrollment> reslist = jt.query(str, new Object[] {LocalDate.now(),empId,"Approved"},new BeanPropertyRowMapper(Enrollment.class));
+			List<Enrollment> reslist = jt.query(str, new Object[] {LocalDate.now().minusDays(1),empId,"Approved"},new BeanPropertyRowMapper(Enrollment.class));
 			return reslist;
 		}
 		catch(Exception ex)
@@ -145,10 +146,10 @@ public class UserServiceImpl implements UserService {
 		{
 			String str="select e.empid,u.firstname,u.lastname,e.sessionid,s.sessiondes,e.attendance,e.approval from userreg as u "
 					+"join enrolldet as e on u.empid=e.empid join sessiondet as s on s.sessionid=e.sessionid where s.sessiondate>? and s.sessiondate<? and e.empid=? and e.approval=?;";
-			List<Enrollment> resList1 = jt.query(str, new Object[] {LocalDate.now(),d1,empId,"Approved"},new BeanPropertyRowMapper(Enrollment.class));
+			List<Enrollment> resList1 = jt.query(str, new Object[] {LocalDate.now().minusDays(1),d1,empId,"Approved"},new BeanPropertyRowMapper(Enrollment.class));
 			if(!resList1.isEmpty())
 			{
-				String s2="Reminder : You have 2 days left to "+resList.size()+" sessions";
+				String s2="Reminder : You have 2 days left to "+resList1.size()+" sessions";
 				notifs.add(s2);
 			}
 			return notifs;

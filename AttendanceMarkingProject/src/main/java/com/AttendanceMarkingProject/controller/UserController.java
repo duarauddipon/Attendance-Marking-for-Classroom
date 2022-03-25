@@ -52,6 +52,22 @@ public class UserController {
 		return "./User/Userreg";
 	}
 	
+	@GetMapping("userhome")
+	public String userHomepage(Model m)
+	{
+		List<String> notifs = us.showNotifications(modelUser.getEmpId());
+		if(notifs.isEmpty())
+		{
+			notifs.add("No new notifications");
+			m.addAttribute("notifs", notifs);
+			m.addAttribute("notif", "0");
+			return "./User/UserHome";
+		}
+		m.addAttribute("notifs", notifs);
+		m.addAttribute("notif",Integer.toString(notifs.size()));
+		return "./User/UserHome";
+	}
+	
 	@GetMapping("showAllSessions")
 	public String showallsessions(Model m) {
 		
@@ -64,8 +80,17 @@ public class UserController {
 		return "ShowAllSessions";
 	}
 	
-	@GetMapping("userPasswordRecovery")
+	@GetMapping("userresetpassword")
 	public String passwordReset() {
+		return "./User/PasswordReset";
+	}
+	
+	@PostMapping("userresetpassword")
+	public String DoPasswordReset(@RequestParam String validation1,@RequestParam String validation2,
+			@RequestParam String validation3,@RequestParam String email,@RequestParam String password,@RequestParam String number,Model m)
+	{
+		String res = us.passwordrecovery(validation1, validation2, validation3, number, email, password);
+		m.addAttribute("msg", res);
 		return "./User/PasswordReset";
 	}
 	
@@ -135,7 +160,15 @@ public class UserController {
 		if(modelUser!=null)
 		{
 			List<String> notifs = us.showNotifications(modelUser.getEmpId());
-			m.addAttribute("notiflist", notifs);
+			if(notifs.isEmpty())
+			{
+				notifs.add("No new notifications");
+				m.addAttribute("notifs", notifs);
+				m.addAttribute("notif", "0");
+				return "./User/UserHome";
+			}
+			m.addAttribute("notifs", notifs);
+			m.addAttribute("notif",Integer.toString(notifs.size()));
 			return "./User/UserHome";
 		}
 		m.addAttribute("msg","Wrong id/password");

@@ -64,6 +64,8 @@ public class SessionController {
 		String res = sr.addSession(sn);
 		m.addAttribute("msg",res);
 		
+		List<Skill> slist = ss.showSkill();
+		m.addAttribute("salist",slist);
 		return "SessionAdd";
 	}
 	

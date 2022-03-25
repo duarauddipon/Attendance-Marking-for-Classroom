@@ -49,40 +49,40 @@
                   <div class="row justify-content-center">
                     <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
     
-                      <form class="mx-1 mx-md-4" name="form1" method="post" action="resetsPassword">
+                      <form class="mx-1 mx-md-4" name="form1" method="post" action="userresetpassword">
       					
       					<!-- Question and Answer -->
                         <div class="d-flex flex-row align-items-center mb-4">
                           
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">What's your Favourite Food?</label>
-                            <input type="text" id="form3Example4c" id="validation1" name="validation1" class="form-control" placeholder="answer" required/>
+                            <input type="text" id="form3Example4c" id="validation1" name="validation1" class="form-control" placeholder="answer" autocomplete="off" required/>
                           </div>
                         </div>     
                         <div class="d-flex flex-row align-items-center mb-4">
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">Whta's your Favourite Place?</label>
-                            <input type="text" id="form3Example4c" id="validation2" name="validation2" class="form-control" placeholder="answer" required/>
+                            <input type="text" id="form3Example4c" id="validation2" name="validation2" class="form-control" placeholder="answer" autocomplete="off" required/>
                           </div>
                         </div>
                         <div class="d-flex flex-row align-items-center mb-4">
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">Who's your Favourite Person?</label>
-                            <input type="text" id="form3Example4c" id="validation3" name="validation3" class="form-control" placeholder="answer" required/>
+                            <input type="text" id="form3Example4c" id="validation3" name="validation3" class="form-control" placeholder="answer" autocomplete="off" required/>
                           </div>
                         </div>           
                         
                         <div class="d-flex flex-row align-items-center mb-4">             
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">Registered Email Id?</label>
-                            <input type="text" id="form3Example4c" id="email" name="email" class="form-control" placeholder="answer" required/>
+                            <input type="text" id="form3Example4c" id="email" name="email" class="form-control" placeholder="answer" autocomplete="off" required/>
                           </div>
                         </div>   
                         
                         <div class="d-flex flex-row align-items-center mb-4">                    
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">Registered Contact Number?</label>
-                            <input type="text" id="form3Example4c" id="number" name="number" class="form-control" placeholder="answer" required/>
+                            <input type="text" id="form3Example4c" id="number" name="number" class="form-control" placeholder="answer" autocomplete="off" required/>
                           </div>
                         </div> 
                         
@@ -91,7 +91,7 @@
                         <div class="d-flex flex-row align-items-center mb-4">
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">New Password</label>
-                            <input type="password" id="form3Example4c" id="password" name="password" class="form-control" placeholder="Password" required/>
+                            <input type="password" id="form3Example4c" id="password" name="password" class="form-control" placeholder="Password" autocomplete="off" required/>
                           </div>
                         </div>      
                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">

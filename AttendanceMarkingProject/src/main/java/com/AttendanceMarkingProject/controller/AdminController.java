@@ -39,7 +39,7 @@ public class AdminController {
 		List<Enrollment> l1= as.showEnrollment();
 		List<String> l2 = l1.stream().map(obj->obj.getApproval()).collect(Collectors.toList());
 		int c=(int) l2.stream().filter(str->str.equals("Pending")).count();
-		m.addAttribute("notif",Integer.toString(c));
+		m.addAttribute("notif",c);
 		return "./Admin/AdminHome";
 	}
 	
@@ -54,12 +54,12 @@ public class AdminController {
 		return "./Admin/AdminReg";
 	}
 	
-	@GetMapping("resetpassword")
+	@GetMapping("adminresetpassword")
 	public String resetPassword() {
 		return "./Admin/PasswordReset";
 	}
 	
-	@PostMapping("resetsPassword")
+	@PostMapping("adminresetpassword")
 	public String reset(@RequestParam String validation1,@RequestParam String validation2,
 			@RequestParam String validation3,@RequestParam String email,@RequestParam String password,@RequestParam String number,Model m) 
 	{

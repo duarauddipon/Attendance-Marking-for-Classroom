@@ -80,7 +80,7 @@
                            <input type="submit"  value="Login" class="btn btn-primary" onclick="window.location.reload()"/>
                         </div>
                         <div class="d-flex flex-row align-items-center mx-4 mb-3 mb-lg-4">
-                           <p>Forgot Password ? <a href="resetpassword" style="text-decoration: none;cursor: pointer;">Reset here!</a></p>
+                           <p>Forgot Password ? <a href="adminresetpassword" style="text-decoration: none;cursor: pointer;">Reset here!</a></p>
                         </div>
                       </form>
                       <div>Don't have an account? <a href="adminreg" class="btn btn-primary"> Register!</a>
