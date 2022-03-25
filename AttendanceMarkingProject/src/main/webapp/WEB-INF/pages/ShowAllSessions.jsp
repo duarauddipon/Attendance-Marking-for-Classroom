@@ -45,7 +45,7 @@ rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCE
         <img src="https://i.pinimg.com/564x/61/6f/90/616f900fb165b3a61464d56a87f4d824.jpg" height="100" width="200" class="img-fluid" style="border-radius: 25px;"></a>
         <div class="collapse navbar-collapse" id="navigation-bar">
             <ul class="navbar-nav" style="margin-left: auto;margin-right:10px">
-   	            <li class="nav-item" ><a class="nav-link" href="showAllSessions" id="navigation"><i class="fa-solid fa-eye"></i>&nbsp;&nbsp;View All Sessions</a></li> 
+   	            <li class="nav-item"><a class="nav-link" href="userhome" id="navigation"><i class="fa-solid fa-house"></i>&nbsp;&nbsp;Home</a></li>
                 <li class="nav-item" ><a class="nav-link" href="login" id="navigation" onclick="window.location.reload()"><i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;&nbsp;LogOut</a></li>
             </ul>
         </div>
