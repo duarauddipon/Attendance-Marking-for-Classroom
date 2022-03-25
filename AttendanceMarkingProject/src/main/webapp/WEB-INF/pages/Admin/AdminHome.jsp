@@ -44,6 +44,7 @@
             <ul class="navbar-nav" style="margin-left: auto;">
                 <li class="nav-item" ><a class="nav-link" href="trainerreg" id="navigation"><i class="fa-solid fa-user-plus"></i>&nbsp;&nbsp;Add Trainer</a></li>
                 <li class="nav-item" ><a class="nav-link" href="sessionadd" id="navigation"><i class="fa-solid fa-file-circle-plus"></i>&nbsp;&nbsp;Add Session</a></li>
+                <li class="nav-item" ><a class="nav-link" href="updateses" id="navigation"><i class="fa-solid fa-pen-to-square"></i>&nbsp;&nbsp;Update Session</a></li>
                 <li class="nav-item" ><a class="nav-link" href="skilladd" id="navigation"><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Add Skill</a></li>
                 <li class="nav-item" ><a class="nav-link" href="updatetrainer" id="navigation"><i class="fa-solid fa-pen-to-square"></i>&nbsp;&nbsp;Update Trainer</a></li>
                 <li class="nav-item" ><a class="nav-link" href="deletetrainer" id="navigation"><i class="fa-solid fa-trash"></i>&nbsp;&nbsp;Delete Trainer</a></li>
@@ -51,13 +52,41 @@
             </ul>
         </div>
     </nav>
-    <section class="vh-100">
-    	<div class="container h-100">
-    	<div class="row d-flex justify-content-center align-items-center h-100" >
-    	<p style="font-weight: bold;">Home Page Under Developement <img alt="img" src="./images/aconst.gif" class="responsive" style="width:600;height: 400;"></p>
-		</div>
-	</div>
-    </section>
+	<section class="vh-100">
+        <div class="container h-100" style="padding-top: 70px">
+          <div class="row d-flex justify-content-center align-items-center h-100" > 
+            <div class="col-lg-12 col-xl-11" >
+            
+              <div class="card text-black" style="border-radius: 25px;box-shadow: inset 2px 2px 4px #d1d9e6,
+              inset -2px -2px 4px #f9f9f9;">
+              
+              <div class="card-header h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" style=" border-top-left-radius: 25px;border-top-right-radius: 25px;">Welcome Home!</div>
+              
+                <div class="card-body p-md-5" >
+                  <div class="row justify-content-center">
+                    <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                      <form class="mx-1 mx-md-4" name="form1" method="post" action="adminloginprocess">
+      					<!-- Inbox  -->
+                        <div class="d-flex flex-row align-items-center mb-4">
+                        	<i class="fas fa-mail fa-lg me-3 fa-fw"></i>
+                          	<a role="button" href="adminnotification" class="btn btn-primary position-relative">
+							Notifications 
+							<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">${notif }<span class="visually-hidden">unread messages</span>
+							</span>
+							</a>
+                        </div>             
+                      </form>
+                    </div>
+                    <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                      <img src="./images/admin.png" style="border-radius: 25px;" class="img-fluid" alt="Sample image">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" 
 	integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 </body>

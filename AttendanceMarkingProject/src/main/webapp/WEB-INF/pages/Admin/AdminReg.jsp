@@ -31,13 +31,9 @@
     &nbsp;&nbsp;&nbsp;<a class="navbar-brand" href="#" style="border-radius: 25px; margin-left: "><img src="https://i.pinimg.com/564x/61/6f/90/616f900fb165b3a61464d56a87f4d824.jpg" height="100" width="200" class="img-fluid" style="border-radius: 25px;"></a>
     <div class="collapse navbar-collapse" id="navigation-bar">
         <ul class="navbar-nav" style="margin-left: auto;margin-right:10px">
-        	<li class="nav-item" ><a class="nav-link" href="adminhome" id="navigation"><i class="fa-solid fa-house-blank"></i>&nbsp;&nbsp;Admin Home</a></li>
-          	<li class="nav-item" ><a class="nav-link" href="trainerreg" id="navigation"><i class="fa-solid fa-user-plus"></i>&nbsp;&nbsp;Add Trainer</a></li>
-            <li class="nav-item" ><a class="nav-link" href="sessionadd" id="navigation"><i class="fa-solid fa-file-circle-plus"></i>&nbsp;&nbsp;Add Session</a></li>
-            <li class="nav-item" ><a class="nav-link" href="skilladd" id="navigation"><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Add Skill</a></li>
-            <li class="nav-item" ><a class="nav-link" href="updatetrainer" id="navigation"><i class="fa-solid fa-pen-to-square"></i>&nbsp;&nbsp;Update Trainer</a></li>
-            <li class="nav-item" ><a class="nav-link" href="deletetrainer" id="navigation"><i class="fa-solid fa-trash"></i>&nbsp;&nbsp;Delete Trainer</a></li>
-            <li class="nav-item" ><a class="nav-link" href="login" id="navigation" onclick="window.location.reload()" style="padding-left: 30px"><i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;&nbsp;LogOut</a></li> 
+        	<li class="nav-item" ><a class="nav-link" href="adminlogin" id="navigation"><i class="fa-solid fa-house-blank"></i>&nbsp;&nbsp;Login</a></li>
+          	<li class="nav-item"><a class="nav-link" href="#AboutUs" id="navigation"><i class="fa-solid fa-circle-info"></i>&nbsp;&nbsp;AboutUs</a></li>
+            <li class="nav-item"><a class="nav-link" href="#ContactUs" id="navigation"><i class="fa-duotone fa-at"></i>&nbsp;&nbsp;ContactUs</a></li>
         </ul>
     </div>
 </nav>
@@ -148,7 +144,7 @@
                         
                         <%--Login Button--%>
                         <div>
-							  Alrady have an account? <a href="adminlogin" class="btn btn-primary"> Login!</a>
+							  Already have an account? <a href="adminlogin" class="btn btn-primary"> Login!</a>
                         </div>
                         <br>
        						<h4 style="font-family: sans-serif;color: red;font-style:italic" >${msg}</h4>

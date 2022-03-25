@@ -1,10 +1,15 @@
 package com.AttendanceMarkingProject.serviceImpl;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
+import com.AttendanceMarkingProject.model.Enrollment;
 import com.AttendanceMarkingProject.model.User;
 import com.AttendanceMarkingProject.service.UserService;
 
@@ -16,7 +21,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public String registeruser(User user) {
-		String str="insert into userreg(firstname,lastname,empid,email,number,password,vaildation1,validation2,validation3) values(?,?,?,?,?,?,?,?,?);";
+		String str="insert into userreg(firstname,lastname,empid,email,number,password,validation1,validation2,validation3) values(?,?,?,?,?,?,?,?,?);";
 		try
 		{
 			int res=jt.update(str, new Object[] {user.getFirstName(),user.getLastName(),user.getEmpId(),user.getEmail(),user.getNumber(),
@@ -108,5 +113,50 @@ public class UserServiceImpl implements UserService {
 			ex.getMessage();
 		}
 	return "Error Reseting. Please try again";
+	}
+
+	@Override
+	public List<Enrollment> showEnrollments(int empId) {
+		String str="select e.empid,u.firstname,u.lastname,e.sessionid,s.sessiondes,e.attendance,e.approval from userreg as u "
+				+"join enrolldet as e on u.empid=e.empid join sessiondet as s on s.sessionid=e.sessionid where s.sessiondate>? and e.empid=? and e.approval=?;";
+		try
+		{
+			List<Enrollment> reslist = jt.query(str, new Object[] {LocalDate.now(),empId,"Approved"},new BeanPropertyRowMapper(Enrollment.class));
+			return reslist;
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+		return null;
+	}
+
+	@Override
+	public List<String> showNotifications(int empId) {
+		List<String> notifs = new ArrayList<>();
+		List<Enrollment> resList = showEnrollments(empId);
+		if(!resList.isEmpty())
+		{
+			String s1="You have been enrolled to upcoming "+resList.size()+" sessions";
+			notifs.add(s1);
+		}
+		LocalDate d1 = LocalDate.now().plusDays(3);
+		try
+		{
+			String str="select e.empid,u.firstname,u.lastname,e.sessionid,s.sessiondes,e.attendance,e.approval from userreg as u "
+					+"join enrolldet as e on u.empid=e.empid join sessiondet as s on s.sessionid=e.sessionid where s.sessiondate>? and s.sessiondate<? and e.empid=? and e.approval=?;";
+			List<Enrollment> resList1 = jt.query(str, new Object[] {LocalDate.now(),d1,empId,"Approved"},new BeanPropertyRowMapper(Enrollment.class));
+			if(!resList1.isEmpty())
+			{
+				String s2="Reminder : You have 2 days left to "+resList.size()+" sessions";
+				notifs.add(s2);
+			}
+			return notifs;
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+		return null;
 	}
 }
