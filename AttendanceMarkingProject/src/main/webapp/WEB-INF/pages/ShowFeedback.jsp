@@ -26,7 +26,7 @@ background-image :url('https://www.freepik.com/vectors/abstract');
 
 
 
-<button id=downloadexcel>Export To Excel</button>
+
 <div class="container-fluid" style="margin-top:100px">
 <div class="row">
 <div class="col-md-1"></div>
@@ -35,9 +35,9 @@ background-image :url('https://www.freepik.com/vectors/abstract');
   <thead class="bg-warning">
     <tr>
       <th scope="col">S.No</th>
-      <th scope="col">Answer 1</th>
-      <th scope="col">Answer 2</th>
-      <th scope="col">Answer 3</th>
+      <th scope="col">Answer 1[?]</th>
+      <th scope="col">Answer 2[?]</th>
+      <th scope="col">Answer 3[?]</th>
       <th scope="col">Answer 4[Rating]</th>
       <th scope="col">Session ID</th>
       
@@ -66,9 +66,11 @@ background-image :url('https://www.freepik.com/vectors/abstract');
             <div class="col-md-1"></div>
 </div>
 
+<button style="margin-left:115px; margin-top:25px" id=downloadexcel type="button" class="btn btn-success">Generate Report</button>
+
 </div>
 <script type="text/javascript">
-document.getElementById('downloadexcel').addEventListerner('click',window.onclick=function(){
+document.getElementById('downloadexcel').addEventListerner('click',downloadexcel.onclick=function(){
 	 var table2excel = new Table2Excel();
 	  table2excel.export(document.querySelectorAll("#tableqwe"));
 });
