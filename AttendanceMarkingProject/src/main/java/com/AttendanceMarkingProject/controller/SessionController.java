@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.AttendanceMarkingProject.model.Session;
 import com.AttendanceMarkingProject.model.Skill;
-import com.AttendanceMarkingProject.model.Trainer;
 import com.AttendanceMarkingProject.service.SessionService;
 import com.AttendanceMarkingProject.service.SkillService;
 

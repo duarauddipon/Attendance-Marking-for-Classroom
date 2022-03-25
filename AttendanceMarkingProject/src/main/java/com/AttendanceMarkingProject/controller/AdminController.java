@@ -109,7 +109,7 @@ public class AdminController {
 		m.addAttribute("elist", reslist);
 		return "./Admin/AdminNotification";
 	}
-
+	
 	@RequestMapping(value="doenroll",params="approve",method=RequestMethod.POST)
 	public String doApprove(@RequestParam(name="eid") int empId,@RequestParam(name="sid") int sId,Model m)
 	{
