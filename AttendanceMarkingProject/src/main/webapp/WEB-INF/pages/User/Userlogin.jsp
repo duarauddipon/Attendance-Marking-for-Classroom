@@ -47,11 +47,11 @@
         <div class="container h-100">
           <div class="row d-flex justify-content-center align-items-center h-100" > 
             <div class="col-lg-12 col-xl-11" >
-            
+            <br>
               <div class="card text-black" style="border-radius: 25px;box-shadow: inset 2px 2px 4px #d1d9e6,
               inset -2px -2px 4px #f9f9f9;">
               
-              <div class="card-header h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" style=" border-top-left-radius: 25px;border-top-right-radius: 25px;">User Login</div>
+              <div class="card-header h1 fw-bold mx-1 mx-md-4 mt-4" style=" border-top-left-radius: 25px;border-top-right-radius: 25px;">User Login</div>
               
                 <div class="card-body p-md-5" >
                   <div class="row justify-content-center">

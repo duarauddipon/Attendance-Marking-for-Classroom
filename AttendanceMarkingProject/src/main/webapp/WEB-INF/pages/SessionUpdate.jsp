@@ -41,7 +41,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation-bar">
             <span class="navbar-toggler-icon">&#9776;</span>
         </button>
-        &nbsp;&nbsp;&nbsp;<a class="navbar-brand" href="#" style="border-radius: 25px; margin-left: "><img src="https://i.pinimg.com/564x/61/6f/90/616f900fb165b3a61464d56a87f4d824.jpg" height="150" width="300" class="img-fluid" style="border-radius: 25px;"></a>
+        &nbsp;&nbsp;&nbsp;<a class="navbar-brand" href="#" margin-left: "><img src="https://i.pinimg.com/564x/61/6f/90/616f900fb165b3a61464d56a87f4d824.jpg" height="150" width="300" class="img-fluid" style="border-radius: 25px;"></a>
         <div class="collapse navbar-collapse" id="navigation-bar">
             <ul class="navbar-nav" style="margin-left: auto;">
             	<li class="nav-item" ><a class="nav-link" href="adminhome" id="navigation"><i class="fa-solid fa-house-user"></i>&nbsp;&nbsp;Admin Home</a></li>
@@ -59,11 +59,11 @@
     <section class="vh-100">
         <div class="container h-100">
           <div class="row d-flex justify-content-center align-items-center h-100" > 
-            <div class="col-lg-12 col-xl-11" >
+            <div class="col-lg-12" >
+            <br><br><br><br><br>
               <div class="card text-black" style="border-radius: 25px;box-shadow: inset 2px 2px 4px #d1d9e6,
               inset -2px -2px 4px #f9f9f9;">
-              
-                <div class="card-body p-md-5" >
+                <div class="card-body" >
                   <div class="row justify-content-center">
                     <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
       
