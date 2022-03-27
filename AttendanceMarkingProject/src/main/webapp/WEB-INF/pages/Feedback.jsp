@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Faculty Registration</title>
+<title>Feedback</title>
  <link href="CSS/admin.css" rel="stylesheet">
  
  
@@ -44,7 +44,7 @@
                         Please Enter the Following Details.
                     </div>
                     <div class="card-body">
-                    <c:forEach var="lls" items="${polist}">
+                    <c:forEach var="lls" items="${qwlist}">
                       	
                       	 <label for="forUser" class="form-label" value="${dls.queSa}">${lls.queSa}</label>
                       </c:forEach>

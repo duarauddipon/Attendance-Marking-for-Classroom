@@ -34,7 +34,6 @@
         <div class="collapse navbar-collapse" id="navigation-bar">
            <ul class="navbar-nav" style="margin-left: auto;">
             <li class="nav-item"><a class="nav-link" href="userhome" id="navigation"><i class="fa-solid fa-house"></i>&nbsp;&nbsp;Home</a></li>
-            <li class="nav-item" ><a class="nav-link" href="report" id="navigation" onclick="window.location.reload()"><i class="fa-solid fa-message-smile"></i>&nbsp;&nbsp;Report</a></li>
             <li class="nav-item" ><a class="nav-link" href="login" id="navigation" onclick="window.location.reload()" style="padding-left: 30px"><i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;&nbsp;LogOut</a></li> 
            </ul>
         </div>
@@ -53,24 +52,28 @@
                 	<div class="table-responsive">
           <table class="table table-striped" style="width:1150px">
             <tbody><tr class="table-dark">
+              <th>Session Id</th>
               <th>Session Name</th>
-              <th>Action</th>
+              <th>Skillset</th>
+              <th>Date</th>
+              <th>Time</th>
             </tr>
-            <c:forEach var="usr" items="${elist }">
-            <form name="frm" method="post" action="joinsession">
+            <c:forEach var="usr" items="${slist }">
             <tr>
               	
-              	<td style="height:55px" class="align-middle">${usr.sessionDes}</td>
+              	<td style="height:55px" class="align-middle">${usr.sessionId}</td>
               	
-              	<td style="height:55px">
-  					 <input type="submit" class="btn btn-danger btn-action" name="join" value="Join"/>
-                </td> 
+              	<td style="height:55px" class="align-middle">${usr.sessionDes}</td>
+              
+	            <td style="height:55px" class="align-middle">${usr.skillSet}</td>
+              	
+              	<td style="height:55px" class="align-middle">${usr.sessionDate}</td> 
+              	
+              	<td style="height:55px" class="align-middle">${usr.sessionTime}</td>
             </tr>
-            <input type="hidden" name="sid" value="${usr.sessionId }"/>
-            </form>
             </c:forEach>
-          </tbody></table>
-          <div style="font-family: sans-serif;color: red;font-style:italic">${msg }</div>
+          </tbody>
+          </table>
         </div>
                 </div>
               </div>

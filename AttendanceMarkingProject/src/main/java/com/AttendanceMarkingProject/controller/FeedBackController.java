@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -24,17 +25,13 @@ public class FeedBackController {
 	@Autowired
 	FeedService sf;
 	
-	
-	@GetMapping("feedback")
-	public String resp(Model m) {
+	@GetMapping("feedback/{id}")
+	public String resp(Model m,@PathVariable("id") int sessionId) {
 		
-		List<Session> aslist = as.showSession();
-		
-		m.addAttribute("salist",aslist);
-		
-		List<Questions> qwlist = sf.showQuestion();
+		Questions qwlist = sf.showQuestionBySessionId(sessionId);
 
-		m.addAttribute("polist",qwlist);
+		m.addAttribute("qwlist",qwlist);
+		
 		return "Feedback";
 		
 	}
@@ -97,7 +94,6 @@ public class FeedBackController {
 
 		String res = sf.updateQuestion(q);
 		m.addAttribute("msg",res);
-
 
 		return "UpdateQuestion";
 	}

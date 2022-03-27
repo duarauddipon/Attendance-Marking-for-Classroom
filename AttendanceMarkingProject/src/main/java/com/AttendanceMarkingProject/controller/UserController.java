@@ -212,4 +212,13 @@ public class UserController {
 		m.addAttribute("elist", resList);
 		return "./User/MySessions";
 	}
+	
+	@GetMapping("report")
+	public String displayReport(Model m)
+	{
+		List<Session> reslist = us.showReport(modelUser.getEmpId());
+		m.addAttribute("slist", reslist);
+		
+		return "./User/Report";
+	}
 }
