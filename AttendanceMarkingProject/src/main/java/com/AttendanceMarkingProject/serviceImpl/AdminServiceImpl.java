@@ -123,6 +123,7 @@ public class AdminServiceImpl implements AdminService {
 		return "Error Rejecting";
 	}
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public List<Enrollment> showEnrollment() {
 		List<Enrollment> reslist = new ArrayList<>();
