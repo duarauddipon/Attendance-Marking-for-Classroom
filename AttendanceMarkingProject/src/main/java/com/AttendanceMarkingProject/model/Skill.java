@@ -23,8 +23,4 @@ public class Skill {
 	public void setSkillDesc(String skillDesc) {
 		this.skillDesc = skillDesc;
 	}
-	
-	
-	
-	
 }
