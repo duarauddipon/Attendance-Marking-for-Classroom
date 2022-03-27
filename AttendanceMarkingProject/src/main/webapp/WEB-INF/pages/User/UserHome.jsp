@@ -97,7 +97,6 @@
 							</table>
 						<br>
 						<div style="margin-left:auto;margin-right:6px">
-						<a class="btn btn-outline-info btm-sm" href="mysessions" style="text-decoration: none" role="button">My Sessions</a>
 						<a class="btn btn-outline-warning btm-sm" href="mysessions" role="button">My Sessions</a>
 						</div>
 						</div>    

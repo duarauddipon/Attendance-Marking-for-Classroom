@@ -42,21 +42,24 @@ public class FeedServiceImpl implements FeedService {
 	}
 
 	@Override
-	public List<Session> showSessionDet() {
-		// TODO Auto-generated method stub
+	public String addQuestion(Questions ques) {
 		
-		List<Session> sllist = new ArrayList<>();
-		String str = "select * from  sessiondet";
-		
-		sllist=jt.query(str, new BeanPropertyRowMapper(Session.class));
-		return sllist;
-		
-	}
-
-	@Override
-	public String quest(Questions qwer) {
-		// TODO Auto-generated method stub
-		return null;
+		String str= "insert into feedques(quesa,quesb,quesc,quesd,sessionid) values(?,?,?,?,?);";
+		try
+		{
+			int r= jt.update(str,new Object[] {ques.getQueSa(),ques.getQueSb(),ques.getQueSc(),ques.getQueSd(),ques.getSessionId()});
+			if(r>=1)
+			{
+				return "Success";
+			}
+			else
+				return "Fail";
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+		return "Fail";
 	}
 
 	@Override
@@ -80,23 +83,40 @@ public class FeedServiceImpl implements FeedService {
 
 	@Override
 	public String updateQuestion(Questions quest) {
-		// TODO Auto-generated method stub
-		String sql = "update feedques set quesb=?,quesb=?,=?,quesc=?,quesd=?  where sessionid=? ;";
+		
+		if(showQuestionBySessionId(quest.getSessionId())==null)
+		{
+			addQuestion(quest);
+			return "Questions added";
+		}
+		String str = "update feedques set quesb=?,quesb=?,=?,quesc=?,quesd=? where sessionid=?;";
 		try {
-			int r = jt.update(sql, new Object[] {quest.getQueSa(),quest.getQueSb(),quest.getQueSc(),quest.getQueSd(),quest.getSessionId()});
+			int r = jt.update(str, new Object[] {quest.getQueSa(),quest.getQueSb(),quest.getQueSc(),quest.getQueSd(),quest.getSessionId()});
 			if(r>=1)
 				return "Questions Updated";
 			else
 				return "Error updating!";
 		}
-			catch(Exception ex)
-			{
-				System.out.println(ex.getMessage());
-			}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
 			return "Error updating!";
 		
 	}
-	
-	
 
+	@Override
+	public Questions showQuestionBySessionId(int sessionId) {
+		String str="select * from feedques where sessionid=?;";
+		try
+		{
+			Questions qs= (Questions) jt.queryForObject(str, new Object[] {sessionId}, new BeanPropertyRowMapper(Questions.class));
+			return qs;
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+		return null;
+	}
 }

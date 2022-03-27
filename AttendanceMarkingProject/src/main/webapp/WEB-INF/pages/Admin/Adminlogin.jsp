@@ -89,7 +89,7 @@
                       </div>
       				<br>
       				<br>
-      				<div class="alert alert-info" style="background-color: white;border-color: white">${msg}</div>
+      				<h3 style="font-style:italic;color:red" class="">${msg}</h3>
                     </div>
                     <br>
                     <br>

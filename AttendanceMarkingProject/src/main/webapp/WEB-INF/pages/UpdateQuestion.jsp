@@ -56,6 +56,7 @@
         <div class="container h-100">
           <div class="row d-flex justify-content-center align-items-center h-100" > 
             <div class="col-lg-12 col-xl-11" >
+            <br><br><br>
               <div class="card text-black" style="border-radius: 25px;box-shadow: inset 2px 2px 4px #d1d9e6,
               inset -2px -2px 4px #f9f9f9;">
               
@@ -63,9 +64,9 @@
                   <div class="row justify-content-center">
                     <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
       
-                      <div class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Update Session</div>
+                      <div class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Update Questions</div>
       
-                      <form class="mx-1 mx-md-4" name="form2" method="post" action="updq">
+                      <form class="mx-1 mx-md-4" name="form2" method="post" action="updatequestion">
       
       
          <div class="d-flex flex-row align-items-center mb-4">
@@ -75,9 +76,9 @@
                          
                           
                           <select class="form-control" name="session" id="session">
-                      <option Selected>Select Session</option>
-                      <c:forEach var="fls" items="${plist}">
-                      	<option value="${fls.sessionDes}">${fls.sessionDes}</option>
+                      <option Selected value="0">Select Session</option>
+                      <c:forEach var="fls" items="${slist}">
+                      	<option value="${fls.sessionId}">${fls.sessionDes}</option>
                       </c:forEach>
                       
                       </select>
@@ -89,7 +90,7 @@
                           <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">Question 1?</label>
-                            <input type="text" id="form3Example4c" id="queSa" name="queSa" placeholder="Update Question !!" class="form-control" />
+                            <input type="text" id="form3Example4c" id="quesa" name="quesa" placeholder="Update Question !!" class="form-control" />
                           </div>
                         </div>                  
       
@@ -98,7 +99,7 @@
                           <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">Question 2</label>
-                            <input type="text" id="form3Example4c" id="queSb" name="queSb" placeholder="Update Question !!" class="form-control" />
+                            <input type="text" id="form3Example4c" id="quesb" name="quesb" placeholder="Update Question !!" class="form-control" />
                           </div>
                         </div>
                         
@@ -106,14 +107,14 @@
                           <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">Question 3</label>
-                            <input type="text" id="form3Example4c" id="queSc" name="queSc" placeholder="Update Question !!" class="form-control" />
+                            <input type="text" id="form3Example4c" id="quesc" name="quesc" placeholder="Update Question !!" class="form-control" />
                           </div>
                         </div>
                           <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                             <label class="form-label" for="form3Example4c">Question 4</label>
-                            <input type="text" id="form3Example4c" id="queSd" name="queSd" placeholder="Update Question !!" class="form-control" />
+                            <input type="text" id="form3Example4c" id="quesd" name="quesd" placeholder="Update Question !!" class="form-control" />
                           </div>
                         </div>
       

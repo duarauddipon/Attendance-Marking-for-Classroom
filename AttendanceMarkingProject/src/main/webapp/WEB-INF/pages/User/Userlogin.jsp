@@ -83,13 +83,12 @@
                          <div class="d-flex justify-co ntent-center mx-4 mb-3 mb-lg-4">
                            <p>Forgot Password ? <a href="userresetpassword" style="text-decoration:none;cursor: pointer;">Reset here!</a></p>
                     </div>
-       						<h3 style="color:black;font-size: 20px">${msg}</h3>
                       </form>
                       <div>Don't have an account? <a href="Userreg" class="btn btn-primary"> Register!</a>
                       </div>
       				<br>
       				<br>
-      				<div class="alert alert-info" style="background-color: white;border-color: white">${msg}</div>
+      				<h3 style="font-style:italic;color:red" class="">${msg}</h3>
                     </div>
                     <br>
                     <br>

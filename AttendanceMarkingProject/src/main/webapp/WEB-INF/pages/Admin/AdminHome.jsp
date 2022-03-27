@@ -42,9 +42,9 @@
         &nbsp;&nbsp;&nbsp;<a class="navbar-brand" href="#" style="border-radius: 25px; margin-left: "><img src="https://i.pinimg.com/564x/61/6f/90/616f900fb165b3a61464d56a87f4d824.jpg" height="100" width="200" class="img-fluid" style="border-radius: 25px;"></a>
         <div class="collapse navbar-collapse" id="navigation-bar">
             <ul class="navbar-nav" style="margin-left: auto;">
-                <li class="nav-item"><a class="nav-link" href="feedbackform" id="navigation7"><i class="fa-solid fa-file-arrow-down"></i>&nbsp;&nbsp;Feedback Report</a></li>
-          	<li class="nav-item"><a class="nav-link" href="updateques" id="navigation8"><i class="fa-solid fa-wrench"></i>&nbsp;&nbsp;Update Questions </a></li>
-                <li class="nav-item" ><a class="nav-link" href="trainerreg" id="navigation1"><i class="fa-solid fa-user-plus"></i>&nbsp;&nbsp;Add Trainer</a></li>
+                <li class="nav-item"><a class="nav-link" href="feedbackform" id="navigation"><i class="fa-solid fa-file-arrow-down"></i>&nbsp;&nbsp;Feedback Report</a></li>
+          	<li class="nav-item"><a class="nav-link" href="updatequestion" id="navigation"><i class="fa-solid fa-wrench"></i>&nbsp;&nbsp;Update Questions </a></li>
+                <li class="nav-item" ><a class="nav-link" href="trainerreg" id="navigation"><i class="fa-solid fa-user-plus"></i>&nbsp;&nbsp;Add Trainer</a></li>
                 <li class="nav-item" ><a class="nav-link" href="sessionadd" id="navigation"><i class="fa-solid fa-file-circle-plus"></i>&nbsp;&nbsp;Add Session</a></li>
                 <li class="nav-item" ><a class="nav-link" href="updateses" id="navigation"><i class="fa-solid fa-pen-to-square"></i>&nbsp;&nbsp;Update Session</a></li>
                 <li class="nav-item" ><a class="nav-link" href="skilladd" id="navigation"><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Add Skill</a></li>
