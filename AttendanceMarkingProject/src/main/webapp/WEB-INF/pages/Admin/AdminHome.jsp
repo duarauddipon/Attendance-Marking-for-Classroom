@@ -43,7 +43,7 @@
         <div class="collapse navbar-collapse" id="navigation-bar">
             <ul class="navbar-nav" style="margin-left: auto;">
                 <li class="nav-item"><a class="nav-link" href="feedbackform" id="navigation"><i class="fa-solid fa-file-arrow-down"></i>&nbsp;&nbsp;Feedback Report</a></li>
-          	<li class="nav-item"><a class="nav-link" href="updateques" id="navigation"><i class="fa-solid fa-wrench"></i>&nbsp;&nbsp;Update Questions </a></li>
+          	<li class="nav-item"><a class="nav-link" href="updatequestion" id="navigation"><i class="fa-solid fa-wrench"></i>&nbsp;&nbsp;Update Questions </a></li>
                 <li class="nav-item" ><a class="nav-link" href="trainerreg" id="navigation"><i class="fa-solid fa-user-plus"></i>&nbsp;&nbsp;Add Trainer</a></li>
                 <li class="nav-item" ><a class="nav-link" href="sessionadd" id="navigation"><i class="fa-solid fa-file-circle-plus"></i>&nbsp;&nbsp;Add Session</a></li>
                 <li class="nav-item" ><a class="nav-link" href="updateses" id="navigation"><i class="fa-solid fa-pen-to-square"></i>&nbsp;&nbsp;Update Session</a></li>
