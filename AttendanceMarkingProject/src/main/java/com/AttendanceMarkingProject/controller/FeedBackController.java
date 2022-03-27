@@ -15,6 +15,7 @@ import com.AttendanceMarkingProject.model.Questions;
 import com.AttendanceMarkingProject.model.Session;
 import com.AttendanceMarkingProject.service.FeedService;
 import com.AttendanceMarkingProject.service.SessionService;
+import com.AttendanceMarkingProject.service.UserService;
 
 @Controller
 public class FeedBackController {
@@ -25,13 +26,16 @@ public class FeedBackController {
 	@Autowired
 	FeedService sf;
 	
+	@Autowired
+	UserService us;
+	
 	@GetMapping("feedback/{id}")
 	public String resp(Model m,@PathVariable("id") int sessionId) {
 		
 		Questions qwlist = sf.showQuestionBySessionId(sessionId);
 
 		m.addAttribute("qwlist",qwlist);
-		
+		m.addAttribute("sessId", sessionId);
 		return "Feedback";
 		
 	}
@@ -40,11 +44,9 @@ public class FeedBackController {
 	public String feedback(	
 			@RequestParam String ansa,
 			@RequestParam String ansb,
-			
-			@RequestParam(name="review") String ansc,
-			@RequestParam(name="rating") String ansd,
-			@RequestParam String sessionid,
-			
+			@RequestParam String ansc,
+			@RequestParam String ansd,
+			@RequestParam int sessId,
 			Model m) {
 		
 		Answers ans = new Answers();
@@ -52,12 +54,12 @@ public class FeedBackController {
 		ans.setAnSb(ansb);
 		ans.setAnSc(ansc);
 		ans.setAnSd(ansd);
-		ans.setSessionId(Integer.parseInt(sessionid));
+		ans.setSessionId(sessId);
 		
 		String res = sf.addAnswer(ans);
+		
 		m.addAttribute("msg", res);
-		
-		
+
 		return "Feedback";
 	}
 	

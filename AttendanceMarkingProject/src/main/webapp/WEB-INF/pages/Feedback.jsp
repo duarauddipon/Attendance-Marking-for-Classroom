@@ -55,7 +55,8 @@
                      
                      <label for="forUser" class="form-label" >${qwlist.queSd}</label>
                      <input type="text" id="ansd" name="ansd" class="form-control" placeholder="We value your opinion!!">
-
+					
+					 <input type="hidden" value=${sessId } name="sessId"/>
                         <div class="row">
                             <div class="col-md-12" style="text-align: center;">
                                 <input type="submit"  value="Submit" class="btn btn-primary" />

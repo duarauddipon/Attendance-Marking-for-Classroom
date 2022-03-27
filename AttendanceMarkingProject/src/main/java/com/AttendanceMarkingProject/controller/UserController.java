@@ -86,7 +86,7 @@ public class UserController {
 	}
 	
 	@PostMapping("userresetpassword")
-	public String DoPasswordReset(@RequestParam String validation1,@RequestParam String validation2,
+	public String doPasswordReset(@RequestParam String validation1,@RequestParam String validation2,
 			@RequestParam String validation3,@RequestParam String email,@RequestParam String password,@RequestParam String number,Model m)
 	{
 		String res = us.passwordrecovery(validation1, validation2, validation3, number, email, password);
