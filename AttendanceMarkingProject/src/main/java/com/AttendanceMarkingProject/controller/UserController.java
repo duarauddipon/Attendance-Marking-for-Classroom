@@ -204,6 +204,7 @@ public class UserController {
 		Session session= sei.searchSession(Integer.parseInt(sid));
 		if(LocalDate.now().toString().equals(session.getSessionDate()))
 		{
+			m.addAttribute("sId", sid);
 			m.addAttribute("sname", session.getSessionDes());
 			return "./User/SessionJoin";
 		}

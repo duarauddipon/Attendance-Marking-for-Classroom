@@ -41,6 +41,7 @@
     	<div class="row d-flex justify-content-center align-items-center h-100" >
     	<p style="font-weight: bold;">${sname }<img alt="img" src="./images/construction.gif" class="responsive" style="width:600;height: 400;"></p>
 		</div>
+		<a role="button" href="feedback/${sId }" class="btn btn-primary btn-lg position-relative" style="margin-left:200px">Submit Feedback</a>
 	</div>
     </section>
 </body>
