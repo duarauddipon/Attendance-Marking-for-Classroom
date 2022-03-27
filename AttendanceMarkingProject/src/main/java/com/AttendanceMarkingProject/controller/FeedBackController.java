@@ -64,7 +64,7 @@ public class FeedBackController {
 		return "Feedback";
 	}
 	
-	@GetMapping("feedbackform")
+	@GetMapping("feedbackreport")
 	public String showAns(Model m) {
 		List<Answers> lklist = sf.showAnswer();
 		m.addAttribute("rlist", lklist);
