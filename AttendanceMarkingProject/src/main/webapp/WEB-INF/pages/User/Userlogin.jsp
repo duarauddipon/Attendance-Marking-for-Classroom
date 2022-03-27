@@ -78,7 +78,7 @@
                         <div class="d-flex justify-co ntent-center mx-4 mb-3 mb-lg-4">
                           	
                           	<!-- Submit -->
-                           <input type="submit"  value="Login" class="btn btn-primary" />
+                           <input type="submit" id="loginuser" value="Login" class="btn btn-primary" />
                         </div>
                          <div class="d-flex justify-co ntent-center mx-4 mb-3 mb-lg-4">
                            <p>Forgot Password ? <a href="userresetpassword" style="text-decoration:none;cursor: pointer;">Reset here!</a></p>
