@@ -74,6 +74,7 @@ public class TrainerServiceImpl implements TrainerService {
 		return "Trainer not found!";
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public List<Trainer> showTrainer() {
 		List<Trainer> tlist = new ArrayList<>();

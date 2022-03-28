@@ -1,4 +1,4 @@
-package com.AttendanceMarkingProject.serviceImpl;
+	package com.AttendanceMarkingProject.serviceImpl;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -118,12 +118,14 @@ public class UserServiceImpl implements UserService {
 	return "Error Reseting. Please try again";
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Enrollment> showEnrollments(int empId) {
 		String str="select e.empid,u.firstname,u.lastname,e.sessionid,s.sessiondes,e.attendance,e.approval from userreg as u "
 				+"join enrolldet as e on u.empid=e.empid join sessiondet as s on s.sessionid=e.sessionid where s.sessiondate>? and e.empid=? and e.approval=?;";
 		try
 		{
+			@SuppressWarnings({ "deprecation", "rawtypes" })
 			List<Enrollment> reslist = jt.query(str, new Object[] {LocalDate.now().minusDays(1),empId,"Approved"},new BeanPropertyRowMapper(Enrollment.class));
 			return reslist;
 		}
@@ -134,6 +136,7 @@ public class UserServiceImpl implements UserService {
 		return null;
 	}
 
+	@SuppressWarnings({ "deprecation", "unchecked", "rawtypes" })
 	@Override
 	public List<String> showNotifications(int empId) {
 		List<String> notifs = new ArrayList<>();
@@ -163,6 +166,7 @@ public class UserServiceImpl implements UserService {
 		return null;
 	}
 
+	@SuppressWarnings({ "unchecked", "rawtypes", "deprecation" })
 	@Override
 	public List<Session> showReport(int empId) {
 		String str = "select s.sessionid,s.sessiondes,s.skillset,s.sessiondate,s.sessiontime from enrolldet as e join sessiondet as s on e.sessionid=s.sessionid where e.empid=? and e.attendance=?;";

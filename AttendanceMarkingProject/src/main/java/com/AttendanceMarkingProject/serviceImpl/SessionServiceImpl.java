@@ -9,7 +9,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 import com.AttendanceMarkingProject.model.Session;
-import com.AttendanceMarkingProject.model.Skill;
 import com.AttendanceMarkingProject.service.SessionService;
 
 @Component
@@ -36,6 +35,7 @@ public class SessionServiceImpl implements SessionService {
 		return "Error...";
 	}
 
+	@SuppressWarnings({ "unchecked", "deprecation", "rawtypes" })
 	@Override
 	public Session searchSession(int sessionId) {
 		
@@ -54,6 +54,7 @@ public class SessionServiceImpl implements SessionService {
 	/**
 	 *
 	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public List<Session> showSession() {
 		List<Session> nlist =  new ArrayList<>();
@@ -86,6 +87,7 @@ public class SessionServiceImpl implements SessionService {
 		
 	}
 
+	@SuppressWarnings({ "deprecation", "unchecked", "rawtypes" })
 	@Override
 	public List<Session> searchBySKillType(String skillType) {
 		String sql = "Select * from sessiondet where skillset=?";
