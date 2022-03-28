@@ -40,8 +40,8 @@ public class FeedBackController {
 		
 	}
 	
-	@PostMapping("resp")
-	public String feedback(	
+	@PostMapping("feedback/resp")
+	public String feedback(
 			@RequestParam String ansa,
 			@RequestParam String ansb,
 			@RequestParam String ansc,
@@ -57,6 +57,8 @@ public class FeedBackController {
 		ans.setSessionId(sessId);
 		
 		String res = sf.addAnswer(ans);
+		
+		us.setAttendance(UserController.getModelUser().getEmpId(), sessId);
 		
 		m.addAttribute("msg", res);
 

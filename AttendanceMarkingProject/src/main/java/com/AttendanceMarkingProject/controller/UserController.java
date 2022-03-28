@@ -39,6 +39,11 @@ public class UserController {
 		modelUser=user;
 	}
 	
+	public static User getModelUser()
+	{
+		return modelUser;
+	}
+	
 	@GetMapping("Userlogin")
 	public String userLogin()
 	{
