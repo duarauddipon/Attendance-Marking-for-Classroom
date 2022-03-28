@@ -18,6 +18,7 @@ public class AdminServiceImpl implements AdminService {
 	@Autowired
 	JdbcTemplate jt;
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public String registerAdmin(Admin admin) {
 		String sql = "Insert into adminreg(firstname,lastname,age,gender,email,number,password,approval,validation1,validation2,validation3)values(?,?,?,?,?,?,?,?,?,?,?)";
@@ -123,6 +124,7 @@ public class AdminServiceImpl implements AdminService {
 		return "Error Rejecting";
 	}
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public List<Enrollment> showEnrollment() {
 		List<Enrollment> reslist = new ArrayList<>();

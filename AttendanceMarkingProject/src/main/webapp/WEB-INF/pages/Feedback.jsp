@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Faculty Registration</title>
+<title>Feedback</title>
  <link href="CSS/admin.css" rel="stylesheet">
  
  
@@ -43,53 +43,20 @@
                         FeedBack form <br>
                         Please Enter the Following Details.
                     </div>
-                    <div class="card-body">
-                    <c:forEach var="lls" items="${polist}">
-                      	
-                      	 <label for="forUser" class="form-label" value="${dls.queSa}">${lls.queSa}</label>
-                      </c:forEach>
-                       
-                        <input type="text" id="ansa" name="ansa" class="form-control" placeholder="We value your opinion!!">
-                    <c:forEach var="lls" items="${polist}">
-                      	
-                      	 <label for="forUser" class="form-label" value="${dls.queSb}">${lls.queSb}</label>
-                      </c:forEach>    
-                        <input type="text" id="ansb" name="ansb" class="form-control" placeholder="We value your opinion!!">
-                          <c:forEach var="lls" items="${polist}">
-                      	
-                      	 <label for="forUser" class="form-label" value="${dls.queSc}">${lls.queSc}</label>
-                      </c:forEach>
-                          <select class="form-control" name="review" id="review">
-                      <option value="yes" id="yes" label="Yes"></option>
-                      <option value="no" id="no" label="No"></option>
-                      <option value="maybe" id="maybe" label="Maybe"></option>
-                      
-            </select>
-              <c:forEach var="lls" items="${polist}">
-                      	
-                      	 <label for="forUser" class="form-label" value="${dls.queSd}">${lls.queSd}</label>
-                      </c:forEach>
-                          <select class="form-control" name="rating" id="rating">
-                      <option value="poor" id="poor" label="Poor"></option>
-                      <option value="satisfactory" id="Satisfactory" label="Satisfactory"></option>
-                      <option value="good" id="good" label="Good"></option>
-                      <option value="excellent" id="excellent" label="Excellent"></option>
-                      
-            </select>
-            
-             <label for="forUser" class="form-label">Session ID</label>
-                        
-                      <select class="form-control" name="sessionid" id="sessionid">
-                      <option Selected>Select ID</option>
-                      <c:forEach var="dls" items="${salist}">
-                      	<option value="${dls.sessionId}">${dls.sessionDes}</option>
-                      </c:forEach>
-                      
-            
-            
-             </select>
-                        <h3 style="font-style:italic;color:red" class="">${msg}</h3>
-                   
+                    <div class="card-body"> 	
+                     <label for="forUser" class="form-label" >${qwlist.queSa}</label>
+                     <input type="text" id="ansa" name="ansa" class="form-control" placeholder="We value your opinion!!">
+                     
+                     <label for="forUser" class="form-label" >${qwlist.queSb}</label>
+                     <input type="text" id="ansb" name="ansb" class="form-control" placeholder="We value your opinion!!">
+                     
+                     <label for="forUser" class="form-label" >${qwlist.queSc}</label>
+                     <input type="text" id="ansc" name="ansc" class="form-control" placeholder="We value your opinion!!">
+                     
+                     <label for="forUser" class="form-label" >${qwlist.queSd}</label>
+                     <input type="text" id="ansd" name="ansd" class="form-control" placeholder="We value your opinion!!">
+					
+					 <input type="hidden" value=${sessId } name="sessId"/>
                         <div class="row">
                             <div class="col-md-12" style="text-align: center;">
                                 <input type="submit"  value="Submit" class="btn btn-primary" />
@@ -101,14 +68,10 @@
 
                
                 </form>
-
+			<h3 style="font-style:italic;color:red" class="">${msg}</h3>
             </div>
             <div class="col-md-3"></div>
         </div>
     </div>
-
-
-
-
 </body>
 </html>

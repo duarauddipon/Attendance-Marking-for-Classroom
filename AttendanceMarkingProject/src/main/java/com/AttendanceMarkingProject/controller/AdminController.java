@@ -1,6 +1,7 @@
 package com.AttendanceMarkingProject.controller;
 
 import java.util.List;
+
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,18 +15,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.AttendanceMarkingProject.model.Admin;
 import com.AttendanceMarkingProject.model.Enrollment;
-import com.AttendanceMarkingProject.model.User;
 import com.AttendanceMarkingProject.serviceImpl.AdminServiceImpl;
-import com.AttendanceMarkingProject.serviceImpl.UserServiceImpl;
 
 @Controller
 public class AdminController {
 	
 	@Autowired
 	AdminServiceImpl as;
-	
-	@Autowired
-	UserServiceImpl us;
 	
 	private static Admin modelAdmin=null;
 	

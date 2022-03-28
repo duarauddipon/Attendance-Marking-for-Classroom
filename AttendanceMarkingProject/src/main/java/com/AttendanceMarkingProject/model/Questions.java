@@ -1,7 +1,5 @@
 package com.AttendanceMarkingProject.model;
 
-
-
 public class Questions {
 
 	private int qId;
@@ -10,6 +8,7 @@ public class Questions {
 	private String queSc;
 	private String queSd;
 	private int sessionId;
+	
 	public int getSessionId() {
 		return sessionId;
 	}

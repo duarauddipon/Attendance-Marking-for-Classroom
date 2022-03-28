@@ -36,6 +36,8 @@
        &nbsp;&nbsp;&nbsp;<a class="navbar-brand" href="#" style="border-radius: 25px; margin-left: "><img src="https://i.pinimg.com/564x/61/6f/90/616f900fb165b3a61464d56a87f4d824.jpg" height="100" width="200" class="img-fluid" style="border-radius: 25px;"></a>
        <div class="collapse navbar-collapse" id="navigation-bar">
           <ul class="navbar-nav" style="margin-left: auto;margin-right:10px"> 
+			
+			
           	<li class="nav-item"><a class="nav-link" href="login" id="navigation"><i class="fa-solid fa-house"></i>&nbsp;&nbsp;Home</a></li>
             <li class="nav-item"><a class="nav-link" href="#AboutUs" id="navigation"><i class="fa-solid fa-circle-info"></i>&nbsp;&nbsp;AboutUs</a></li>
             <li class="nav-item"><a class="nav-link" href="#ContactUs" id="navigation"><i class="fa-duotone fa-at"></i>&nbsp;&nbsp;ContactUs</a></li>
@@ -77,7 +79,7 @@
                         </div>      
                         <div class="d-flex flex-row align-items-center mx-4 mb-3 mb-lg-4">
                           
-                           <input type="submit"  value="Login" class="btn btn-primary" onclick="window.location.reload()"/>
+                           <input type="submit" id="loginadmin"value="Login" class="btn btn-primary" onclick="window.location.reload()"/>
                         </div>
                         <div class="d-flex flex-row align-items-center mx-4 mb-3 mb-lg-4">
                            <p>Forgot Password ? <a href="adminresetpassword" style="text-decoration: none;cursor: pointer;">Reset here!</a></p>
@@ -87,7 +89,7 @@
                       </div>
       				<br>
       				<br>
-      				<div class="alert alert-info" style="background-color: white;border-color: white">${msg}</div>
+      				<h3 style="font-style:italic;color:red" class="">${msg}</h3>
                     </div>
                     <br>
                     <br>

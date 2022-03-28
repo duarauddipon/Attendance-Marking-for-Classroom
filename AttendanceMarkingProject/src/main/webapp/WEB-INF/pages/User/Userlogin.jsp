@@ -47,11 +47,11 @@
         <div class="container h-100">
           <div class="row d-flex justify-content-center align-items-center h-100" > 
             <div class="col-lg-12 col-xl-11" >
-            
+            <br>
               <div class="card text-black" style="border-radius: 25px;box-shadow: inset 2px 2px 4px #d1d9e6,
               inset -2px -2px 4px #f9f9f9;">
               
-              <div class="card-header h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" style=" border-top-left-radius: 25px;border-top-right-radius: 25px;">User Login</div>
+              <div class="card-header h1 fw-bold mx-1 mx-md-4 mt-4" style=" border-top-left-radius: 25px;border-top-right-radius: 25px;">User Login</div>
               
                 <div class="card-body p-md-5" >
                   <div class="row justify-content-center">
@@ -78,18 +78,17 @@
                         <div class="d-flex justify-co ntent-center mx-4 mb-3 mb-lg-4">
                           	
                           	<!-- Submit -->
-                           <input type="submit"  value="Login" class="btn btn-primary" />
+                           <input type="submit" id="loginuser" value="Login" class="btn btn-primary" />
                         </div>
                          <div class="d-flex justify-co ntent-center mx-4 mb-3 mb-lg-4">
                            <p>Forgot Password ? <a href="userresetpassword" style="text-decoration:none;cursor: pointer;">Reset here!</a></p>
-                        </div>
-       						<h3 style="color:black;font-size: 20px">${msg}</h3>
+                    </div>
                       </form>
                       <div>Don't have an account? <a href="Userreg" class="btn btn-primary"> Register!</a>
                       </div>
       				<br>
       				<br>
-      				<div class="alert alert-info" style="background-color: white;border-color: white">${msg}</div>
+      				<h3 style="font-style:italic;color:red" class="">${msg}</h3>
                     </div>
                     <br>
                     <br>

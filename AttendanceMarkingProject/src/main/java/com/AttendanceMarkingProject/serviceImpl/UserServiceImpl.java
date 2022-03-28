@@ -10,6 +10,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 import com.AttendanceMarkingProject.model.Enrollment;
+import com.AttendanceMarkingProject.model.Session;
 import com.AttendanceMarkingProject.model.User;
 import com.AttendanceMarkingProject.service.UserService;
 
@@ -19,6 +20,7 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	JdbcTemplate jt;
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public String registeruser(User user) {
 		String str="insert into userreg(firstname,lastname,empid,email,number,password,validation1,validation2,validation3) values(?,?,?,?,?,?,?,?,?);";
@@ -159,5 +161,40 @@ public class UserServiceImpl implements UserService {
 			System.out.println(ex.getMessage());
 		}
 		return null;
+	}
+
+	@Override
+	public List<Session> showReport(int empId) {
+		String str = "select s.sessionid,s.sessiondes,s.skillset,s.sessiondate,s.sessiontime from enrolldet as e join sessiondet as s on e.sessionid=s.sessionid where e.empid=? and e.attendance=?;";
+		try
+		{
+			List<Session> reslist = jt.query(str, new Object[] {empId,"Present"},new BeanPropertyRowMapper(Session.class));
+			return reslist;
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+		return null;
+	}
+
+	@Override
+	public String setAttendance(int empId, int sessionId) {
+		String str = "update enrolldet set attendance=? where empid=? and sessionid=?;";
+		try
+		{
+			int r= jt.update(str,new Object[] {"Present",empId,sessionId});
+			if(r>=1)
+			{
+				return "Your attendance has been recorded";
+			}
+			else
+				return "Attendance error!";
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+		return "Attendance error!";
 	}
 }
