@@ -62,7 +62,21 @@ public class FeedServiceImpl implements FeedService {
 		return "Fail";
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
+
+	public List<Questions> showQuestion() {
+		// TODO Auto-generated method stub
+		List<Questions> qlist = new ArrayList<>();
+		String str ="select * from feedques";
+		qlist = jt.query(str,new BeanPropertyRowMapper(Questions.class));
+		return qlist;
+		
+	}
+
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@Override
+
 	public List<Answers> showAnswer() {
 		// TODO Auto-generated method stub
 		List<Answers> alist = new ArrayList<>();
@@ -95,6 +109,7 @@ public class FeedServiceImpl implements FeedService {
 		
 	}
 
+	@SuppressWarnings({ "deprecation", "unchecked", "rawtypes" })
 	@Override
 	public Questions showQuestionBySessionId(int sessionId) {
 		String str="select * from feedques where sessionid=?;";
