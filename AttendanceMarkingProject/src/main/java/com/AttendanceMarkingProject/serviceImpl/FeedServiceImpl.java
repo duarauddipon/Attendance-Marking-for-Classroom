@@ -64,6 +64,7 @@ public class FeedServiceImpl implements FeedService {
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
+
 	public List<Questions> showQuestion() {
 		// TODO Auto-generated method stub
 		List<Questions> qlist = new ArrayList<>();
@@ -75,6 +76,7 @@ public class FeedServiceImpl implements FeedService {
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
+
 	public List<Answers> showAnswer() {
 		// TODO Auto-generated method stub
 		List<Answers> alist = new ArrayList<>();

@@ -86,7 +86,7 @@ public class UserController {
 	}
 	
 	@PostMapping("userresetpassword")
-	public String DoPasswordReset(@RequestParam String validation1,@RequestParam String validation2,
+	public String doPasswordReset(@RequestParam String validation1,@RequestParam String validation2,
 			@RequestParam String validation3,@RequestParam String email,@RequestParam String password,@RequestParam String number,Model m)
 	{
 		String res = us.passwordrecovery(validation1, validation2, validation3, number, email, password);
@@ -204,6 +204,7 @@ public class UserController {
 		Session session= sei.searchSession(Integer.parseInt(sid));
 		if(LocalDate.now().toString().equals(session.getSessionDate()))
 		{
+			m.addAttribute("sId", sid);
 			m.addAttribute("sname", session.getSessionDes());
 			return "./User/SessionJoin";
 		}
@@ -211,5 +212,14 @@ public class UserController {
 		List<Enrollment> resList=us.showEnrollments(modelUser.getEmpId());
 		m.addAttribute("elist", resList);
 		return "./User/MySessions";
+	}
+	
+	@GetMapping("report")
+	public String displayReport(Model m)
+	{
+		List<Session> reslist = us.showReport(modelUser.getEmpId());
+		m.addAttribute("slist", reslist);
+		
+		return "./User/Report";
 	}
 }
