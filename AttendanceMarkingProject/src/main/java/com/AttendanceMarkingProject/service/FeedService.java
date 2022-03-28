@@ -12,4 +12,5 @@ public interface FeedService {
 	public List<Answers> showAnswer();
 	public String updateQuestion(Questions quest);
 	public Questions showQuestionBySessionId(int sessionId);
+	 public List<Questions> showQuestion();
 }

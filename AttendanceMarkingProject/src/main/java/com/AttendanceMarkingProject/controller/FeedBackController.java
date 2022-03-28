@@ -40,7 +40,7 @@ public class FeedBackController {
 		
 	}
 	
-	@PostMapping("resp")
+	@PostMapping("feedback/resp")
 	public String feedback(	
 			@RequestParam String ansa,
 			@RequestParam String ansb,
