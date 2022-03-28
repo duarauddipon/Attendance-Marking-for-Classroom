@@ -62,6 +62,7 @@ public class FeedServiceImpl implements FeedService {
 		return "Fail";
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public List<Questions> showQuestion() {
 		// TODO Auto-generated method stub
@@ -72,6 +73,7 @@ public class FeedServiceImpl implements FeedService {
 		
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public List<Answers> showAnswer() {
 		// TODO Auto-generated method stub
@@ -105,6 +107,7 @@ public class FeedServiceImpl implements FeedService {
 		
 	}
 
+	@SuppressWarnings({ "deprecation", "unchecked", "rawtypes" })
 	@Override
 	public Questions showQuestionBySessionId(int sessionId) {
 		String str="select * from feedques where sessionid=?;";
