@@ -10,8 +10,6 @@ import org.springframework.stereotype.Component;
 
 import com.AttendanceMarkingProject.model.Answers;
 import com.AttendanceMarkingProject.model.Questions;
-import com.AttendanceMarkingProject.model.Session;
-
 import com.AttendanceMarkingProject.service.FeedService;
 
 @Component
@@ -62,17 +60,6 @@ public class FeedServiceImpl implements FeedService {
 		return "Fail";
 	}
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
-	@Override
-
-	public List<Questions> showQuestion() {
-		// TODO Auto-generated method stub
-		List<Questions> qlist = new ArrayList<>();
-		String str ="select * from feedques";
-		qlist = jt.query(str,new BeanPropertyRowMapper(Questions.class));
-		return qlist;
-		
-	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override

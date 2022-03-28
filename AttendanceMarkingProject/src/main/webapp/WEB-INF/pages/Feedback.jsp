@@ -66,9 +66,9 @@
                     </div>
                 </div>
 
-               
+               <h3 style="font-style:italic;color:red" class="">${msg}</h3>
                 </form>
-			<h3 style="font-style:italic;color:red" class="">${msg}</h3>
+			
             </div>
             <div class="col-md-3"></div>
         </div>
